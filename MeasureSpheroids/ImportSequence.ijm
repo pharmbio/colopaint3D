@@ -42,7 +42,8 @@ function filter(i, name) {
     // if (endsWith(name,".txt")) return false;
     // does name contain both "Series002" and "ch01"
     // 
-    // if (indexOf(name,"ch01")==-1) return false;
+    if (matches(name,".*w5.*")) return false;
+    if (matches(name,".*w2.*")) return false;
 
     // open only first 10 images
     // if (i>=10) return false;
