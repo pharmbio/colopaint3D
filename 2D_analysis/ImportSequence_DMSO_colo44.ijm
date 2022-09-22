@@ -6,12 +6,12 @@
 macro "Open Series Using Filter" {
     requires("1.34e"); 
     //dir = getDirectory("Choose a Directory ");
-    dir = "/Volumes/mikro_pharmbio/ColoPaint/colo44-v1-FA-P017365-CACO2-48h-P1-L1/2022-05-26/1043/";
+    dir = "/Volumes/mikro_pharmbio/ColoPaint/colo44-v1-FA-P017366-CACO2-48h-P1-L2/2022-05-27/1045/";
     print(dir);
     list = getFileList(dir);
     //s = getString("Enter a string:", "str");
     //list_im = split(s, ",");
-    list_im = split("B05_,B23_,C07_,C13_,D15_,E08_,F14_,F20_,G03_,G09_,H06_,H17_,I02_,I12_,J10_,J18_,K22_,L09_,M19_,M23_,N04_,N21_,O11_,O16", ",");
+    list_im = split("B14_,C19_,C21_,D16_,E04_,E12_,F06_,F15_,G08_,G11_,H03_,H17_,I05_,I07_,J09_,J20_,K18_,K23_,L06_,M10_,N17_,N22_,O02_,O13", ",");
     stack = 0;
     setBatchMode(true); 
     for (i=0; i<list.length; i++) {
