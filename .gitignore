@@ -6,3 +6,7 @@
 **/QC
 /results*
 .ipynb_checkpoints
+notebooks/data_csv/
+notebooks/output/
+notebooks/settings/
+notebooks/Finished*
