@@ -1,5 +1,7 @@
 *.parquet
 *.csv
+*.tif
+*.pdf
 .DS_Store
 .ipynb_checkpoints
 **/Image*
