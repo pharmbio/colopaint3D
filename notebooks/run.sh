@@ -1,1 +1,0 @@
- jupyter nbconvert --to notebook --execute /home/jovyan/scratch2-shared/david/colopaint3D/notebooks/1_featureSorting.ipynb --allow-errors --output=/home/jovyan/scratch2-shared/david/colopaint3D/notebooks/Finished_1_featureSorting.ipynb --ExecutePreprocessor.timeout=None 
