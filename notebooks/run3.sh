@@ -1,1 +1,0 @@
- jupyter nbconvert --to notebook --execute /home/jovyan/scratch2-shared/david/colopaint3D/notebooks/3_PCAUMAP_loc.ipynb --allow-errors --output=/home/jovyan/scratch2-shared/david/colopaint3D/notebooks/Finished_3_PCAUMAP.ipynb --ExecutePreprocessor.timeout=None 
