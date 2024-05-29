@@ -10,3 +10,5 @@ notebooks/data_csv/
 notebooks/output/
 notebooks/settings/
 notebooks/Finished*
+output/
+notebooks/
