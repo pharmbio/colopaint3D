@@ -9,4 +9,11 @@
 **/QC
 /results*
 /old_features*
-.ipynb_checkpoints
+notebooks/data_csv/
+notebooks/output/
+notebooks/settings/
+notebooks/Finished*
+output/
+notebooks/
+data/
+*old.ipynb
