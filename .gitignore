@@ -16,4 +16,5 @@ notebooks/Finished*
 output/
 notebooks/
 data/
+old_files/
 *old.ipynb
