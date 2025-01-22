@@ -34,7 +34,7 @@ Contact
 
 ### Contact
 This project is coordinated by Christa Ringers (@xxx) 
-and David Holmberg (@xxx) and it is part of the research work at the 
+and David Holmberg (@xxx) under supervision by Ola Spjuth and Jordi-Carreras Puigvert and it is part of the research work at the 
 Pharmaceutical Bioinformatics Research Group, Department of Pharmaceutical Biosciences, 
 Uppsala University, Sweden.
 * Norway
