@@ -6,7 +6,7 @@ This repository contains supporting scripts and codes used in the analysis for t
 
 ### Summary
 
-Cell Painting is a popular assay for morphological profiling of 2D monolayer cell cultures(ref).  
+Cell Painting is a popular assay for morphological profiling of 2D monolayer cell cultures.  
 In the paper, we propose a scalable method to apply Cell Painting in 3D. 
 The workflow is largely based on existing analysis strategies, 
 with some adaptations to enable single-cell morphological profiling of 3D spheroids.
@@ -20,7 +20,7 @@ We aim to make the images, cell pose models, and feature files available in a su
 
 
 ### References
-* (CellProfiler)[https://github.com/CellProfiler]
-* (Pycytominer)[https://github.com/cytomining/pycytominer]
-* (Spheroid detection)[https://github.com/Ionshiv/SphereDetect]
+* [CellProfiler](https://github.com/CellProfiler)
+* [Pycytominer](https://github.com/cytomining/pycytominer)
+* [Spheroid detection](https://github.com/Ionshiv/SphereDetect)
 
