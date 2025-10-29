@@ -1,5 +1,6 @@
 *.parquet
 *.csv
+*.tsv
 *.tif
 *.pdf
 *.png
