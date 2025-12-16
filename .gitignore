@@ -21,3 +21,4 @@ old_files/
 *old.ipynb
 .venv/
 colo8-input/
+*.h5ad
