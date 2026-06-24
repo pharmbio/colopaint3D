@@ -15,8 +15,16 @@ This repository contains a collection of notebooks for processing CellProfiler f
 and creating figures that accompany the manuscript. 
 
 ### Downloading data
-More on this will follow. 
-We aim to make the images, cell pose models, and feature files available in a suitable repository.
+The data underlying this analysis are deposited in the BioImage Archive under accession S-BIAD2254 (https://www.ebi.ac.uk/biostudies/studies/S-BIAD2254).
+
+The archive contains:
+
+* Raw images — 16-bit OME-TIFF, organised across per-plate result folders under Files/results/.
+* Single-cell feature tables — per-compartment CellProfiler features (featICF_cells.parquet, featICF_cytoplasm.parquet, featICF_nuclei.parquet) within each acquisition's results folder (e.g. Files/results/PB000137/).
+* Segmentation masks — Cellpose masks in the segmentation/ subfolder of each results folder.
+* Detection demonstrator dataset — an example dataset for benchmarking spheroid detection, at Files/detection_example_dataset/.
+* CellProfiler pipeline + cellpose models - the pipeline is provided at Files/feature_extraction/.
+* Image acquisiition files - JOBS,OCs, and GA3 pipelines are provided at Files/image_acquisition/.
 
 
 ### References
