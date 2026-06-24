@@ -24,7 +24,7 @@ The archive contains:
 * Segmentation masks — Cellpose masks in the segmentation/ subfolder of each results folder.
 * Detection demonstrator dataset — an example dataset for benchmarking spheroid detection, at Files/detection_example_dataset/.
 * CellProfiler pipeline + cellpose models - the pipeline is provided at Files/feature_extraction/.
-* Image acquisiition files - JOBS,OCs, and GA3 pipelines are provided at Files/image_acquisition/.
+* Image acquisition files - JOBS, OCs, and GA3 pipelines are provided at Files/image_acquisition/.
 
 
 ### References
