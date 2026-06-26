@@ -14,6 +14,22 @@ with some adaptations to enable single-cell morphological profiling of 3D sphero
 This repository contains a collection of notebooks for processing CellProfiler features of 3D spheroids 
 and creating figures that accompany the manuscript. 
 
+### Reproducing the analysis
+
+A one-click reproducible Code Ocean capsule is available at: <DOI — to be added upon publication>.
+The capsule bundles the environment, a data subset, and the notebooks so the analysis can be
+re-run without local setup.
+
+To run locally instead, follow Installation and Test dataset below.
+
+## Installation
+
+Requires Python 3.10
+
+python3.10 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
 ### Downloading data
 The data underlying this analysis are deposited in the BioImage Archive under accession S-BIAD2254 (https://www.ebi.ac.uk/biostudies/studies/S-BIAD2254).
 
