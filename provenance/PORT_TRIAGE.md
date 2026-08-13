@@ -68,8 +68,10 @@ code. Fig 4/5 panels are HCT116; every one also exists for HT29 (see Suppl 4).
 | **Fig 5d** | 2D − 3D difference map | same (`Difference_*_colored_tails`) | — |
 | **Fig 5e** | *image of cells* — no code | — | — |
 | **Fig 5f** | 2D + 3D fingerprints, 5-FU & olaparib | `3_PairwiseCorrlations **copy**` only | — |
-| **Fig 6** | GSEA / hallmark NES | `DEG/hallmark_nes_scatter` | — |
-| | EdU + γH2AX | `EdU/EdU_analysis` | — |
+| **Fig 6** ? | hallmark NES scatter | `DEG/hallmark_nes_scatter` → `hallmark_nes_scatter` | — |
+| **Fig 6** ? | GSEA NES overview | same → `gsea_nes_overview` | — |
+| **Fig 6** ? | OXPHOS gene-level log₂FC | same → `oxphos_logfc_dumbbell` — **panel or unused?** | — |
+| **Fig 6** ? | EdU + γH2AX | `EdU/EdU_analysis` | — |
 | **Fig 6e** | top-10 most similar to 5-FU, HCT116 & HT29 | `10_5fu_top_neighbours` **or** `fig_5fu_neighbours_frozen_doses` — **which?** | — |
 | **Suppl 1d** | detected-cell spheroid plot, **HT29** | `CellDetectionSanityCheck/3_Plot_Spheroids` | — |
 | **Suppl 1** (rest) | *images* — no code | — | — |
@@ -94,7 +96,8 @@ code. Fig 4/5 panels are HCT116; every one also exists for HT29 (see Suppl 4).
 | **Suppl 5c** | difference in similarity | same → `Difference_HT29_colored_tails` | HT29 |
 | **Suppl 5d** | grit-score dose example, HCT116 2D vs 3D | `S_dose_similarity_5FU_Olaparib` | — |
 | **Suppl 5e** | drug-pair similarity 2D vs 3D, HCT116, coloured by MoA | `09b_panel_c_moa_class` (MoA colouring matches; `09_panel_c_recolor` looks like its predecessor) | — |
-| **Suppl 6** | **? unknown** | | |
+| **Suppl 6a** | DEG volcano (Plasmidsaurus) — *not in this analysis* | external / vendor | — |
+| **Suppl 6b** | gene-level log₂FC, G2M checkpoint + SASP | `DEG/hallmark_nes_scatter` → `signature_dumbbells_combined` | — |
 
 Both `PCAUMAP_pathway_v2` and `3_PairwiseCorrlations` are parameterised by `data_type`
 and `cell_line`, so each emits panels into Fig 4, Fig 5 **and** Suppl 4 from one run.
