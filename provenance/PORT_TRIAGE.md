@@ -77,10 +77,23 @@ code. Fig 4/5 panels are HCT116; every one also exists for HT29 (see Suppl 4).
 | **Suppl 2d** | expert-annotation IoU / segmentation error | `expert-annotation/quantify_segmentation_error` | — |
 | **Suppl 2e** | error propagation with depth | `expert-annotation/error_propegation` | — |
 | **Suppl 2a, 2b** | **? presumed images** | | |
-| **Suppl 3** | reproducibility / Percent Replicating, all three experiments | exp1 `_certain_slices`, exp2 `3_PercentReplicating`, exp3 robustness | — |
-| **Suppl 4** | *inferred:* Fig 4's six panels for **HT29** | same notebooks, `cell_line='HT29'` | `MIP`, `aggregates` |
-| **Suppl 5d** | dose-response grit 2D vs 3D, ola + 5-FU | `S_dose_similarity_5FU_Olaparib` | — |
-| **Suppl 5e** | drug-pair similarity 2D vs 3D by MoA class | `09b_panel_c_moa_class` / `09_panel_c_recolor` — **which?** | — |
+| **Suppl 3a** | z-plane subsampling | `3_Robustness_Combined_Final` → `A_zplane_subsampling` | exp1 slices |
+| **Suppl 3b** | z-sampling density | same → `A2_zdensity` | exp3 sections |
+| **Suppl 3c** | spheroid size (270/540/810 seeded) | same → `A3_spheroid_size` | exp2 `grit_section*` |
+| **Suppl 3d** | clearing | same → `A4_clearing` | exp3 sections |
+| **Suppl 3e** | magnification | same → `A5_magnification` | exp3 sections |
+| **Suppl 3f** | *image* — no code | — | — |
+| **Suppl 3g** | intensity vs depth, two sizes | same → `B_bleaching` | **feature dumps** |
+| **Suppl 3h** | cell detection vs depth by clearing | same → `C_detection_depth` | **feature dumps** |
+| **Suppl 4a–f** | exactly Fig 4a–f but for **HT29** | same notebooks, `cell_line='HT29'` | `MIP`, `aggregates` |
+| **Suppl 4g** | *images* — no code | — | — |
+| **Suppl 4h** | UMAP unsupervised + labelled, air vs WI objective | **`colopaint3D_AZ`** `3_Figure3/UMAP/3_PCA.ipynb` | exp4 |
+| **Suppl 4i** | reproducibility, same objectives | **`colopaint3D_AZ`** `PercentReplicating/3_Fig_TechnicalReplicates.ipynb` | exp4 |
+| **Suppl 5a** | 2D UMAP fingerprints, **HT29** | `PCAUMAP/PCAUMAP_pathway_v2` | `2D`, HT29 |
+| **Suppl 5b** | 2D clustermap, **HT29** | `3_PairwiseCorrlations` → `PairwiseCorrelations_HT29_2D` | `2D`, HT29 |
+| **Suppl 5c** | difference in similarity | same → `Difference_HT29_colored_tails` | HT29 |
+| **Suppl 5d** | grit-score dose example, HCT116 2D vs 3D | `S_dose_similarity_5FU_Olaparib` | — |
+| **Suppl 5e** | drug-pair similarity 2D vs 3D, HCT116, coloured by MoA | `09b_panel_c_moa_class` (MoA colouring matches; `09_panel_c_recolor` looks like its predecessor) | — |
 | **Suppl 6** | **? unknown** | | |
 
 Both `PCAUMAP_pathway_v2` and `3_PairwiseCorrlations` are parameterised by `data_type`
@@ -136,14 +149,65 @@ This is why `save_panel` derives the target figure from the panel name.
 
 ## Suppl Fig 3 — reproducibility (the only figure `METHODS.md` covers)
 
+**Resolved: one notebook makes the whole figure.** `3_Robustness_Combined_Final.ipynb`
+emits all seven code panels (a–e, g, h) into `result-images/combined/`, and its output
+names map 1:1 onto the paper's lettering. It reads all three experiments itself.
+
 | | File | Note |
 |---|---|---|
-| IN | v1 `3_PercentReplicating_certain_slices.ipynb` | 52 compounds; the well-powered one |
-| IN | v2 `3_PercentReplicating.ipynb` | seeding density, incl. `seeding_brackets` |
-| ? | v3 `3_Robustness_Combined_Final.ipynb` vs `clearing_comparison{,_stats}.ipynb` | `Combined_Final` looks canonical but `METHODS.md` cites `clearing_comparison` — **doc and files disagree** |
-| OUT | v1 `3_PercentReplicating{,copy,copy 2}.ipynb`, v2 `_copy` | superseded / duplicates |
+| IN | v3 `3_Robustness_Combined_Final.ipynb` | **canonical** — the entire Suppl Fig 3 |
+| OUT | v3 `clearing_comparison.ipynb`, `clearing_comparison_stats.ipynb` | predecessors, superseded by `Combined_Final` |
+| OUT | v1 `3_PercentReplicating_certain_slices.ipynb` | superseded: panel a now comes from `Combined_Final` |
+| OUT | v2 `3_PercentReplicating.ipynb` | superseded: panel c now comes from `Combined_Final` |
+| OUT | v1 `3_PercentReplicating{,copy,copy 2}.ipynb`, v2 `_copy` | duplicates |
 | OUT | v2 `3_MAP.ipynb` | **mAP dropped from the paper** |
 | ? | v2+v3 `GritScores/3_GritScores.ipynb` | grit for the robustness experiments — in the paper or not |
+
+> ⚠️ **`METHODS.md` is now stale.** It documents the metric, null model and tests as
+> implemented in `_certain_slices` (exp1), `3_PercentReplicating` (exp2) and
+> `clearing_comparison` (exp3) — **all three of which are superseded**. The statistics
+> actually behind the published panels live in `Combined_Final`'s `panel_analysis()`.
+> The doc must be re-derived from that notebook before submission, including whether its
+> null and multiple-comparison handling match what `METHODS.md` claims.
+
+> ⚠️ **Panels g and h do not run from the downloaded profile tier.** They read
+> `FeaturesImages_*/SingleSlice` and `SingleCell` for exp1 and exp3 — part of the
+> 19.5 GB that no tier covers. Either deposit those dumps, or have `Combined_Final`
+> cache the per-depth intensity and detection summaries as small tables that ship with
+> the repo. Without one of the two, "every figure regenerates from the download" is
+> false for Suppl 3g/h.
+
+## Suppl Fig 4h/i — exp4, objective comparison (`colopaint3D_AZ`)
+
+A **fourth experiment**, in a **separate repository** from the colopaint3D tree. Three
+acquisitions; `_WI_` is the water-immersion set:
+
+| Key | Upstream dataset name |
+|---|---|
+| `bomi_20241220` | `CellPainting_20241220clearedspheroidsBOMI_20241220_151510` |
+| `cleared3d_20250127` | `CellPainting_20250127Cellpaintcleared3D_20250127_171120` |
+| `wi_20250203` | `CellPainting_CellPaint3DBomi_**WI**_for_Jordi_20250203_155142` |
+
+| | File | Note |
+|---|---|---|
+| IN | `1_Data/1_FeatureSorting.ipynb` (+ `_script.py`) | exp4 feature sorting |
+| IN | `1_Data/Prepare_metadata.ipynb` | exp4 metadata |
+| IN | `2_Processing/2_Pycytominer.ipynb` | exp4 processing |
+| IN | `2_Processing/2_DetectandCombine.ipynb` | exp4 detection/combination |
+| IN | `3_Figure3/UMAP/3_PCA.ipynb` | **Suppl 4h** — `UMAP_labeled/unlabeled_*`, `PCA_unlabeled_*` |
+| IN | `3_Figure3/PercentReplicating/3_Fig_TechnicalReplicates.ipynb` | **Suppl 4i** — `TechnicalReplicates_repl_corrs_*` |
+| ? | `3_Figure3/Radarplots/feature_heatmaps.ipynb` | radar / feature heatmaps — not in the Suppl 4 lettering; in the paper? |
+| OUT | `0_Inspection/0_renderImages.ipynb`, `old/` | inspection / superseded |
+
+**Which dataset is "air"?** The lettering says *air vs WI*, and `wi_20250203` is clearly
+WI — but there are two non-WI acquisitions (`bomi_20241220`, `cleared3d_20250127`) and
+outputs exist for all three. Needs confirming which is the air comparator, and whether
+the third is used at all.
+
+**Duplicated utils.** exp4 carries three near-identical copies of `utils/` (`utils.py`,
+`replicate.py`) under `PercentReplicating/`, `Radarplots/` and `UMAP/`, with differing
+dates. These should collapse into the repo-level `utils/`, after diffing them — a
+`replicate.py` divergence would change Suppl 4i's numbers.
 
 ## Suppl Fig 5
 

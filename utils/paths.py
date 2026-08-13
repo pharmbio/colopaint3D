@@ -45,14 +45,25 @@ ANALYSIS_ROOT = REPO_ROOT / "analysis"
 # which upstream folder each came from, so the port stays traceable.
 EXPERIMENTS = {
     "exp1_main": "z-slice sampling, 52 compounds — feeds every figure",
-    "exp2_spheroid_size": "seeding density / spheroid size — Suppl Fig 3 only",
-    "exp3_clearing_mag_z": "clearing, magnification, z-sampling — Suppl Fig 3 only",
+    "exp2_spheroid_size": "seeding density / spheroid size — Suppl Fig 3c",
+    "exp3_clearing_mag_z": "clearing, magnification, z-sampling — Suppl Fig 3b/d/e",
+    "exp4_objective": "air vs water-immersion objective — Suppl Fig 4h/i",
 }
 
+# Upstream provenance. exp4 came from a *separate repository*
+# (`colopaint3D_AZ`), not from the colopaint3D tree.
 UPSTREAM_NAMES = {
-    "exp1_main": "spher_colo52_v1",
-    "exp2_spheroid_size": "spher_colo52_v2",
-    "exp3_clearing_mag_z": "spher_colo52_v3",
+    "exp1_main": "colopaint3D/spher_colo52_v1",
+    "exp2_spheroid_size": "colopaint3D/spher_colo52_v2",
+    "exp3_clearing_mag_z": "colopaint3D/spher_colo52_v3",
+    "exp4_objective": "colopaint3D_AZ/spher_colo52_v1",
+}
+
+# exp4's acquisitions are named by run rather than by condition.
+EXP4_DATASETS = {
+    "bomi_20241220": "CellPainting_20241220clearedspheroidsBOMI_20241220_151510",
+    "cleared3d_20250127": "CellPainting_20250127Cellpaintcleared3D_20250127_171120",
+    "wi_20250203": "CellPainting_CellPaint3DBomi_WI_for_Jordi_20250203_155142",
 }
 
 
