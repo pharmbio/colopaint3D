@@ -8,31 +8,56 @@ Status key: **IN** = port it · **OUT** = excluded · **?** = needs your decisio
 
 ---
 
-## Blocking problem found during the port
+## Feature-set versions — investigated and resolved
 
-**Three notebooks read feature dumps that no longer exist.** Feature sets are
-versioned by date (`FeaturesImages_<DDMMYY>_none/`), and the code references two
-versions that are not on disk:
+Feature dumps are versioned by date (`FeaturesImages_<DDMMYY>_none/`) and the
+notebooks reference several versions. Two initially appeared to be missing.
 
-| Referenced | Exists? | Referenced by |
+**The date stamps are re-extraction runs on the same images, not different
+datasets.** Verified by comparing exp1's `150125` against `011225` across 4
+`SingleSlice` MedianAgg files (HCT116 slices 0/6/11, HT29 slice 3):
+
+- identical column sets (2125 columns / 2110 raw features), identical row counts,
+  identical well coverage — zero wells unique to either side
+- 99.45–99.77% of values bitwise equal
+- max absolute difference **exactly 6.10352e-05 = 2⁻¹⁴** in every file — the float32
+  quantum near magnitude 1, i.e. storage round-off
+- median relative difference among differing cells ≈ 8e-8, concentrated in
+  `RadialDistribution_ZernikePhase_*` (arctan2 phase angles, where last-bit
+  non-determinism surfaces)
+
+| Version | Where | Referenced by |
 |---|---|---|
-| `FeaturesImages_150125_none` | **NO** | `2_Processing/2_Pycytominer.ipynb` (v1), `RemoveNoise/Prepare_Slice_Features.ipynb`, `CellDetectionSanityCheck/3_Plot_Spheroids.ipynb` |
-| `FeaturesImages_100125_none` | **NO** | `CellCoverage/3_CellCoverage.ipynb` |
-| `FeaturesImages_291025_none` | yes (2025-11-30) | `2_Pycytominer_certain_slices.ipynb` (v1) |
-| `FeaturesImages_011225_none` | yes (2026-03-26) | `1_FeatureSorting.ipynb` (v1) |
-| `FeaturesImages_070426_none` | yes (2026-04-07) | v2 `1_FeatureSorting`, `2_Pycytominer` |
-| `FeaturesImages_150526_none` | yes (2026-05-15) | v3 `1_FeatureSorting`, `2_Pycytominer`, robustness notebooks |
+| `150125` | **`colopaint3D_fork/spher_colo52_v1/1_Data/`** (7.7 GB) | v1 `2_Pycytominer`, `Prepare_Slice_Features`, `3_Plot_Spheroids` |
+| `100125` | **not found anywhere** | `CellCoverage/3_CellCoverage.ipynb` (`SingleCell` level) |
+| `291025` | main tree | `2_Pycytominer_certain_slices.ipynb` (v1) |
+| `011225` | main tree | v1 `1_FeatureSorting` |
+| `070426` | main tree | v2 `1_FeatureSorting`, `2_Pycytominer` |
+| `150526` | main tree | v3 `1_FeatureSorting`, `2_Pycytominer`, robustness notebooks |
 
-So **experiment 1's own pipeline is internally inconsistent**: `1_FeatureSorting`
-writes `011225`, `2_Pycytominer` reads `150125` (gone), and
-`2_Pycytominer_certain_slices` reads `291025`. Three feature versions in one chain,
-two of them referencing deleted directories.
+`150125` was never missing — it lives in the fork, which is *why* those notebooks
+`chdir` into the fork. The fork reference and the `150125` reference are one fact.
+It is confirmed as the source of the published tables: **834 unique wells, exactly
+matching `selected_data_aggregates_HCT116.parquet`, zero discrepancy either way.**
 
-This cannot be fixed by rewriting paths — it needs you to say **which feature set
-the published `selected_data_*` / `grit_data_*` tables were actually built from.**
-Until then those four notebooks are ported with their original reference preserved
-and a `TODO` marker, rather than silently repointed at a version that would
-produce different numbers.
+### Consequence for the port
+
+Because `011225` ≡ `150125` to within float32 round-off, exp1 can be **repointed at
+`011225` in the main tree, dropping the fork dependency entirely**. Differences are
+~1e-7 relative — invisible in any figure or statistic — so nothing needs re-running
+and no published number changes.
+
+`100125` is read only by `3_CellCoverage` at the `SingleCell` level; since it is 5
+days before `150125` and the versions are equivalent, `011225/SingleCell/` (which
+has both HCT116 and HT29) is the sound substitute.
+
+`291025` is the outlier: only 12 `SingleSlice` files (vs 24) and HCT116-only
+`SingleCell`. A **partial** set, plausibly intentional for the z-subsampling
+analysis that consumes it, but not verified equivalent — worth a look before
+`2_Pycytominer_certain_slices` is ported.
+
+*Caveat: sampled 4 of 24 slice files at the well-aggregated level; the 4.8 GB
+`SingleCell` parquets were not value-compared.*
 
 ---
 
@@ -41,9 +66,9 @@ produce different numbers.
 | Status | File | Note |
 |---|---|---|
 | IN | `1_Data/1_FeatureSorting.ipynb` (v1, v2, v3) | 3 notebooks, one per experiment |
-| ? | `2_Processing/2_Pycytominer.ipynb` (v1) | reads the missing `150125` |
+| IN | `2_Processing/2_Pycytominer.ipynb` (v1) | repoint `150125` (fork) → `011225` (main tree); verified equivalent |
 | IN | `2_Processing/2_Pycytominer.ipynb` (v2, v3) | reference existing feature sets |
-| ? | `2_Processing/2_Pycytominer_certain_slices.ipynb` (v1) | reads `291025`, unlike its own v1 chain |
+| ? | `2_Processing/2_Pycytominer_certain_slices.ipynb` (v1) | reads `291025`, a **partial** set (12 slice files, HCT116-only) — confirm that is intentional |
 | IN | `4_BioImageArchive/4_ImageBioArchive_Metadata.ipynb` | deposition metadata; also the basis for WP7 |
 | IN | `MIP_features/Pycytominer_MIP.ipynb` | produces `selected_data_MIP_*`, needed by Fig5 |
 | IN | `2D_features/2D_profiles.ipynb` | produces `selected_data_2D_*`, needed by Fig5. Has a fork path |
@@ -53,10 +78,10 @@ produce different numbers.
 
 | Status | File | Note |
 |---|---|---|
-| ? | `CellCoverage/3_CellCoverage.ipynb` | reads the missing `100125`. Output `CellsPerSpheroid.pdf` |
-| ? | `CellDetectionSanityCheck/3_Plot_Spheroids.ipynb` | reads the missing `150125` |
+| IN | `CellCoverage/3_CellCoverage.ipynb` | `100125` not found anywhere; substitute `011225/SingleCell/` (has both cell lines). Output `CellsPerSpheroid.pdf` |
+| IN | `CellDetectionSanityCheck/3_Plot_Spheroids.ipynb` | repoint `150125` (fork) → `011225` |
 | IN | `RemoveNoise/5_PCA_RemoveNoise_BatchStratified.ipynb` | canonical — its PDFs are the newest on disk (2026-08-13) |
-| ? | `RemoveNoise/Prepare_Slice_Features.ipynb` | reads the missing `150125`; writes the `normalized_data_*` PCA inputs |
+| IN | `RemoveNoise/Prepare_Slice_Features.ipynb` | repoint `150125` (fork) → `011225`; writes the `normalized_data_*` PCA inputs |
 | OUT | `RemoveNoise/old/5_PCA_RemoveNoise.ipynb` | superseded by BatchStratified |
 | OUT | `RemoveNoise/old/5_PCA_RemoveNoise_and_FeatureImportance.ipynb` | superseded |
 
@@ -140,10 +165,14 @@ produce different numbers.
 
 ## Decisions needed, in priority order
 
-1. **Which feature set (`FeaturesImages_*`) the published profiles came from** — blocks 4 notebooks.
-2. **The definitive paper figure list** — Fig2/Fig3/Fig4 panel lists are still unknown, so those folders cannot be finalised. (Fig5, Fig6, Suppl3, Suppl5 are pinned.)
-3. **`3_PairwiseCorrlations`**: plain or `copy`. Recommend `copy` (superset, makes 5f).
-4. **v3 robustness**: `Combined_Final` or `clearing_comparison`(`_stats`).
-5. **`3_GritScores`**: which of the two.
-6. **Figure assignment** for the five unplaced files above.
-7. **Fig6e / Suppl5e**: which script of each pair.
+1. **The definitive paper figure list** — Fig2/Fig3/Fig4 panel lists are still unknown, so those folders cannot be finalised. (Fig5, Fig6, Suppl3, Suppl5 are pinned.)
+2. **`3_PairwiseCorrlations`**: plain or `copy`. Recommend `copy` (superset, makes 5f).
+3. **v3 robustness**: `Combined_Final` or `clearing_comparison`(`_stats`).
+4. **`3_GritScores`**: which of the two.
+5. **Figure assignment** for the five unplaced files above.
+6. **Fig6e / Suppl5e**: which script of each pair.
+7. **`291025`**: confirm the partial set (12 slice files, HCT116-only) is intentional for `2_Pycytominer_certain_slices`.
+
+*Resolved: which feature set the published profiles came from — see the feature-set
+section above. `150125` (in the fork) is the source; `011225` in the main tree is
+equivalent to within float32 round-off, so the fork dependency can be dropped.*
