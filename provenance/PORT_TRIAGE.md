@@ -51,10 +51,18 @@ and no published number changes.
 days before `150125` and the versions are equivalent, `011225/SingleCell/` (which
 has both HCT116 and HT29) is the sound substitute.
 
-`291025` is the outlier: only 12 `SingleSlice` files (vs 24) and HCT116-only
-`SingleCell`. A **partial** set, plausibly intentional for the z-subsampling
-analysis that consumes it, but not verified equivalent — worth a look before
-`2_Pycytominer_certain_slices` is ported.
+`291025` is **scoped to HCT116, not partial** — confirmed as the Suppl Fig 3 feature
+set. All three sets carry the identical full 12-plane stack (z 0–11, the "12z
+(original)" base case in `METHODS.md`); `291025` simply omits HT29, which is correct
+because the entire Percent Replicating analysis is HCT116-only. Its consumer,
+`2_Pycytominer_certain_slices`, derives the z-subsampling cases (single z2/z7/z11,
+sparse 3/6/9z, 12z) from those 12 planes.
+
+| Set | Cell lines | z-planes | Role |
+|---|---|---|---|
+| `291025` | HCT116 | 0–11 (12) | Suppl Fig 3 reproducibility |
+| `150125` (fork) | HCT116 + HT29 | 0–11 (12) | main analysis — source of the published tables |
+| `011225` | HCT116 + HT29 | 0–11 (12) | re-extraction of `150125`, equivalent to float32 round-off |
 
 *Caveat: sampled 4 of 24 slice files at the well-aggregated level; the 4.8 GB
 `SingleCell` parquets were not value-compared.*
@@ -68,7 +76,7 @@ analysis that consumes it, but not verified equivalent — worth a look before
 | IN | `1_Data/1_FeatureSorting.ipynb` (v1, v2, v3) | 3 notebooks, one per experiment |
 | IN | `2_Processing/2_Pycytominer.ipynb` (v1) | repoint `150125` (fork) → `011225` (main tree); verified equivalent |
 | IN | `2_Processing/2_Pycytominer.ipynb` (v2, v3) | reference existing feature sets |
-| ? | `2_Processing/2_Pycytominer_certain_slices.ipynb` (v1) | reads `291025`, a **partial** set (12 slice files, HCT116-only) — confirm that is intentional |
+| IN | `2_Processing/2_Pycytominer_certain_slices.ipynb` (v1) | reads `291025` — the HCT116-scoped Suppl Fig 3 set. Correct as-is; keep the reference |
 | IN | `4_BioImageArchive/4_ImageBioArchive_Metadata.ipynb` | deposition metadata; also the basis for WP7 |
 | IN | `MIP_features/Pycytominer_MIP.ipynb` | produces `selected_data_MIP_*`, needed by Fig5 |
 | IN | `2D_features/2D_profiles.ipynb` | produces `selected_data_2D_*`, needed by Fig5. Has a fork path |
@@ -171,8 +179,8 @@ analysis that consumes it, but not verified equivalent — worth a look before
 4. **`3_GritScores`**: which of the two.
 5. **Figure assignment** for the five unplaced files above.
 6. **Fig6e / Suppl5e**: which script of each pair.
-7. **`291025`**: confirm the partial set (12 slice files, HCT116-only) is intentional for `2_Pycytominer_certain_slices`.
 
 *Resolved: which feature set the published profiles came from — see the feature-set
 section above. `150125` (in the fork) is the source; `011225` in the main tree is
-equivalent to within float32 round-off, so the fork dependency can be dropped.*
+equivalent to within float32 round-off, so the fork dependency can be dropped.
+`291025` is the HCT116-scoped Suppl Fig 3 set and is correct as referenced.*
