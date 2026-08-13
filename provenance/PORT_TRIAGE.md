@@ -73,7 +73,10 @@ code. Fig 4/5 panels are HCT116; every one also exists for HT29 (see Suppl 4).
 | **Fig 6e** | top-10 most similar to 5-FU, HCT116 & HT29 | `10_5fu_top_neighbours` **or** `fig_5fu_neighbours_frozen_doses` — **which?** | — |
 | **Suppl 1d** | detected-cell spheroid plot, **HT29** | `CellDetectionSanityCheck/3_Plot_Spheroids` | — |
 | **Suppl 1** (rest) | *images* — no code | — | — |
-| **Suppl 2** | **? unknown** | | |
+| **Suppl 2c** | mean focus per compound × z-slice | `david_revision/focus_estimates` | — |
+| **Suppl 2d** | expert-annotation IoU / segmentation error | `expert-annotation/quantify_segmentation_error` | — |
+| **Suppl 2e** | error propagation with depth | `expert-annotation/error_propegation` | — |
+| **Suppl 2a, 2b** | **? presumed images** | | |
 | **Suppl 3** | reproducibility / Percent Replicating, all three experiments | exp1 `_certain_slices`, exp2 `3_PercentReplicating`, exp3 robustness | — |
 | **Suppl 4** | *inferred:* Fig 4's six panels for **HT29** | same notebooks, `cell_line='HT29'` | `MIP`, `aggregates` |
 | **Suppl 5d** | dose-response grit 2D vs 3D, ola + 5-FU | `S_dose_similarity_5FU_Olaparib` | — |
@@ -149,12 +152,23 @@ This is why `save_panel` derives the target figure from the panel name.
 | IN | `S_dose_similarity_5FU_Olaparib.ipynb` | = suppl5d dose-response grit 2D vs 3D |
 | ? | `09b_panel_c_moa_class.py` vs `09_panel_c_recolor.py` | which makes suppl5e |
 
-## Unplaced — need a figure assignment
+## Supplementary 1 & 2 analyses (placed)
 
-`expert-annotation/quantify_segmentation_error.ipynb` ·
-`expert-annotation/error_propegation.ipynb` ·
-`expert-annotation/convert_npy_to_tiff.py` ·
-`david_revision/focus_estimates.ipynb` · `1_Data/syto14_boxplot.ipynb`
+| | File | Panel |
+|---|---|---|
+| IN | `CellDetectionSanityCheck/3_Plot_Spheroids` (HT29 output) | Suppl 1d |
+| IN | `david_revision/focus_estimates` | Suppl 2c |
+| IN | `expert-annotation/quantify_segmentation_error` | Suppl 2d |
+| IN | `expert-annotation/error_propegation` | Suppl 2e |
+| IN | `expert-annotation/convert_npy_to_tiff.py` | utility for the annotation work (339 chars) |
+
+`focus_estimates` emits three figure pairs; only `focus_by_compound_z` is assigned to
+2c. Whether `focus_normalized_var_by_compound_z` and
+`focus_normalized_var_by_cellline_z` are further panels is **unresolved**.
+
+## Unplaced — still need a figure assignment
+
+`1_Data/syto14_boxplot.ipynb` → `syto14_boxplot_HCT116.png`
 
 ## Excluded
 
@@ -167,9 +181,12 @@ This is why `save_panel` derives the target figure from the panel name.
 
 ## Open decisions
 
-1. **The paper figure list** — Fig2/3/4 panel lists unknown, so those folders can't be finalised (Fig5, Fig6, Suppl3, Suppl5 are pinned).
-2. **`3_PairwiseCorrlations`** — plain or `copy`. Recommend `copy`.
-3. **v3 robustness** — `Combined_Final` or `clearing_comparison{,_stats}`.
-4. **`3_GritScores`** — which of the two.
-5. **Figure assignment** for the five unplaced files.
-6. **Fig6e / Suppl5e** — which script of each pair.
+1. **Panel lettering** — Fig 2 (cells-per-spheroid, spheroid plot, PCA before/after), Fig 3 (are there A1/B1 alongside A2/B2?), Suppl 4 (HT29). The CellCoverage panel is currently written as `Fig2d`, **a guess**, and that name is baked into the figure file, source-data filename and manifest.
+2. **Suppl 6** — entirely unknown.
+3. **Suppl 2a/2b** — presumed images; confirm.
+4. **`3_PairwiseCorrlations`** — plain or `copy`. Recommend `copy` (only it makes Fig 5f).
+5. **v3 robustness** — `Combined_Final` or `clearing_comparison{,_stats}`; files and `METHODS.md` disagree.
+6. **`3_GritScores`** — which of the two.
+7. **Fig 6e / Suppl 5e** — which script of each pair.
+8. **`syto14_boxplot`** — which figure, if any.
+9. **`focus_estimates`** — are the two `normalized_var` outputs also panels?
