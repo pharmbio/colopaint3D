@@ -1,0 +1,2 @@
+panel,figure,source_data,figure_files,notebook,n_rows,caption,written_utc
+Fig2d,Fig2,Fig2d_cells_per_spheroid_per_z_slice_dmso_wells_both_cell_lines.csv,Fig2d.pdf;Fig2d.png,analysis/3_Figure2/CellCoverage/3_CellCoverage.ipynb,1470,"Cells per spheroid per z-slice, DMSO wells, both cell lines",2026-08-13T18:56:06Z

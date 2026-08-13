@@ -23,9 +23,9 @@ import os
 from pathlib import Path
 
 __all__ = [
-    "REPO_ROOT", "DATA_ROOT", "FIGURES_ROOT", "SOURCE_DATA_ROOT", "ANALYSIS_ROOT",
+    "REPO_ROOT", "DATA_ROOT", "FEATURES_ROOT", "FIGURES_ROOT", "SOURCE_DATA_ROOT", "ANALYSIS_ROOT",
     "EXPERIMENTS", "UPSTREAM_NAMES",
-    "profiles", "figdir", "source_data", "analysis", "metadata", "require",
+    "profiles", "features", "feature_output", "figdir", "source_data", "analysis", "metadata", "require",
 ]
 
 # paths.py lives at <repo>/utils/paths.py, so the root is two levels up. This is
@@ -34,6 +34,9 @@ __all__ = [
 REPO_ROOT = Path(os.environ.get("COLOPAINT3D_ROOT", Path(__file__).resolve().parents[1]))
 
 DATA_ROOT = Path(os.environ.get("COLOPAINT3D_DATA", REPO_ROOT / "data"))
+# Per-slice / single-cell CellProfiler dumps (~19.5 GB). Outside every download
+# tier, so this points wherever they actually live.
+FEATURES_ROOT = Path(os.environ.get("COLOPAINT3D_FEATURES", DATA_ROOT / "features"))
 FIGURES_ROOT = Path(os.environ.get("COLOPAINT3D_FIGURES", REPO_ROOT / "figures"))
 SOURCE_DATA_ROOT = REPO_ROOT / "source_data"
 ANALYSIS_ROOT = REPO_ROOT / "analysis"
@@ -70,6 +73,47 @@ def profiles(exp: str, name: str) -> Path:
     """
     _check_experiment(exp)
     return DATA_ROOT / exp / name
+
+
+def features(exp: str, version: str, level: str, name: str | None = None) -> Path:
+    """Path to a CellProfiler feature dump.
+
+    >>> features("exp1_main", "011225", "SingleCell", "HCT116.parquet")
+
+    ``version`` is the DDMMYY extraction stamp. These dumps total ~19.5 GB and are
+    outside every download tier, so point ``COLOPAINT3D_FEATURES`` at wherever they
+    live. Extraction stamps are re-runs of the same images, not different data —
+    see provenance/PORT_TRIAGE.md.
+    """
+    _check_experiment(exp)
+    base = FEATURES_ROOT / exp / f"FeaturesImages_{version}_none" / level
+    return base / name if name else base
+
+
+def feature_output(exp: str, version: str, *, allow_existing: bool = False) -> Path:
+    """Destination for a FeatureSorting run. **Refuses to overwrite by default.**
+
+    The upstream notebook hardcoded ``OutputDir = 'FeaturesImages_011225'``, so any
+    re-run silently overwrote a 7.7 GB feature set that took hours to build — and
+    that set is the provenance of the published profiles. Overwriting is therefore
+    opt-in, and ``version`` has no default so the stamp is always a deliberate choice.
+
+    >>> feature_output("exp1_main", "130826")          # new stamp, fine
+    >>> feature_output("exp1_main", "011225")          # raises: would clobber
+    >>> feature_output("exp1_main", "011225", allow_existing=True)   # explicit
+    """
+    _check_experiment(exp)
+    if not version or not version.strip():
+        raise ValueError("version is required, e.g. '130826' (DDMMYY of the extraction)")
+    dest = FEATURES_ROOT / exp / f"FeaturesImages_{version}_none"
+    if dest.exists() and not allow_existing:
+        raise FileExistsError(
+            f"{dest} already exists.\n"
+            "Refusing to overwrite an existing feature set — it is the provenance of\n"
+            "the published profiles. Either choose a new version stamp, or pass\n"
+            "allow_existing=True if you really mean to replace it."
+        )
+    return dest
 
 
 def figdir(figure: str) -> Path:

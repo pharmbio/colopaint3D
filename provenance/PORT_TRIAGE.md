@@ -1,186 +1,175 @@
-# Port triage — what goes in, what stays out, what needs a decision
+# Port triage
 
-Every notebook and script in the upstream tree, with its porting status. Derived
-from a mechanical audit of inputs, outputs, and surviving output files (see
-`SOURCE_SNAPSHOT.tsv` for the exact versions audited).
+Per-file porting status for the curated release. Audited from notebook inputs,
+outputs and surviving output files; `SOURCE_SNAPSHOT.tsv` pins the exact versions.
 
-Status key: **IN** = port it · **OUT** = excluded · **?** = needs your decision
+**IN** = port · **OUT** = excluded · **?** = needs a decision
 
----
+## Feature-set versions (resolved)
 
-## Feature-set versions — investigated and resolved
+Feature dumps are versioned by extraction date, `FeaturesImages_<DDMMYY>_none/`.
+**The date stamps are re-runs on the same images, not different data.** Comparing
+`150125` vs `011225` over 4 `SingleSlice` files (both cell lines, 4 slices):
+identical schema, rows and well coverage; 99.5% of values bitwise equal; max
+absolute difference exactly 2⁻¹⁴ (the float32 quantum) in every file; the residue
+sits in `ZernikePhase` arctan2 features.
 
-Feature dumps are versioned by date (`FeaturesImages_<DDMMYY>_none/`) and the
-notebooks reference several versions. Two initially appeared to be missing.
-
-**The date stamps are re-extraction runs on the same images, not different
-datasets.** Verified by comparing exp1's `150125` against `011225` across 4
-`SingleSlice` MedianAgg files (HCT116 slices 0/6/11, HT29 slice 3):
-
-- identical column sets (2125 columns / 2110 raw features), identical row counts,
-  identical well coverage — zero wells unique to either side
-- 99.45–99.77% of values bitwise equal
-- max absolute difference **exactly 6.10352e-05 = 2⁻¹⁴** in every file — the float32
-  quantum near magnitude 1, i.e. storage round-off
-- median relative difference among differing cells ≈ 8e-8, concentrated in
-  `RadialDistribution_ZernikePhase_*` (arctan2 phase angles, where last-bit
-  non-determinism surfaces)
-
-| Version | Where | Referenced by |
-|---|---|---|
-| `150125` | **`colopaint3D_fork/spher_colo52_v1/1_Data/`** (7.7 GB) | v1 `2_Pycytominer`, `Prepare_Slice_Features`, `3_Plot_Spheroids` |
-| `100125` | **not found anywhere** | `CellCoverage/3_CellCoverage.ipynb` (`SingleCell` level) |
-| `291025` | main tree | `2_Pycytominer_certain_slices.ipynb` (v1) |
-| `011225` | main tree | v1 `1_FeatureSorting` |
-| `070426` | main tree | v2 `1_FeatureSorting`, `2_Pycytominer` |
-| `150526` | main tree | v3 `1_FeatureSorting`, `2_Pycytominer`, robustness notebooks |
-
-`150125` was never missing — it lives in the fork, which is *why* those notebooks
-`chdir` into the fork. The fork reference and the `150125` reference are one fact.
-It is confirmed as the source of the published tables: **834 unique wells, exactly
-matching `selected_data_aggregates_HCT116.parquet`, zero discrepancy either way.**
-
-### Consequence for the port
-
-Because `011225` ≡ `150125` to within float32 round-off, exp1 can be **repointed at
-`011225` in the main tree, dropping the fork dependency entirely**. Differences are
-~1e-7 relative — invisible in any figure or statistic — so nothing needs re-running
-and no published number changes.
-
-`100125` is read only by `3_CellCoverage` at the `SingleCell` level; since it is 5
-days before `150125` and the versions are equivalent, `011225/SingleCell/` (which
-has both HCT116 and HT29) is the sound substitute.
-
-`291025` is **scoped to HCT116, not partial** — confirmed as the Suppl Fig 3 feature
-set. All three sets carry the identical full 12-plane stack (z 0–11, the "12z
-(original)" base case in `METHODS.md`); `291025` simply omits HT29, which is correct
-because the entire Percent Replicating analysis is HCT116-only. Its consumer,
-`2_Pycytominer_certain_slices`, derives the z-subsampling cases (single z2/z7/z11,
-sparse 3/6/9z, 12z) from those 12 planes.
-
-| Set | Cell lines | z-planes | Role |
+| Set | Where | Cell lines | Role |
 |---|---|---|---|
-| `291025` | HCT116 | 0–11 (12) | Suppl Fig 3 reproducibility |
-| `150125` (fork) | HCT116 + HT29 | 0–11 (12) | main analysis — source of the published tables |
-| `011225` | HCT116 + HT29 | 0–11 (12) | re-extraction of `150125`, equivalent to float32 round-off |
+| `150125` | **`colopaint3D_fork`** (7.7 GB) | HCT116 + HT29 | source of the published tables |
+| `011225` | main tree | HCT116 + HT29 | re-extraction of `150125` |
+| `291025` | main tree | HCT116 only | Suppl Fig 3 reproducibility |
+| `100125` | **gone** | — | was read by `3_CellCoverage` |
+| `070426` / `150526` | main tree | — | exp2 / exp3 |
 
-*Caveat: sampled 4 of 24 slice files at the well-aggregated level; the 4.8 GB
+All exp1 sets carry the same 12-plane stack (z 0–11) and the same 873,550
+single-cell rows. `150125` was never missing — it is in the fork, which is *why*
+those notebooks `chdir` there. Verified as the published source: 834 wells, exact
+match with `selected_data_aggregates_HCT116.parquet`.
+
+**Consequences.** exp1 can be repointed at `011225` in the main tree, dropping the
+fork dependency; differences are ~1e-7 and change no figure. `291025` is correct as
+referenced. `100125` is gone but equivalent data exists — note that the notebook
+written against it uses an **older column convention** that must be translated:
+
+| `100125` name | Current name |
+|---|---|
+| `Cytoplasm_ObjectNumber` | `ObjectNumber_cytoplasm` |
+| `Nuclei_ObjectNumber` | `ObjectNumber_nuclei` |
+| `Cytoplasm_AreaShape_Area` | `AreaShape_Area_cytoplasm` |
+| `Metadata_cmpd_cmpdname` | `Metadata_cmpdname` |
+| `Metadata_cmpd_cell_line` | `Metadata_cell_line` |
+
+*Caveat: 4 of 24 slice files compared, at well-aggregated level; the 4.8 GB
 `SingleCell` parquets were not value-compared.*
 
----
+## Panel map
+
+6 main figures, 6 supplementary. Panels marked *image* or *schematic* need no analysis
+code. Fig 4/5 panels are HCT116; every one also exists for HT29 (see Suppl 4).
+
+| Panel | Content | Produced by | `data_type` |
+|---|---|---|---|
+| **Fig 1** | schematic — *no data* | — | — |
+| **Fig 2** | cells per spheroid | `CellCoverage/3_CellCoverage` | SingleCell |
+| | detected-cell sanity check | `CellDetectionSanityCheck/3_Plot_Spheroids` | — |
+| | PCA before / after batch stratification | `RemoveNoise/5_PCA_RemoveNoise_BatchStratified` | — |
+| **Fig 3** A2 | grit, MIP | `GritScores/3_GritScores_Figure3A2B2` | `MIP` |
+| **Fig 3** B2 | grit, scAgg | same | `aggregates` |
+| **Fig 4a** | labelled (supervised) UMAP, MIP | `PCAUMAP/PCAUMAP_pathway_v2` | `MIP` |
+| **Fig 4b** | labelled (supervised) UMAP, sc | same | `aggregates` |
+| **Fig 4c** | unsupervised UMAP, MIP | same | `MIP` |
+| **Fig 4d** | unsupervised UMAP, sc | same | `aggregates` |
+| **Fig 4e** | clustermap, MIP | `PairwiseCorrelations/3_PairwiseCorrlations` | `MIP` |
+| **Fig 4f** | clustermap, sc | same | `aggregates` |
+| **Fig 5a** | compound grit counting | `GritScores` | — |
+| **Fig 5b** | 2D UMAP | `PCAUMAP/PCAUMAP_pathway_v2` | `2D` |
+| **Fig 5c** | 2D hierarchical clustermap | `PairwiseCorrelations/3_PairwiseCorrlations` | `2D` |
+| **Fig 5d** | 2D − 3D difference map | same (`Difference_*_colored_tails`) | — |
+| **Fig 5e** | *image of cells* — no code | — | — |
+| **Fig 5f** | 2D + 3D fingerprints, 5-FU & olaparib | `3_PairwiseCorrlations **copy**` only | — |
+| **Fig 6** | GSEA / hallmark NES | `DEG/hallmark_nes_scatter` | — |
+| | EdU + γH2AX | `EdU/EdU_analysis` | — |
+| **Fig 6e** | top-10 most similar to 5-FU, HCT116 & HT29 | `10_5fu_top_neighbours` **or** `fig_5fu_neighbours_frozen_doses` — **which?** | — |
+| **Suppl 1d** | detected-cell spheroid plot, **HT29** | `CellDetectionSanityCheck/3_Plot_Spheroids` | — |
+| **Suppl 1** (rest) | *images* — no code | — | — |
+| **Suppl 2** | **? unknown** | | |
+| **Suppl 3** | reproducibility / Percent Replicating, all three experiments | exp1 `_certain_slices`, exp2 `3_PercentReplicating`, exp3 robustness | — |
+| **Suppl 4** | *inferred:* Fig 4's six panels for **HT29** | same notebooks, `cell_line='HT29'` | `MIP`, `aggregates` |
+| **Suppl 5d** | dose-response grit 2D vs 3D, ola + 5-FU | `S_dose_similarity_5FU_Olaparib` | — |
+| **Suppl 5e** | drug-pair similarity 2D vs 3D by MoA class | `09b_panel_c_moa_class` / `09_panel_c_recolor` — **which?** | — |
+| **Suppl 6** | **? unknown** | | |
+
+Both `PCAUMAP_pathway_v2` and `3_PairwiseCorrlations` are parameterised by `data_type`
+and `cell_line`, so each emits panels into Fig 4, Fig 5 **and** Suppl 4 from one run.
+This is why `save_panel` derives the target figure from the panel name.
 
 ## Pipeline stages
 
-| Status | File | Note |
+| | File | Note |
 |---|---|---|
-| IN | `1_Data/1_FeatureSorting.ipynb` (v1, v2, v3) | 3 notebooks, one per experiment |
-| IN | `2_Processing/2_Pycytominer.ipynb` (v1) | repoint `150125` (fork) → `011225` (main tree); verified equivalent |
-| IN | `2_Processing/2_Pycytominer.ipynb` (v2, v3) | reference existing feature sets |
-| IN | `2_Processing/2_Pycytominer_certain_slices.ipynb` (v1) | reads `291025` — the HCT116-scoped Suppl Fig 3 set. Correct as-is; keep the reference |
-| IN | `4_BioImageArchive/4_ImageBioArchive_Metadata.ipynb` | deposition metadata; also the basis for WP7 |
-| IN | `MIP_features/Pycytominer_MIP.ipynb` | produces `selected_data_MIP_*`, needed by Fig5 |
-| IN | `2D_features/2D_profiles.ipynb` | produces `selected_data_2D_*`, needed by Fig5. Has a fork path |
-| IN → move | GritScores *computation* | per your decision: compute in `2_Processing`, plot in the figure folder |
+| IN | `1_Data/1_FeatureSorting.ipynb` (v1, v2, v3) | one per experiment |
+| IN | `2_Processing/2_Pycytominer.ipynb` (v1) | repoint `150125` → `011225` |
+| IN | `2_Processing/2_Pycytominer.ipynb` (v2, v3) | reference existing sets |
+| IN | `2_Processing/2_Pycytominer_certain_slices.ipynb` (v1) | `291025` correct as-is |
+| IN | `4_BioImageArchive/4_ImageBioArchive_Metadata.ipynb` | also the basis for WP7 |
+| IN | `MIP_features/Pycytominer_MIP.ipynb` | `selected_data_MIP_*`, needed by Fig5 |
+| IN | `2D_features/2D_profiles.ipynb` | `selected_data_2D_*`, needed by Fig5 |
+| IN → move | GritScores *computation* | compute here, plot in the figure folder |
 
 ## Figure 2
 
-| Status | File | Note |
+| | File | Note |
 |---|---|---|
-| IN | `CellCoverage/3_CellCoverage.ipynb` | `100125` not found anywhere; substitute `011225/SingleCell/` (has both cell lines). Output `CellsPerSpheroid.pdf` |
-| IN | `CellDetectionSanityCheck/3_Plot_Spheroids.ipynb` | repoint `150125` (fork) → `011225` |
-| IN | `RemoveNoise/5_PCA_RemoveNoise_BatchStratified.ipynb` | canonical — its PDFs are the newest on disk (2026-08-13) |
-| IN | `RemoveNoise/Prepare_Slice_Features.ipynb` | repoint `150125` (fork) → `011225`; writes the `normalized_data_*` PCA inputs |
-| OUT | `RemoveNoise/old/5_PCA_RemoveNoise.ipynb` | superseded by BatchStratified |
-| OUT | `RemoveNoise/old/5_PCA_RemoveNoise_and_FeatureImportance.ipynb` | superseded |
+| IN | `CellCoverage/3_CellCoverage.ipynb` | ported; `100125` → `011225` + column translation. Its `savefig` was commented out — the archived PDF was saved by hand |
+| IN | `CellDetectionSanityCheck/3_Plot_Spheroids.ipynb` | repoint `150125` → `011225` |
+| IN | `RemoveNoise/5_PCA_RemoveNoise_BatchStratified.ipynb` | canonical (newest PDFs) |
+| IN | `RemoveNoise/Prepare_Slice_Features.ipynb` | repoint; writes the PCA inputs |
+| OUT | `RemoveNoise/old/*` | superseded by BatchStratified |
 
 ## Figure 3
 
-| Status | File | Note |
+| | File | Note |
 |---|---|---|
-| IN | `GritScores/3_GritScores_Figure3A2B2.ipynb` | makes `Figure3A2_grit_MIP`, `Figure3B2_grit_scAgg` — already panel-named |
-| ? | `GritScores/3_GritScores.ipynb` vs `3_GritScores copy.ipynb` | **differ** despite identical size; needs a diff to pick |
+| IN | `GritScores/3_GritScores_Figure3A2B2.ipynb` | already panel-named |
+| ? | `3_GritScores.ipynb` vs `3_GritScores copy.ipynb` | differ despite equal size |
 
-## Figure 5 — 2D vs 3D (confirmed: 5a grit counting, 5b UMAP, 5c clustermap, 5d difference map, 5f fingerprints)
+## Figure 5 — 2D vs 3D
+5a grit counting · 5b UMAP · 5c clustermap · 5d difference map · 5f fingerprints
 
-| Status | File | Note |
+| | File | Note |
 |---|---|---|
-| ? | `PairwiseCorrelations/3_PairwiseCorrlations.ipynb` vs `... copy.ipynb` | **`copy` is the superset** — only it emits `fingerprints_2D/3D.pdf` (= 5f). Recommend `copy`; cost is rewriting its fork path |
-| IN | `PCAUMAP/PCAUMAP_pathway_v2.ipynb` | canonical: `UMAP_supervised/unsupervised_pathway_*` on disk are its outputs |
+| ? | `3_PairwiseCorrlations.ipynb` vs `... copy.ipynb` | **`copy` is the superset** — only it emits `fingerprints_2D/3D.pdf` (5f). Recommend `copy` |
+| IN | `PCAUMAP/PCAUMAP_pathway_v2.ipynb` | canonical; its outputs are the ones on disk |
 | OUT | `PCAUMAP/PCAUMAP_pathway.ipynb` | superseded by v2 |
 
 ## Figure 6
 
-| Status | File | Note |
+| | File | Note |
 |---|---|---|
-| IN | `3_Figure6/DEG/hallmark_nes_scatter.ipynb` | GSEA/hallmark panels; ships its own dge + gsea CSVs |
-| IN | `3_Figure6/EdU/EdU_analysis.ipynb` | already writes `panel_source_data.csv` — the pattern WP3 generalises |
-| ? | `10_5fu_top_neighbours.py` / `fig_5fu_neighbours_frozen_doses.py` | you identified 6e as "top-10 similar to 5-FU in HCT116 and HT29" — which of these two is it? |
+| IN | `DEG/hallmark_nes_scatter.ipynb` | ships its own dge + gsea CSVs |
+| IN | `EdU/EdU_analysis.ipynb` | already writes `panel_source_data.csv` |
+| ? | `10_5fu_top_neighbours.py` vs `fig_5fu_neighbours_frozen_doses.py` | which makes 6e |
 
-## Suppl Fig 3 — reproducibility (the only figure the reproducibility methods doc covers)
+## Suppl Fig 3 — reproducibility (the only figure `METHODS.md` covers)
 
-| Status | File | Note |
+| | File | Note |
 |---|---|---|
-| IN | v1 `3_PercentReplicating_certain_slices.ipynb` | z-slice sampling, 52 compounds. The one well-powered comparison |
-| IN | v2 `3_PercentReplicating.ipynb` | spheroid size / seeding density, incl. `seeding_brackets` |
-| ? | v3: `3_Robustness_Combined_Final.ipynb` vs `clearing_comparison.ipynb` vs `clearing_comparison_stats.ipynb` | `Combined_Final` looks canonical (newest; its `combined/A2…C_*.pdf` panel names look final) but the methods doc cites `clearing_comparison.ipynb`. **Doc and files disagree** |
-| OUT | v1 `3_PercentReplicating.ipynb`, `copy`, `copy 2` | superseded by `_certain_slices` |
-| OUT | v2 `3_PercentReplicating_copy.ipynb` | duplicate |
-| ? | v2 `3_MAP.ipynb`, v2/v3 `GritScores/3_GritScores.ipynb` | mAP + grit for the robustness experiments — in the paper or not? |
+| IN | v1 `3_PercentReplicating_certain_slices.ipynb` | 52 compounds; the well-powered one |
+| IN | v2 `3_PercentReplicating.ipynb` | seeding density, incl. `seeding_brackets` |
+| ? | v3 `3_Robustness_Combined_Final.ipynb` vs `clearing_comparison{,_stats}.ipynb` | `Combined_Final` looks canonical but `METHODS.md` cites `clearing_comparison` — **doc and files disagree** |
+| OUT | v1 `3_PercentReplicating{,copy,copy 2}.ipynb`, v2 `_copy` | superseded / duplicates |
+| OUT | v2 `3_MAP.ipynb` | **mAP dropped from the paper** |
+| ? | v2+v3 `GritScores/3_GritScores.ipynb` | grit for the robustness experiments — in the paper or not |
 
 ## Suppl Fig 5
 
-| Status | File | Note |
+| | File | Note |
 |---|---|---|
-| IN | `S_dose_similarity_5FU_Olaparib.ipynb` | = your "suppl5d dose-response grit 2D vs 3D ola+5-FU". `S_` prefix and surviving PDF agree |
-| ? | `09b_panel_c_moa_class.py`, `09_panel_c_recolor.py` | = your "suppl5e drug-pair similarity 2D vs 3D coloured by antimetabolites/PARPi/DNA-damage"? Which of the two |
+| IN | `S_dose_similarity_5FU_Olaparib.ipynb` | = suppl5d dose-response grit 2D vs 3D |
+| ? | `09b_panel_c_moa_class.py` vs `09_panel_c_recolor.py` | which makes suppl5e |
 
-## Unplaced — needs a figure assignment
+## Unplaced — need a figure assignment
 
-| Status | File | Note |
-|---|---|---|
-| ? | `expert-annotation/quantify_segmentation_error.ipynb` | `segmentation_error_analysis.svg` — segmentation validation |
-| ? | `expert-annotation/error_propegation.ipynb` | `error_propagation_depth.svg` |
-| ? | `expert-annotation/convert_npy_to_tiff.py` | 339 chars, utility for the annotation work |
-| ? | `david_revision/focus_estimates.ipynb` | 6 focus-vs-z figures; "revision" suggests a reviewer response |
-| ? | `1_Data/syto14_boxplot.ipynb` | `syto14_boxplot_HCT116.png` |
+`expert-annotation/quantify_segmentation_error.ipynb` ·
+`expert-annotation/error_propegation.ipynb` ·
+`expert-annotation/convert_npy_to_tiff.py` ·
+`david_revision/focus_estimates.ipynb` · `1_Data/syto14_boxplot.ipynb`
 
-## Excluded — single-cell (your decision: out entirely, incl. feature extraction)
+## Excluded
 
-`1_SC_Harmony_streamlined.ipynb`, `..._copy.ipynb`, `..._new.ipynb`,
-`reapply_harmony.py`, `sc_preprocess_harmony.py`,
-`PairwiseCorrelations/olaparib_direction_magnitude.py` (reads `adata_qc_harmony.h5ad`)
+- **Single-cell / Harmony** (never in the paper): `1_SC_Harmony_streamlined{,_copy,_new}.ipynb`, `reapply_harmony.py`, `sc_preprocess_harmony.py`, `olaparib_direction_magnitude.py`
+- **Organoids / colo8** (never in the paper): `not_to_git/organoids_colo8/`, `colo8*-input/`
+- **Exploratory**: `generate_network_html*.py` ×4 (HTML only) · `plot_similarity_*.py` ×4 (superseded by `09*_panel_c`) · `radial_analysis.py`, `radial_profile_analysis.py` (5 parameter-sweep output folders) · `force_graph_diff.py`, `plot_cluster_signature.py` (no surviving output) · screenshots · `_archive/`, `.venv*/`
 
-## Excluded — organoids / colo8 (your decision: never made the paper)
+> Exclusion means "not copied into the paper repo" — nothing is deleted from the
+> source tree, and any of it can be pulled back in.
 
-`not_to_git/organoids_colo8/`, `not_to_git/colo8-input/`, `not_to_git/colo8-6sect-input/`
+## Open decisions
 
-## Excluded — exploratory
-
-| File | Why |
-|---|---|
-| `generate_network_html.py` + `copy`, `_p53pull`, `_profile_corr` | emit only interactive `.html`; no paper figure |
-| `plot_similarity_network.py`, `plot_similarity_scatter.py`, `_cycling.py`, `_interactive.py` | superseded by the `09*_panel_c` scripts |
-| `radial_analysis.py` (71 k), `radial_profile_analysis.py` | produced 5 `result-images-radial*` parameter-sweep folders |
-| `force_graph_diff.py`, `plot_cluster_signature.py` | no surviving paper output |
-| `result-images/Screenshot 2026-*.png` | screenshots |
-| `_archive/`, `.venv/`, `.venv_map/` | not analysis |
-
-> These are the "~19 Figure-4 extras" you wanted to discuss. Nothing here is
-> deleted from the source tree — exclusion only means "not copied into the paper
-> repo", and any of it can be pulled in later.
-
----
-
-## Decisions needed, in priority order
-
-1. **The definitive paper figure list** — Fig2/Fig3/Fig4 panel lists are still unknown, so those folders cannot be finalised. (Fig5, Fig6, Suppl3, Suppl5 are pinned.)
-2. **`3_PairwiseCorrlations`**: plain or `copy`. Recommend `copy` (superset, makes 5f).
-3. **v3 robustness**: `Combined_Final` or `clearing_comparison`(`_stats`).
-4. **`3_GritScores`**: which of the two.
-5. **Figure assignment** for the five unplaced files above.
-6. **Fig6e / Suppl5e**: which script of each pair.
-
-*Resolved: which feature set the published profiles came from — see the feature-set
-section above. `150125` (in the fork) is the source; `011225` in the main tree is
-equivalent to within float32 round-off, so the fork dependency can be dropped.
-`291025` is the HCT116-scoped Suppl Fig 3 set and is correct as referenced.*
+1. **The paper figure list** — Fig2/3/4 panel lists unknown, so those folders can't be finalised (Fig5, Fig6, Suppl3, Suppl5 are pinned).
+2. **`3_PairwiseCorrlations`** — plain or `copy`. Recommend `copy`.
+3. **v3 robustness** — `Combined_Final` or `clearing_comparison{,_stats}`.
+4. **`3_GritScores`** — which of the two.
+5. **Figure assignment** for the five unplaced files.
+6. **Fig6e / Suppl5e** — which script of each pair.
