@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "Analysis code for: High-content morphological profiling by Cell Painting in 3D spheroids"
+message: "If you use this software or the analysis it describes, please cite the paper."
+type: software
+license: MIT
+
+# TODO before submission:
+#   - complete the author list, in publication order, with ORCIDs and affiliations
+#   - add the paper's DOI under preferred-citation once available
+#   - add the BioImage Archive accession for the image data
+#   - set version and date-released at the time of the release/tag
+authors:
+  - family-names: Ringers
+    given-names: Christa
+    email: christa.ringers@uu.se
+    affiliation: "Uppsala University"
+
+repository-code: "https://github.com/pharmbio/colopaint3D"
+keywords:
+  - Cell Painting
+  - morphological profiling
+  - 3D spheroids
+  - high-content imaging
+  - colorectal cancer
+  - image-based profiling

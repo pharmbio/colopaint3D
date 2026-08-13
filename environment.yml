@@ -1,0 +1,9 @@
+name: colopaint3d
+channels:
+  - conda-forge
+dependencies:
+  # numba 0.56 / llvmlite 0.39 cap this at 3.10
+  - python=3.10
+  - pip
+  - pip:
+      - -r requirements.txt

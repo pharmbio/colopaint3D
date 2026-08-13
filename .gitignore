@@ -1,0 +1,50 @@
+# =============================================================================
+# colopaint3D_paper
+#
+# NOTE ON ORDERING: the upstream repo excluded *.csv / *.pdf / *.png outright,
+# which silently swallowed the per-panel source-data tables. Here the excludes
+# are narrow and the source_data/ allow-rules are explicit. If you add a new
+# ignore rule, check `git status` still shows source_data/*.csv afterwards.
+# =============================================================================
+
+# --- Downloaded / generated, never committed --------------------------------
+/data/
+/figures/
+
+# --- Large binary data formats ---------------------------------------------
+*.parquet
+*.h5ad
+*.tif
+*.tiff
+*.npy
+
+# --- Environments and caches ----------------------------------------------
+.venv/
+.venv*/
+venv*/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+
+# --- Notebook execution artefacts ------------------------------------------
+# papermill writes an executed copy next to each notebook
+*.executed.ipynb
+
+# =============================================================================
+# EXPLICITLY TRACKED — these must survive every rule above
+# =============================================================================
+
+# Per-panel source data: the point of this repo. Committed.
+!/source_data/
+!/source_data/**/*.csv
+!/source_data/MANIFEST.csv
+
+# Provenance record of the tree this port came from
+!/provenance/
+!/provenance/*.tsv
+
+# Acquisition protocols: instrument config, not data. Small, and the one part
+# of the method a reader cannot reconstruct from the notebooks.
+!/acquisition/
+!/acquisition/**
