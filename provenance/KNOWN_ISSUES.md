@@ -104,8 +104,19 @@ identical, and identical at 1/2/8 numba threads and 1/4/128 BLAS threads); the f
 extraction (`150125` and `011225` give the same metrics through the notebook); and the
 NMI averaging convention (geometric and arithmetic both 0.349).
 
-The panels' claim is unaffected — ordering and magnitudes hold — but the legend numbers
-will not match a re-run, and cannot until the January MIP table is recovered.
+**The embeddings themselves do reproduce.** `figures/archived_originals/` holds the
+Jan-13 PDFs, and `checks/fig4_umap_shape.png` puts them beside the regenerated panels:
+the cluster layout matches in all four (PI3K top, MAPK right, DNA Damage left, Cell Cycle
+left; the same single-blob 4c and two-lobe 4d). What does not reproduce is the printed
+ARI/NMI/SC — and note those come from a *different* UMAP fit (cell 16) than the plotted
+panel (cell 7), which is why the picture can be right while the numbers are not.
+
+Two further hypotheses were tested and rejected: the `min_compounds >= 10` pathway filter
+(removing it gives 0.213/0.392/0.417, further away) and the NMI averaging convention.
+
+So the panels' claim is unaffected — the embeddings, ordering and magnitudes all hold —
+but the legend numbers will not match a re-run, and cannot until the January MIP table
+and the pre-2026-01-15 notebook are recovered. Neither survives on disk.
 
 **Fig 5b / Suppl 5a — 2D UMAP unverified.** `PCAUMAP_pathway_v2` supports `data_type='2D'`
 but no 2D output survives upstream. Marked `UNVERIFIED` in its `PANEL` map.
