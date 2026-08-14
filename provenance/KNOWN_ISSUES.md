@@ -93,11 +93,22 @@ dendrograms — **not** the published panel, which is two stacked blocks, each t
 scaled. Those clustermaps are now commented out as not-a-panel and Fig 5f is built to
 the published layout from the same fingerprint tables (416 shared features).
 
-**Open:** the colour scales do not match. The published blocks run to about ±10 (2D) and
-±2.5 (3D); the reconstruction lands near ±1.4 and ±2.1, so the published version was
-normalised differently. The structure, rows and feature set are right; the scaling is a
-guess. `FIG5F_AVAILABLE` is gated on `data_type`, since the comparison is 2D vs
-single-cell aggregates and 5-FU does not clear grit in the MIP runs.
+Three findings fixed the rendering: the published spread matches the **normalised values
+as they are**, not any z-score of them (every z variant makes 2D *narrower* than 3D, where
+the paper has it ~4× wider); each block keeps its **own full feature set** (849 and 598)
+rather than the 416-feature intersection — which is why the missing `normalize_feat` never
+broke this panel; and the colour limits are ±12 (2D) and ±2.7 (3D), given by the author as
+chosen to capture the spread.
+
+**No code anywhere sets those limits.** Every `imshow`/`pcolormesh` in the source tree
+plots a similarity matrix (`vmin=0, vmax=1`) or a neighbour matrix (`±1`); the only limits
+ever applied to feature values are the clustermaps' `±3`. The values were set
+interactively and the author's recollection is the only record. Note the 3D limit is
+exactly the 99th percentile of |value| of the plotted rows (2.7); the same rule gives 4.3
+for 2D, not 12, so the two blocks were not scaled by one rule.
+
+`FIG5F_AVAILABLE` is gated on `data_type`, since the comparison is 2D vs single-cell
+aggregates and 5-FU does not clear grit in the MIP runs.
 
 **Deposition-dependent.** No BIA accession, so `download_images.py` is a scaffold; no dataset
 URL, so use `download_data.py --from-local`. The CellProfiler `.cppipe` pipelines and Cellpose
