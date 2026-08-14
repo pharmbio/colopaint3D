@@ -74,6 +74,16 @@ so they do not re-derive. The manuscript is being updated to match this version.
 - [ ] **RNA-seq DGE tables** (`3_Figure6/DEG/data`, ~11 MB) are inputs that nothing in the
       repo can regenerate. They need a GEO/ArrayExpress accession or to travel with the
       release.
+- [ ] **Re-running `2_Processing` puts back tables the deposit deliberately omits.**
+      `data/` was trimmed to the 31 files some figure actually reads. But exp2's and
+      exp3's `2_Pycytominer` each process 8 cases and write a `selected_*` table for
+      every one — including `37C` and `double_dens`, which no panel plots — so a full
+      run on a machine with the feature dumps recreates ~16 of them. That is correct
+      behaviour (they are pipeline outputs, and someone re-deriving will want them);
+      it only becomes a problem if the manifest is regenerated afterwards, because the
+      FileList would then grow by files nothing reads. **Before re-hashing with
+      `--write-manifest data`, check `git diff scripts/data_manifest.tsv` for entries
+      you did not mean to deposit.**
 - [ ] **Nothing in the repo generates the exp2/exp3 `grit_*` tables.** Both
       `2_Pycytominer` notebooks write only `selected_*`; the grit tier came from upstream
       and has no derivation path here. Suppl 3c reads three of them
