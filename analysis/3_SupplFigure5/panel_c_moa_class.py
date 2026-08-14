@@ -144,7 +144,9 @@ def main(argv=None):
     rho, p = spearmanr(pairs.sim_2D, pairs.sim_3D)
 
     fig, ax = plt.subplots(figsize=(7.2, 7))
-    lo = min(pairs.sim_2D.min(), pairs.sim_3D.min()) - 0.05
+    # Both axes start at 0.2 (author's call). Pairs below that are outside the
+    # plotted range and are not drawn; n dropped is reported below.
+    lo = 0.2
     hi = max(pairs.sim_2D.max(), pairs.sim_3D.max()) + 0.05
 
     # diagonal + decoupling guide lines
@@ -186,6 +188,9 @@ def main(argv=None):
     ax.set_ylabel("Cosine similarity (3D) scAgg", fontsize=11)
     ax.set_title("Drug pair similarity: 2D vs 3D", fontsize=13)
     ax.set_xlim(lo, hi); ax.set_ylim(lo, hi); ax.set_aspect("equal")
+    _clipped = pairs[(pairs.sim_2D < lo) | (pairs.sim_3D < lo)]
+    if len(_clipped):
+        print(f"axis limits clip {len(_clipped)} of {len(pairs)} pairs below {lo}")
     ax.axhline(0, color="0.85", lw=0.6); ax.axvline(0, color="0.85", lw=0.6)
     ax.axhline(0.5, color="0.85", lw=0.6, ls="--"); ax.axvline(0.5, color="0.85", lw=0.6, ls="--")
 

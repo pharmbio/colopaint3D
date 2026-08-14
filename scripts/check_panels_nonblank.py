@@ -34,9 +34,16 @@ def main() -> int:
         if ".ipynb_checkpoints" in pdf.parts or "actual_panels" in pdf.parts:
             continue
         checked += 1
-        pix = pymupdf.open(pdf)[0].get_pixmap(dpi=72)
+        rel = pdf.relative_to(FIGURES).as_posix()
+        # A truncated or zero-byte PDF is a failure to report, not a crash: it happens
+        # when a run is interrupted mid-write, and it is exactly what this check is for.
+        try:
+            pix = pymupdf.open(pdf)[0].get_pixmap(dpi=72)
+        except Exception as e:
+            blank.append(f"{rel}  ({type(e).__name__})")
+            continue
         if int((np.frombuffer(pix.samples, dtype=np.uint8) < 250).sum()) == 0:
-            blank.append(pdf.relative_to(FIGURES).as_posix())
+            blank.append(rel)
 
     if blank:
         print(f"{len(blank)} of {checked} rendered panels are blank:", file=sys.stderr)

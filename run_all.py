@@ -77,7 +77,7 @@ SWEEPS = {
     # Suppl 4h is air vs WI only: air = bomi, WI = wi. cleared3d is a third exp4
     # acquisition that the published panel does not use.
     "analysis/3_SupplFigure4/3_PCA_objective.ipynb": [
-        {"COLOPAINT3D_PLATE": t} for t in ("bomi", "wi")
+        {"COLOPAINT3D_PLATE": t} for t in ("air", "wi")
     ],
 }
 

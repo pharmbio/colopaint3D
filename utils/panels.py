@@ -45,7 +45,7 @@ MANIFEST_FIELDS = [
 # A trailing "_part" covers a panel assembled from more than one file, e.g. Fig 5f
 # is the 2D and 3D fingerprint clustermaps side by side: "Fig5f_2D", "Fig5f_3D".
 _PANEL_RE = re.compile(
-    r"^(?P<figure>(?:Suppl)?Fig\d+)(?P<panel>[A-Za-z]\d?)?(?P<part>_[A-Za-z0-9]+)?$"
+    r"^(?P<figure>(?:Suppl)?Fig\d+)(?P<panel>[A-Za-z]\d?)?(?P<part>_[A-Za-z0-9_]+)?$"
 )
 
 # PDF only: vector, editable text, and what the figure assembly actually consumes.
