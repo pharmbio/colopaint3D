@@ -64,3 +64,6 @@ __pycache__/
 
 # Scratch comparison renders — working notes, not part of the release
 /checks/
+
+# Upload bundles built from data/ — regenerable, never committed
+*.zip
