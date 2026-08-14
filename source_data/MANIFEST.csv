@@ -10,17 +10,17 @@ Fig3e,Fig3,Fig3e.csv,Fig3e.pdf,analysis/3_Figure3/3_PercentReplicating.ipynb,205
 Fig3f,Fig3,Fig3f.csv,Fig3f.pdf,analysis/3_Figure3/3_PercentReplicating.ipynb,2059,"Median pairwise Pearson correlation by concentration step, replicate vs null, aggregates",2026-08-14T17:35:55Z
 Fig3g,Fig3,Fig3g.csv,Fig3g.pdf,analysis/3_Figure3/3_Fig3gh_MIP_vs_Aggregates.ipynb,395,"Replicate correlation, MIP vs aggregates, coloured by concentration step",2026-08-14T17:34:52Z
 Fig3h,Fig3,Fig3h.csv,Fig3h.pdf,analysis/3_Figure3/3_Fig3gh_MIP_vs_Aggregates.ipynb,395,"Replicate correlation, MIP vs aggregates, coloured by pathway",2026-08-14T17:34:53Z
-Fig4a,Fig4,Fig4a.csv,Fig4a.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,677,"Supervised UMAP coloured by pathway, HCT116 MIP",2026-08-14T17:24:19Z
-Fig4b,Fig4,Fig4b.csv,Fig4b.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,747,"Supervised UMAP coloured by pathway, HCT116 aggregates",2026-08-14T17:25:06Z
-Fig4c,Fig4,Fig4c.csv,Fig4c.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,252,"Unsupervised UMAP, KMeans clusters vs pathway, HCT116 MIP",2026-08-14T17:24:26Z
-Fig4d,Fig4,Fig4d.csv,Fig4d.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,326,"Unsupervised UMAP, KMeans clusters vs pathway, HCT116 aggregates",2026-08-14T17:25:13Z
-Fig4e,Fig4,Fig4e.csv,Fig4e.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,37,"Pairwise compound similarity clustermap, HCT116 MIP",2026-08-14T17:21:19Z
-Fig4f,Fig4,Fig4f.csv,Fig4f.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,38,"Pairwise compound similarity clustermap, HCT116 aggregates",2026-08-14T17:21:41Z
+Fig4a,Fig4,Fig4a.csv,Fig4a.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,677,"Supervised UMAP coloured by pathway, HCT116 MIP",2026-08-14T17:58:18Z
+Fig4b,Fig4,Fig4b.csv,Fig4b.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,747,"Supervised UMAP coloured by pathway, HCT116 aggregates",2026-08-14T17:59:09Z
+Fig4c,Fig4,Fig4c.csv,Fig4c.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,252,"Unsupervised UMAP, KMeans clusters vs pathway, HCT116 MIP",2026-08-14T17:58:24Z
+Fig4d,Fig4,Fig4d.csv,Fig4d.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,326,"Unsupervised UMAP, KMeans clusters vs pathway, HCT116 aggregates",2026-08-14T17:59:16Z
+Fig4e,Fig4,Fig4e.csv,Fig4e.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,37,"Pairwise compound similarity clustermap, HCT116 MIP",2026-08-14T17:55:38Z
+Fig4f,Fig4,Fig4f.csv,Fig4f.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,38,"Pairwise compound similarity clustermap, HCT116 aggregates",2026-08-14T18:04:05Z
 Fig5a,Fig5,Fig5a.csv,Fig5a.pdf,analysis/3_Figure5/3_Fig5a_grit_overlap.ipynb,2,"Compounds passing grit: common, unique to 2D, unique to 3D",2026-08-14T16:28:17Z
-Fig5b,Fig5,Fig5b.csv,Fig5b.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,1004,"Supervised UMAP coloured by pathway, HCT116 2D",2026-08-14T17:25:58Z
-Fig5c,Fig5,Fig5c.csv,Fig5c.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,46,"Pairwise compound similarity clustermap, HCT116 2D",2026-08-14T17:22:11Z
-Fig5d,Fig5,Fig5d.csv,Fig5d.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,630,"2D minus 3D pairwise similarity, HCT116",2026-08-14T17:22:13Z
-Fig5f,Fig5,Fig5f.csv,Fig5f.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,4,"Morphological fingerprints of 5-FU and olaparib, 2D and 3D",2026-08-14T17:23:40Z
+Fig5b,Fig5,Fig5b.csv,Fig5b.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,1004,"Supervised UMAP coloured by pathway, HCT116 2D",2026-08-14T18:00:04Z
+Fig5c,Fig5,Fig5c.csv,Fig5c.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,46,"Pairwise compound similarity clustermap, HCT116 2D",2026-08-14T17:56:29Z
+Fig5d,Fig5,Fig5d.csv,Fig5d.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,630,"2D minus 3D pairwise similarity, HCT116",2026-08-14T18:04:07Z
+Fig5f,Fig5,Fig5f.csv,Fig5f.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,4,"Morphological fingerprints of 5-FU and olaparib, 2D and 3D",2026-08-14T18:04:12Z
 Fig6b,Fig6,Fig6b.csv,Fig6b.pdf,analysis/3_Figure6/EdU/EdU_analysis.ipynb,47,"DNA damage, S-phase entry and spheroid size by treatment",2026-08-14T16:45:31Z
 Fig6c,Fig6,Fig6c.csv,Fig6c.pdf,analysis/3_Figure6/DEG/hallmark_nes_scatter.ipynb,50,"Hallmark GSEA NES, olaparib vs 5-FU",2026-08-14T16:29:05Z
 Fig6d,Fig6,Fig6d.csv,Fig6d.pdf,analysis/3_Figure6/DEG/hallmark_nes_scatter.ipynb,45,Gene-set signatures — HCT116 spheroids,2026-08-14T16:29:08Z
@@ -36,21 +36,21 @@ SupplFig3d,SupplFig3,SupplFig3d.csv,SupplFig3d.pdf,analysis/3_SupplFigure3/3_Rob
 SupplFig3e,SupplFig3,SupplFig3e.csv,SupplFig3e.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,6018,Magnification,2026-08-14T16:34:00Z
 SupplFig3g,SupplFig3,SupplFig3g.csv,SupplFig3g.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,7870,"Channel intensity vs imaging depth, two spheroid sizes",2026-08-14T16:34:17Z
 SupplFig3h,SupplFig3,SupplFig3h.csv,SupplFig3h.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,1546,Cell detection vs imaging depth by clearing condition,2026-08-14T16:34:20Z
-SupplFig4a,SupplFig4,SupplFig4a.csv,SupplFig4a.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,639,"Supervised UMAP coloured by pathway, HT29 MIP",2026-08-14T17:26:52Z
-SupplFig4b,SupplFig4,SupplFig4b.csv,SupplFig4b.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,691,"Supervised UMAP coloured by pathway, HT29 aggregates",2026-08-14T17:27:39Z
-SupplFig4c,SupplFig4,SupplFig4c.csv,SupplFig4c.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,264,"Unsupervised UMAP, KMeans clusters vs pathway, HT29 MIP",2026-08-14T17:26:58Z
-SupplFig4d,SupplFig4,SupplFig4d.csv,SupplFig4d.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,273,"Unsupervised UMAP, KMeans clusters vs pathway, HT29 aggregates",2026-08-14T17:27:46Z
-SupplFig4e,SupplFig4,SupplFig4e.csv,SupplFig4e.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,32,"Pairwise compound similarity clustermap, HT29 MIP",2026-08-14T17:22:42Z
-SupplFig4f,SupplFig4,SupplFig4f.csv,SupplFig4f.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,33,"Pairwise compound similarity clustermap, HT29 aggregates",2026-08-14T17:23:04Z
+SupplFig4a,SupplFig4,SupplFig4a.csv,SupplFig4a.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,639,"Supervised UMAP coloured by pathway, HT29 MIP",2026-08-14T18:01:03Z
+SupplFig4b,SupplFig4,SupplFig4b.csv,SupplFig4b.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,691,"Supervised UMAP coloured by pathway, HT29 aggregates",2026-08-14T18:01:53Z
+SupplFig4c,SupplFig4,SupplFig4c.csv,SupplFig4c.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,264,"Unsupervised UMAP, KMeans clusters vs pathway, HT29 MIP",2026-08-14T18:01:09Z
+SupplFig4d,SupplFig4,SupplFig4d.csv,SupplFig4d.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,273,"Unsupervised UMAP, KMeans clusters vs pathway, HT29 aggregates",2026-08-14T18:01:59Z
+SupplFig4e,SupplFig4,SupplFig4e.csv,SupplFig4e.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,32,"Pairwise compound similarity clustermap, HT29 MIP",2026-08-14T17:56:56Z
+SupplFig4f,SupplFig4,SupplFig4f.csv,SupplFig4f.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,33,"Pairwise compound similarity clustermap, HT29 aggregates",2026-08-14T17:57:17Z
 SupplFig4h_labelled_air,SupplFig4,SupplFig4h_labelled_air.csv,SupplFig4h_labelled_air.pdf,analysis/3_SupplFigure4/3_PCA_objective.ipynb,75,"Labelled UMAP, CellPainting_20241220clearedspheroidsBOMI_20241220_151510",2026-08-14T16:35:18Z
 SupplFig4h_labelled_wi,SupplFig4,SupplFig4h_labelled_wi.csv,SupplFig4h_labelled_wi.pdf,analysis/3_SupplFigure4/3_PCA_objective.ipynb,55,"Labelled UMAP, CellPainting_CellPaint3DBomi_WI_for_Jordi_20250203_155142",2026-08-14T16:35:53Z
 SupplFig4h_unlabelled_air,SupplFig4,SupplFig4h_unlabelled_air.csv,SupplFig4h_unlabelled_air.pdf,analysis/3_SupplFigure4/3_PCA_objective.ipynb,75,"Unsupervised UMAP, CellPainting_20241220clearedspheroidsBOMI_20241220_151510",2026-08-14T16:35:15Z
 SupplFig4h_unlabelled_wi,SupplFig4,SupplFig4h_unlabelled_wi.csv,SupplFig4h_unlabelled_wi.pdf,analysis/3_SupplFigure4/3_PCA_objective.ipynb,55,"Unsupervised UMAP, CellPainting_CellPaint3DBomi_WI_for_Jordi_20250203_155142",2026-08-14T16:35:51Z
 SupplFig4i_air,SupplFig4,SupplFig4i_air.csv,SupplFig4i_air.pdf,analysis/3_SupplFigure4/3_Fig_TechnicalReplicates.ipynb,60,"Replicate Spearman correlation vs concentration, CellPainting_20241220clearedspheroidsBOMI_20241220_151510",2026-08-14T16:34:44Z
 SupplFig4i_wi,SupplFig4,SupplFig4i_wi.csv,SupplFig4i_wi.pdf,analysis/3_SupplFigure4/3_Fig_TechnicalReplicates.ipynb,60,"Replicate Spearman correlation vs concentration, CellPainting_CellPaint3DBomi_WI_for_Jordi_20250203_155142",2026-08-14T16:34:45Z
-SupplFig5a,SupplFig5,SupplFig5a.csv,SupplFig5a.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,1025,"Supervised UMAP coloured by pathway, HT29 2D",2026-08-14T17:28:29Z
-SupplFig5b,SupplFig5,SupplFig5b.csv,SupplFig5b.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,47,"Pairwise compound similarity clustermap, HT29 2D",2026-08-14T17:23:33Z
-SupplFig5c,SupplFig5,SupplFig5c.csv,SupplFig5c.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,528,"2D minus 3D pairwise similarity, HT29",2026-08-14T17:23:35Z
+SupplFig5a,SupplFig5,SupplFig5a.csv,SupplFig5a.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,1025,"Supervised UMAP coloured by pathway, HT29 2D",2026-08-14T18:02:46Z
+SupplFig5b,SupplFig5,SupplFig5b.csv,SupplFig5b.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,47,"Pairwise compound similarity clustermap, HT29 2D",2026-08-14T17:57:39Z
+SupplFig5c,SupplFig5,SupplFig5c.csv,SupplFig5c.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,528,"2D minus 3D pairwise similarity, HT29",2026-08-14T17:57:42Z
 SupplFig5d,SupplFig5,SupplFig5d.csv,SupplFig5d.pdf,analysis/3_SupplFigure5/S_dose_similarity_5FU_Olaparib.ipynb,41,"Dose-resolved 5-FU vs olaparib similarity, 2D vs 3D",2026-08-14T16:36:52Z
 SupplFig5e,SupplFig5,SupplFig5e.csv,SupplFig5e.pdf,analysis/3_SupplFigure5/3_SupplFig5e_moa_class.ipynb,630,"Drug-pair similarity 2D vs 3D, coloured by MoA pair class",2026-08-14T16:36:17Z
 SupplFig6b,SupplFig6,SupplFig6b.csv,SupplFig6b.pdf,analysis/3_Figure6/DEG/hallmark_nes_scatter.ipynb,30,Gene-set signatures — HCT116 spheroids,2026-08-14T16:29:10Z
