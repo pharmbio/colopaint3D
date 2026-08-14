@@ -80,27 +80,24 @@ cycling-dependence recolour and the MoA version was lost; `09b` rebuilds it (pal
 but may not be pixel-identical. `06_analyze_similarity.py` is gone — harmless, the MoA map is
 hardcoded in `09b`.
 
-**Fig 5f — the surviving code does not draw the published panel.** `normalize_feat`
-(which "normalises the illum prefix so feature names match 3D") is defined nowhere in
-`colopaint3D`, `colopaint3D_fork` or `colopaint3D_AZ`; it survived only in a live kernel.
-It has now been **reconstructed** and enabled (`FIG5F_AVAILABLE = True`): the 2D and 3D
-tables differ only in an `illum` prefix on the channel token — 983 of 1093 2D names carry
-it, none of the 598 3D names do, and exact name overlap goes 92 → 467 once stripped.
-`parse_channel` was recovered verbatim from `plot_cluster_signature.py`; `cos_sim` was
-simply never imported and is plain `cosine_similarity`.
+**Fig 5f — RECONSTRUCTED, and the surviving code does not draw it.** `normalize_feat`
+is defined nowhere in any source tree; it survived only in a live kernel. It has been
+**reconstructed** and enabled: the 2D tables carry an `illum` prefix on the channel token
+that the 3D tables do not (983 of 1093 2D names, 0 of 598 3D names), and stripping it
+takes exact name overlap from 92 to 467. `parse_channel` was recovered verbatim from
+`plot_cluster_signature.py`; `cos_sim` was never imported and is plain `cosine_similarity`.
 
-**But the panel that code produces is not the one in the paper.** Published Fig 5f is two
-wide strips — 2 rows (`5-FU`, `olaparib`) across *all* features, no dendrogram, colourbars
-±10 (2D) and ±2.5 (3D). The notebook's cells produce two tall clustermaps: top-40 features
-× 5 compounds (etoposide, nutlin, AMG232, 5-FU, olaparib), dendrograms, ±3. Different
-compounds, feature count, orientation and scale. So `get_lowest_passing_profiles` → top-40
-→ `sns.clustermap` is **not** the published code path, and this triage's "only the `copy`
-makes these" is wrong.
+The notebook's own fingerprint cells produce top-40 × 5-compound clustermaps with
+dendrograms — **not** the published panel, which is two stacked blocks, each two rows
+(5-FU, olaparib) across every shared feature, no clustering, each block independently
+scaled. Those clustermaps are now commented out as not-a-panel and Fig 5f is built to
+the published layout from the same fingerprint tables (416 shared features).
 
-Consequences: the `normalize_feat` reconstruction cannot be validated against the published
-figure, because that figure was not drawn by this code; and the current `Fig5f_2D` /
-`Fig5f_3D` outputs are **not** Figure 5f and should not carry that panel name until the real
-producer is found or the strip rendering is written.
+**Open:** the colour scales do not match. The published blocks run to about ±10 (2D) and
+±2.5 (3D); the reconstruction lands near ±1.4 and ±2.1, so the published version was
+normalised differently. The structure, rows and feature set are right; the scaling is a
+guess. `FIG5F_AVAILABLE` is gated on `data_type`, since the comparison is 2D vs
+single-cell aggregates and 5-FU does not clear grit in the MIP runs.
 
 **Deposition-dependent.** No BIA accession, so `download_images.py` is a scaffold; no dataset
 URL, so use `download_data.py --from-local`. The CellProfiler `.cppipe` pipelines and Cellpose
