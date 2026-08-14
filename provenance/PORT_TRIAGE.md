@@ -10,27 +10,35 @@ surviving output files; `SOURCE_SNAPSHOT.tsv` pins the exact versions audited.
 | Panel | Content | Produced by |
 |---|---|---|
 | **Fig 1** | *schematic* | — |
+| **Fig 2a–c** | *images* | — |
 | **Fig 2d** | cells per spheroid | `CellCoverage/3_CellCoverage` |
-| **Fig 2f** | detected-cell sanity check (spheroid plot) | `CellDetectionSanityCheck/3_Plot_Spheroids` |
+| **Fig 2e** | detections per cell (Z-stack), duplicate estimate | **NO CODE** — inputs exist (`david_revision/**/z_duplicate_analysis_cell.csv`, committed under `3_SupplFigure2/data/`), the plotting code does not |
+| **Fig 2f** | detected-cell sanity check (spheroid plot) | `CellDetectionSanityCheck/3_Plot_Spheroids` (`cell_line='HCT116'`) |
 | **Fig 2g** | PCA before / after batch stratification | `RemoveNoise/5_PCA_RemoveNoise_BatchStratified` |
+| **Fig 3a–b** | *images* | — |
 | **Fig 3c** | grit, MIP *(was `Figure3A2`)* | `GritScores/3_GritScores_Figure3A2B2` |
 | **Fig 3d** | grit, scAgg *(was `Figure3B2`)* | same |
+| **Fig 3e** | reproducibility, MIP | `3_PercentReplicating` (`data_type='MIP'`) |
+| **Fig 3f** | reproducibility, scAgg | same (`data_type='aggregates'`) |
+| **Fig 3g** | MIP vs Aggregates, coloured by dose | **CODE LOST** — only `AggVsMIP_dose_aggregates.pdf` survives; see `KNOWN_ISSUES.md` |
+| **Fig 3h** | MIP vs Aggregates, coloured by pathway | **CODE LOST** — only `AggVsMIP_pathway_aggregates.pdf` survives |
 | **Fig 4a–d** | UMAP: supervised & unsupervised × MIP & scAgg | `PCAUMAP/PCAUMAP_pathway_v2` |
 | **Fig 4e–f** | clustermap × MIP & scAgg | `PairwiseCorrelations/3_PairwiseCorrlations copy` |
-| **Fig 5a** | compound grit counting | `GritScores` |
+| **Fig 5a** | compound grit counting | `3_Figure5/3_Fig5a_grit_overlap` — rebuilt; upstream it was `3_GritScores` cell 18, whose four input CSVs have no surviving writer |
 | **Fig 5b** | 2D UMAP | `PCAUMAP_pathway_v2` (`2D`) |
 | **Fig 5c** | 2D clustermap | `3_PairwiseCorrlations copy` (`2D`) |
 | **Fig 5d** | 2D − 3D difference map | same → `Difference_*_colored_tails` |
 | **Fig 5e** | *image of cells* | — |
 | **Fig 5f** | 2D + 3D fingerprints, 5-FU & olaparib | same → `fingerprints_2D/3D` — **only the `copy` makes these** |
-| **Fig 6b** | EdU / γH2AX: DNA damage, S-phase entry, size | `EdU/EdU_analysis` |
+| **Fig 6b** | EdU / γH2AX: DNA damage, S-phase entry, size | `EdU/EdU_analysis` → `Fig6b_{damage,sphase,size}`; its `savefig` had been commented out as not-a-panel |
 | **Fig 6c** | hallmark GSEA scatter | `DEG/hallmark_nes_scatter` → `hallmark_nes_scatter` |
 | **Fig 6d** | dumbbells: p53 pathway → E2F targets → p53 apoptosis | same → *subset of* `signature_dumbbells_combined` |
-| **Fig 6e** | top-10 most similar to 5-FU, HCT116 & HT29 | `fig_5fu_neighbours_frozen_doses.py` |
+| **Fig 6e** | top-10 most similar to 5-FU, HCT116 & HT29 | `3_Figure6/3_Fig6e_5fu_neighbours` — wraps `fig_5fu_neighbours_frozen_doses.py`, now ported |
 | **Suppl 1d** | detected-cell spheroid plot, **HT29** | `3_Plot_Spheroids` |
 | **Suppl 1** rest | *images* | — |
-| **Suppl 2a–b** | *images* | — |
-| **Suppl 2c** | mean focus per compound × z | `david_revision/focus_estimates` |
+| **Suppl 2a** | target protein class sunburst | *made in clue.io*, documented in the paper — not a reproducibility gap |
+| **Suppl 2b** | *images* | — |
+| **Suppl 2c** | mean focus per compound × z | `david_revision/focus_estimates` — the **normalized**-variance cell, not the raw Laplacian one the port first attached |
 | **Suppl 2d** | expert-annotation IoU | `expert-annotation/quantify_segmentation_error` |
 | **Suppl 2e** | error propagation with depth | `expert-annotation/error_propegation` |
 | **Suppl 3a–e, g–h** | z-subsampling · z-density · spheroid size · clearing · magnification · intensity-vs-depth · detection-vs-depth | `3_Robustness_Combined_Final` (all of them) |
@@ -43,13 +51,18 @@ surviving output files; `SOURCE_SNAPSHOT.tsv` pins the exact versions audited.
 | **Suppl 5b** | 2D clustermap, HT29 | `3_PairwiseCorrlations copy` |
 | **Suppl 5c** | difference in similarity | same → `Difference_HT29_colored_tails` |
 | **Suppl 5d** | grit dose example, HCT116 2D vs 3D | `S_dose_similarity_5FU_Olaparib` |
-| **Suppl 5e** | drug-pair similarity 2D vs 3D by MoA | `09b_panel_c_moa_class.py` |
+| **Suppl 5e** | drug-pair similarity 2D vs 3D by MoA | `3_SupplFigure5/3_SupplFig5e_moa_class` — wraps `09b_panel_c_moa_class.py`, now ported |
 | **Suppl 6a** | DEG volcano (Plasmidsaurus) — *external* | — |
 | **Suppl 6b** | gene-level log₂FC, G2M + SASP | `hallmark_nes_scatter` → *subset of* `signature_dumbbells_combined` |
 
 `PCAUMAP_pathway_v2` and `3_PairwiseCorrlations copy` are parameterised by `data_type` and
 `cell_line`, so each emits panels into Fig 4, Fig 5 **and** Suppl 4/5 in one run — which is
 why `save_panel` derives the target figure from the panel name.
+
+Those parameters are read from the environment (`COLOPAINT3D_CELL_LINE`,
+`COLOPAINT3D_DATA_TYPE`), defaulting to the value each notebook used to hardcode.
+`run_all.py`'s `SWEEPS` table runs each one over every combination — without it the
+`PANEL` maps promise ten panels and a run produces two.
 
 ## Files to port
 
@@ -69,16 +82,20 @@ why `save_panel` derives the target figure from the panel name.
 | OUT | `3_GritScores copy.ipynb` | pure duplicate |
 | OUT | `PCAUMAP_pathway.ipynb` | superseded by `_v2` |
 | OUT | `RemoveNoise/old/*` | superseded by `BatchStratified` |
-| OUT | exp1 + exp2 `3_PercentReplicating*`, exp3 `clearing_comparison{,_stats}` | superseded by `3_Robustness_Combined_Final` |
+| IN | `3_Figure3/PercentReplicating/3_PercentReplicating.ipynb` | **Fig 3e/3f.** Was excluded as "superseded by `3_Robustness_Combined_Final`" — wrong: that notebook is the z-subsampling analysis behind Suppl Fig 3, a different question |
+| IN | `Pairwise_related_figures/fig_5fu_neighbours_frozen_doses.py` | **Fig 6e.** Named as its producer but never copied |
+| IN | `Pairwise_related_figures/09b_panel_c_moa_class.py` | **Suppl 5e.** Named as its producer but never copied |
+| IN | `plot_cluster_signature.py` (`parse_channel`, `_CHANNELS` only) | needed by the Fig 5f cells; the rest stays out |
+| OUT | exp2 `3_PercentReplicating*`, exp3 `clearing_comparison{,_stats}` | superseded by `3_Robustness_Combined_Final` |
 | OUT | exp2 `3_MAP.ipynb` | mAP dropped from the paper |
 | OUT | exp4 `Radarplots/feature_heatmaps`, `0_Inspection`, `old/` | not in the paper |
 | OUT | `1_Data/syto14_boxplot` | not in the paper |
 | OUT | `gsea_nes_overview`, `oxphos_logfc_dumbbell` outputs | not in the paper |
-| OUT | `focus_normalized_var_by_{compound,cellline}_z` outputs | not panels; only `focus_by_compound_z` is (Suppl 2c) |
+| ~~OUT~~ **IN** | `focus_normalized_var_by_compound_z` | **this is Suppl 2c**, not `focus_by_compound_z` — the published panel is titled "Mean normalized variance". `focus_normalized_var_by_cellline_z` stays out |
 | OUT | `REPRODUCIBILITY_METHODS.md` | dropped — documented three superseded notebooks |
 | OUT | single-cell / Harmony: `1_SC_Harmony_streamlined*`, `reapply_harmony.py`, `sc_preprocess_harmony.py`, `olaparib_direction_magnitude.py` | never in the paper |
 | OUT | organoids / colo8: `not_to_git/organoids_colo8/`, `colo8*-input/` | never in the paper |
-| OUT | `generate_network_html*.py` ×4, `plot_similarity_*.py` ×4, `radial_*.py`, `force_graph_diff.py`, `plot_cluster_signature.py` *(but see KNOWN_ISSUES — it holds `parse_channel`, which Fig 5f needs)*, `10_5fu_top_neighbours.py`, `09_panel_c_recolor.py` | exploratory or superseded |
+| OUT | `generate_network_html*.py` ×4, `plot_similarity_*.py` ×4, `radial_*.py`, `force_graph_diff.py`, `10_5fu_top_neighbours.py`, `09_panel_c_recolor.py` | exploratory or superseded |
 | OUT | `_archive/`, `.venv*/`, screenshots | not analysis |
 
 > Exclusion means "not copied into the paper repo". Nothing is deleted from the source

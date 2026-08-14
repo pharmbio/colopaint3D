@@ -36,6 +36,14 @@ python run_all.py --stage 2_Processing
 python run_all.py --verify               # check every panel has source data
 ```
 
+Several notebooks are parameterised by cell line and data type and emit panels into
+more than one figure. They read those parameters from the environment, defaulting to
+the value each used to hardcode, and `run_all.py` runs them over every combination:
+
+```bash
+COLOPAINT3D_CELL_LINE=HT29 COLOPAINT3D_DATA_TYPE=MIP jupyter nbconvert --execute ...
+```
+
 Data held outside the repo:
 
 ```bash
@@ -167,12 +175,23 @@ tree this release was ported from; `provenance/PORT_TRIAGE.md` records what was 
 excluded and why; and `provenance/KNOWN_ISSUES.md` records the open blockers and the
 defects found on both sides of the port.
 
-The port is reproducible: `python provenance/port_notebook.py --all` regenerates every
-ported notebook from the source tree, applying the same path rewrites and panel
-conversions, and AST-parses every cell before accepting the result.
+`provenance/port_notebook.py` records how the port was made and can still bring a new
+notebook across from the source tree one at a time. It is **no longer the maintenance
+path** — the notebooks are committed and git is the change history. Do not run
+`--all`; it regenerates from source and would discard everything since.
 
-**Not yet verified end to end:** the notebooks have not all been executed in this
-repository. `run_all.py` has so far been exercised on `3_Figure2/CellCoverage` only.
+**Execution status.** Every figure folder now runs end to end. Three notebooks do not,
+for reasons outside this repo:
+
+| Notebook | Why |
+|---|---|
+| `2_Processing/exp1_main/3_GritScores` | `cytominer-eval==0.1` imports `np.float`, removed in numpy 1.24 |
+| `3_Figure2/RemoveNoise/Prepare_Slice_Features` | `pycytominer==0.2.0` imports `scipy.stats.median_absolute_deviation`, removed in scipy 1.7 |
+| `1_Data/*`, other `2_Processing/*` | need the 19.5 GB per-slice feature dumps, which are not in either download tier |
+
+The pinned versions predate the current scientific stack; `requirements-frozen.txt` is
+the environment they were written against. Neither blocks the figures — the download
+tier begins downstream of `2_Processing`.
 
 ---
 

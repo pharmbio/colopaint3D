@@ -40,20 +40,67 @@ NON_FIGURE = {"1_Data", "2_Processing", "4_BioImageArchive"}
 
 SKIP_PARTS = {".ipynb_checkpoints", "__pycache__", ".venv"}
 
+# Notebooks parameterised by cell line and/or data type. Each reads its parameters
+# from the environment, defaulting to the value it used to hardcode, so one notebook
+# emits every combination its PANEL map promises. Without this the maps offer ten
+# panels and a run produces two.
+_LINES = ("HCT116", "HT29")
+_TYPES = ("MIP", "aggregates", "2D")
+
+
+def _sweep(lines=(), types=()):
+    if lines and types:
+        return [{"COLOPAINT3D_CELL_LINE": c, "COLOPAINT3D_DATA_TYPE": d}
+                for c in lines for d in types]
+    if lines:
+        return [{"COLOPAINT3D_CELL_LINE": c} for c in lines]
+    return [{"COLOPAINT3D_DATA_TYPE": d} for d in types]
+
+
+SWEEPS = {
+    # Fig 4a-d, Fig 5b, Suppl 4a-d, Suppl 5a
+    "analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb": _sweep(_LINES, _TYPES),
+    # Fig 4e-f, Fig 5c-d, Suppl 4e-f, Suppl 5b-c. Both dimensions: the clustermap uses
+    # the notebook's top-level data_type, and only the 2D-vs-3D difference map further
+    # down loops data_type on its own. Sweeping cell_line alone leaves Fig4e and Fig5c
+    # unrendered.
+    "analysis/3_Figure4/3_PairwiseCorrelations.ipynb": _sweep(_LINES, _TYPES),
+    # Fig 3e/3f (loops cell_line internally)
+    "analysis/3_Figure3/3_PercentReplicating.ipynb": _sweep(types=("MIP", "aggregates")),
+    # Fig 2f + Suppl 1d
+    "analysis/3_Figure2/CellDetectionSanityCheck/3_Plot_Spheroids.ipynb": _sweep(lines=_LINES),
+    # writes grit_data_{data_type}_{cell_line}.parquet, which everything downstream reads
+    "analysis/2_Processing/exp1_main/3_GritScores.ipynb": _sweep(_LINES, _TYPES),
+}
+
+
+def _tag(env: dict) -> str:
+    """Short suffix identifying one sweep combination, for the executed-copy name."""
+    return "_".join(env[k] for k in ("COLOPAINT3D_CELL_LINE", "COLOPAINT3D_DATA_TYPE") if k in env)
+
 
 class Notebook:
-    """A notebook to execute, with the group it belongs to."""
+    """A notebook to execute, with the group it belongs to.
 
-    def __init__(self, path: Path, group: str):
+    ``env`` holds the sweep parameters for this run; a notebook with a SWEEPS entry
+    yields one Notebook per combination.
+    """
+
+    def __init__(self, path: Path, group: str, env: dict | None = None):
         self.path = path
         self.group = group
+        self.env = env or {}
 
     @property
     def rel(self) -> str:
         return self.path.relative_to(REPO_ROOT).as_posix()
 
+    @property
+    def label(self) -> str:
+        return f"{self.rel} [{_tag(self.env)}]" if self.env else self.rel
+
     def __repr__(self) -> str:  # pragma: no cover
-        return f"<Notebook {self.rel}>"
+        return f"<Notebook {self.label}>"
 
 
 def _matches_figure(group: str, figure: str) -> bool:
@@ -104,7 +151,9 @@ def discover(figure: str | None = None, stage: str | None = None) -> list[Notebo
                 continue
             if path.name.endswith(".executed.ipynb"):
                 continue
-            found.append(Notebook(path, group))
+            rel = path.relative_to(REPO_ROOT).as_posix()
+            for env in SWEEPS.get(rel, [{}]):
+                found.append(Notebook(path, group, env))
     return found
 
 
@@ -132,7 +181,10 @@ def _runner() -> tuple[str, list[str]]:
 def execute(nb: Notebook, backend: str) -> tuple[bool, float, str]:
     """Run one notebook. Returns (ok, seconds, message)."""
     started = time.time()
-    out = nb.path.with_suffix(".executed.ipynb")
+    # Sweep combinations get distinct executed copies, so one does not overwrite
+    # the next and a failure can be traced to the combination that caused it.
+    stem = f"{nb.path.stem}.{_tag(nb.env)}" if nb.env else nb.path.stem
+    out = nb.path.with_name(f"{stem}.executed.ipynb")
     if backend == "papermill":
         cmd = [sys.executable, "-m", "papermill", str(nb.path), str(out),
                "--cwd", str(nb.path.parent), "--log-output"]
@@ -141,7 +193,10 @@ def execute(nb: Notebook, backend: str) -> tuple[bool, float, str]:
             sys.executable, "-m", "nbconvert", "--to", "notebook", "--execute",
             f"--output={out.name}", str(nb.path),
         ]
-    proc = subprocess.run(cmd, capture_output=True, text=True)
+    # Parameters travel by environment: nbconvert cannot inject cells, and this
+    # works identically under papermill.
+    env = {**os.environ, **nb.env}
+    proc = subprocess.run(cmd, capture_output=True, text=True, env=env)
     elapsed = time.time() - started
     if proc.returncode != 0:
         tail = (proc.stderr or proc.stdout or "").strip().splitlines()[-15:]
@@ -192,7 +247,7 @@ def main() -> int:
         if nb.group != current:
             current = nb.group
             print(f"  [{current}]")
-        print(f"      {nb.rel}")
+        print(f"      {nb.label}")
     print()
 
     if dry:
@@ -211,7 +266,7 @@ def main() -> int:
 
     failures: list[tuple[Notebook, str]] = []
     for i, nb in enumerate(notebooks, 1):
-        print(f"[{i}/{len(notebooks)}] {nb.rel} ... ", end="", flush=True)
+        print(f"[{i}/{len(notebooks)}] {nb.label} ... ", end="", flush=True)
         ok, elapsed, msg = execute(nb, backend)
         if ok:
             print(f"ok ({elapsed:.0f}s)")
@@ -227,7 +282,7 @@ def main() -> int:
     if failures:
         print(f"{len(failures)} notebook(s) failed:", file=sys.stderr)
         for nb, _ in failures:
-            print(f"  - {nb.rel}", file=sys.stderr)
+            print(f"  - {nb.label}", file=sys.stderr)
         return 1
 
     from utils.panels import verify_manifest
