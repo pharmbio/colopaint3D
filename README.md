@@ -30,6 +30,8 @@ python run_all.py
 Individual figures:
 
 ```bash
+python run_all.py --verify               # panels <-> manifest <-> source tables
+python scripts/check_panels_nonblank.py   # and that none of them is an empty page
 python run_all.py --figure Fig5          # also accepts Figure5 or 3_Figure5
 python run_all.py --figure SupplFig3
 python run_all.py --stage 2_Processing

@@ -118,10 +118,22 @@ Each was silent; the guard matters more than the fix.
 ## Current verification
 
 ```
-31 notebooks · 0 absolute paths · 0 os.chdir · 0 syntax errors · outputs stripped
-25 save_panel calls · 46 panels · 2 live savefig (both intentional)
-21 non-panel savefig commented, not deleted
+35 notebooks · 0 absolute paths · 0 os.chdir · 0 syntax errors
+28 save_panel calls · 47 panels rendered · 0 blank · 2 live savefig (both intentional)
+18 non-panel savefig commented, not deleted
+run_all.py --verify: green
 ```
 
-**Not done:** the notebooks have not been executed end to end. `run_all.py` has been
-exercised on `3_Figure2/CellCoverage` only (12 s, passed `--verify`).
+**Executed.** Every figure folder runs end to end; `run_all.py` expands 31 notebooks
+into ~42 runs via `SWEEPS`. A blank-page check (rasterise each PDF, assert a non-white
+pixel) runs alongside `--verify` — it is what would have caught `Fig5d`, which had a
+healthy manifest row and source table behind an empty page.
+
+Still not produced, and why:
+
+| Panel | Blocked on |
+|---|---|
+| Fig 2e | no plotting code anywhere; inputs are committed |
+| Fig 3g/3h | code lost (above) |
+| Fig 5f (2D/3D) | `normalize_feat` missing; cells guarded, not deleted |
+| Suppl 4h ×6, 4i ×3 | exp4 profiles absent from `data/`; regenerating them needs `pycytominer`, which cannot import (above). The notebooks themselves are fixed and ready |
