@@ -29,13 +29,13 @@ SupplFig1d,SupplFig1,SupplFig1d.csv,SupplFig1d.pdf,analysis/3_Figure2/CellDetect
 SupplFig2c,SupplFig2,SupplFig2c.csv,SupplFig2c.pdf,analysis/3_SupplFigure2/focus_estimates.ipynb,320,Mean focus (normalized variance) per compound and z-slice,2026-08-14T16:32:33Z
 SupplFig2d,SupplFig2,SupplFig2d.csv,SupplFig2d.pdf,analysis/3_SupplFigure2/quantify_segmentation_error.ipynb,288,Cellpose vs expert-annotation IoU by depth and treatment,2026-08-14T16:32:54Z
 SupplFig2e,SupplFig2,SupplFig2e.csv,SupplFig2e.pdf,analysis/3_SupplFigure2/error_propegation.ipynb,423,"Feature correlation vs imaging depth, by compartment",2026-08-14T16:32:09Z
-SupplFig3a,SupplFig3,SupplFig3a.csv,SupplFig3a.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,21364,Z-plane subsampling — v1 (c=52),2026-08-14T16:33:50Z
-SupplFig3b,SupplFig3,SupplFig3b.csv,SupplFig3b.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,6018,Z-sampling density — v1 / 14z / 44z (cross-experiment; caveat: diff plates),2026-08-14T16:33:52Z
-SupplFig3c,SupplFig3,SupplFig3c.csv,SupplFig3c.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,6018,Spheroid size / seeding density — v2,2026-08-14T16:33:55Z
-SupplFig3d,SupplFig3,SupplFig3d.csv,SupplFig3d.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,6018,Clearing,2026-08-14T16:33:58Z
-SupplFig3e,SupplFig3,SupplFig3e.csv,SupplFig3e.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,6018,Magnification,2026-08-14T16:34:00Z
-SupplFig3g,SupplFig3,SupplFig3g.csv,SupplFig3g.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,7870,"Channel intensity vs imaging depth, two spheroid sizes",2026-08-14T16:34:17Z
-SupplFig3h,SupplFig3,SupplFig3h.csv,SupplFig3h.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,1546,Cell detection vs imaging depth by clearing condition,2026-08-14T16:34:20Z
+SupplFig3a,SupplFig3,SupplFig3a.csv,SupplFig3a.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,21364,Z-plane subsampling — v1 (c=52),2026-08-14T21:13:53Z
+SupplFig3b,SupplFig3,SupplFig3b.csv,SupplFig3b.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,6018,Z-sampling density — v1 / 14z / 44z (cross-experiment; caveat: diff plates),2026-08-14T21:13:55Z
+SupplFig3c,SupplFig3,SupplFig3c.csv,SupplFig3c.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,6018,Spheroid size / seeding density — v2,2026-08-14T21:13:58Z
+SupplFig3d,SupplFig3,SupplFig3d.csv,SupplFig3d.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,6018,Clearing,2026-08-14T21:14:00Z
+SupplFig3e,SupplFig3,SupplFig3e.csv,SupplFig3e.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,6018,Magnification,2026-08-14T21:14:02Z
+SupplFig3g,SupplFig3,SupplFig3g.csv,SupplFig3g.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,7870,"Channel intensity vs imaging depth, two spheroid sizes",2026-08-14T21:14:19Z
+SupplFig3h,SupplFig3,SupplFig3h.csv,SupplFig3h.pdf,analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb,1546,Cell detection vs imaging depth by clearing condition,2026-08-14T21:14:22Z
 SupplFig4a,SupplFig4,SupplFig4a.csv,SupplFig4a.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,639,"Supervised UMAP coloured by pathway, HT29 MIP",2026-08-14T18:01:03Z
 SupplFig4b,SupplFig4,SupplFig4b.csv,SupplFig4b.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,691,"Supervised UMAP coloured by pathway, HT29 aggregates",2026-08-14T18:01:53Z
 SupplFig4c,SupplFig4,SupplFig4c.csv,SupplFig4c.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,264,"Unsupervised UMAP, KMeans clusters vs pathway, HT29 MIP",2026-08-14T18:01:09Z
