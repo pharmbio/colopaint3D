@@ -20,8 +20,8 @@ surviving output files; `SOURCE_SNAPSHOT.tsv` pins the exact versions audited.
 | **Fig 3d** | grit, scAgg *(was `Figure3B2`)* | same |
 | **Fig 3e** | reproducibility, MIP | `3_PercentReplicating` (`data_type='MIP'`) |
 | **Fig 3f** | reproducibility, scAgg | same (`data_type='aggregates'`) |
-| **Fig 3g** | MIP vs Aggregates, coloured by dose | **CODE LOST** — only `AggVsMIP_dose_aggregates.pdf` survives; see `KNOWN_ISSUES.md` |
-| **Fig 3h** | MIP vs Aggregates, coloured by pathway | **CODE LOST** — only `AggVsMIP_pathway_aggregates.pdf` survives |
+| **Fig 3g** | MIP vs Aggregates, coloured by dose | `3_Fig3gh_MIP_vs_Aggregates` — **reconstruction**, code lost; see `KNOWN_ISSUES.md` |
+| **Fig 3h** | MIP vs Aggregates, coloured by pathway | same notebook — **reconstruction** |
 | **Fig 4a–d** | UMAP: supervised & unsupervised × MIP & scAgg | `PCAUMAP/PCAUMAP_pathway_v2` |
 | **Fig 4e–f** | clustermap × MIP & scAgg | `PairwiseCorrelations/3_PairwiseCorrlations copy` |
 | **Fig 5a** | compound grit counting | `3_Figure5/3_Fig5a_grit_overlap` — rebuilt; upstream it was `3_GritScores` cell 18, whose four input CSVs have no surviving writer |

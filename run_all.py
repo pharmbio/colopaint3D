@@ -42,6 +42,14 @@ NON_FIGURE = {"1_Data", "2_Processing", "4_BioImageArchive"}
 
 SKIP_PARTS = {".ipynb_checkpoints", "__pycache__", ".venv"}
 
+# Notebooks that overwrite shipped data tables in place and whose output is not
+# bit-reproducible. Prepare_Slice_Features rewrites normalized_data_merged_HCT116.csv
+# with 779 selected features where the published file has 781, which visibly moves
+# Fig 2g. Skipped by default; --include-destructive runs them anyway.
+DESTRUCTIVE = {
+    "analysis/3_Figure2/RemoveNoise/Prepare_Slice_Features.ipynb",
+}
+
 # Notebooks parameterised by cell line and/or data type. Each reads its parameters
 # from the environment, defaulting to the value it used to hardcode, so one notebook
 # emits every combination its PANEL map promises. Without this the maps offer ten
@@ -129,7 +137,7 @@ def _matches_figure(group: str, figure: str) -> bool:
 
 
 def discover(figure: str | None = None, stage: str | None = None,
-             skip: Iterable[str] = ()) -> list[Notebook]:
+             skip: Iterable[str] = (), include_destructive: bool = False) -> list[Notebook]:
     """Return notebooks to run, in execution order."""
     if not ANALYSIS_ROOT.is_dir():
         return []
@@ -170,6 +178,9 @@ def discover(figure: str | None = None, stage: str | None = None,
             if path.name.endswith(".executed.ipynb"):
                 continue
             rel = path.relative_to(REPO_ROOT).as_posix()
+            if rel in DESTRUCTIVE and not include_destructive:
+                print(f"  (skipping {rel}: overwrites shipped data, see KNOWN_ISSUES)")
+                continue
             for env in SWEEPS.get(rel, [{}]):
                 found.append(Notebook(path, group, env))
     return found
@@ -229,6 +240,11 @@ def main() -> int:
     ap.add_argument("--figure", help="run one figure, e.g. Fig5 or SupplFig3")
     ap.add_argument("--stage", help="run one stage, e.g. 1_Data or 2_Processing")
     ap.add_argument(
+        "--include-destructive", action="store_true",
+        help="also run notebooks that overwrite shipped data tables in place "
+             "(currently Prepare_Slice_Features; see provenance/KNOWN_ISSUES.md)",
+    )
+    ap.add_argument(
         "--skip", action="append", default=[], metavar="NAME",
         help="skip a stage or figure folder; repeatable. --skip 1_Data leaves out "
              "feature sorting, which needs the 19.5 GB dumps and rewrites them",
@@ -257,7 +273,8 @@ def main() -> int:
             print(f"  - {p}", file=sys.stderr)
         return 1
 
-    notebooks = discover(figure=args.figure, stage=args.stage, skip=args.skip)
+    notebooks = discover(figure=args.figure, stage=args.stage, skip=args.skip,
+                         include_destructive=args.include_destructive)
     if not notebooks:
         print("No notebooks found under analysis/.")
         print("(The analysis code has not been ported into this repo yet — see WP6.)")

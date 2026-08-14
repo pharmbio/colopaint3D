@@ -41,17 +41,18 @@ file, so it hard-failed in the documented environment.
 **Open (cosmetic):** Suppl 4i's x axis is built as `conc * 1000`, so it reads in nM
 (0.32 … 10000) where the published panel reads µM (0.00316 … 10.0).
 
-**Fig 3g / 3h cannot be reproduced — the code is lost.** Published Figure 3 runs a–h.
-Panels 3e/3f were recovered (see below), but 3g/3h — the MIP-vs-Aggregates scatters,
-coloured by dose and by pathway — survive only as
-`3_Figure3/PercentReplicating/result-images/AggVsMIP_{dose,pathway}_aggregates.pdf`,
-dated 2025-01-22. The string `AggVsMIP` appears in **no notebook, script or checkpoint**
-in `colopaint3D`, `colopaint3D_fork` or `colopaint3D_AZ`, and all three
-`3_PercentReplicating` variants in both trees were diffed — none contains the scatter.
-The producing cell was written after the surviving notebook versions (2025-01-11/18)
-and later overwritten. Not rebuilt: reconstructing it would mean guessing the dose and
-pathway encodings. The `perc_replicating_conc_*.csv` that `3_PercentReplicating` writes
-is the input it would need.
+**Fig 3g / 3h — code lost, panel RECONSTRUCTED.** `AggVsMIP` appears in no notebook,
+script or checkpoint in `colopaint3D`, `colopaint3D_fork` or `colopaint3D_AZ`, and in
+none of the 194 commits in the repository history; no historical version of
+`3_PercentReplicating.ipynb` ever contained the string `Aggregates`. Only the outputs
+survive (`result-images/AggVsMIP_{dose,pathway}_aggregates.pdf`, 2025-01-22).
+
+Rebuilt as `3_Figure3/3_Fig3gh_MIP_vs_Aggregates.ipynb` from the replicate correlations
+`3_PercentReplicating` already computes for Fig 3e/3f — the same quantity on both axes.
+395 points: 52 compounds × 4 concentration steps × 2 cell lines, all pathway-annotated.
+Axes, diagonal, palettes, legend ordering and the dot/plus cell-line convention all
+match the surviving PDFs. It is a reconstruction, not a port: compare against those
+PDFs before publishing.
 
 **`requirements.txt` did not resolve.** `statsmodels==0.14.6` requires numpy ≥1.22.3
 against the pinned `numpy==1.22.0`, so `pip install -r requirements.txt` — and therefore
@@ -115,6 +116,7 @@ reproduce the features.
 | `np.fill_diagonal(df.values, …)` raises on pandas ≥2 (copy-on-write makes `.values` read-only). Correct under the pinned stack, breaks for anyone on a current one | rewritten as `to_numpy(copy=True)`, same result any version |
 | **Fig 6d and Suppl 6b were one fused output** from a five-entry `SIGNATURE_PANELS` | split into two calls over disjoint subsets |
 | **`3_CellCoverage`'s `savefig` was commented out** — the archived PDF was saved by hand | exactly what `save_panel` prevents |
+| **`Prepare_Slice_Features` overwrites `normalized_data_merged_HCT116.csv`** — a shipped `normalized`-tier file — and its output is **not reproducible**: re-running it yields 781 → 779 selected features, which moves Fig 2g (PC1 22.78%→24.18%, after-correction r +0.11→−0.06) | restored from the source tree; **do not re-run this notebook against a populated `data/`**. The 2-feature drift is in pycytominer `feature_select`'s variance/correlation thresholds |
 | **`3_GritScores` writes back into `1_Data/results/`** — re-running it overwrites the published `grit_data_*.parquet` that every figure consumes | Fig 5a was rebuilt so it no longer requires that re-run; the hazard itself is unfixed |
 | **The cell that wrote `grit_scores_descriptive_stats_*.csv` does not survive** — only its four outputs do | Fig 5a's compound sets re-derived as "treatments whose median grit per perturbation > 1.96", validated against all four originals: 46/46, 47/47, 38/38, 33/33 |
 | A second `np.fill_diagonal(...values)` in `3_PairwiseCorrelations`' trailing `cluster_metrics`, missed when the first was fixed | same `to_numpy(copy=True)` rewrite |
