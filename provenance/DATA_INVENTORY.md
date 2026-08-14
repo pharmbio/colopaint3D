@@ -9,10 +9,10 @@ same bytes, not copies — a deposition needs the resolved files, not the links.
 
 | Dataset | Panels | Experiment | Files | Size | Location |
 |---|---|---|---|---|---|
-| 3D spheroid Cell Painting | Fig 2–4, 5d–f, 6e | `exp1_main` | 15 | 68 MB | linked → `colopaint3D/` |
-| 2D monolayer Cell Painting (4-plate run) | Fig 5a–d, Suppl 5 | `exp1_main` | 4 | 37 MB | linked → `colopaint3D/` |
+| 3D spheroid Cell Painting | Fig 2–4, 5d–f, 6e | `exp1_main` | 15 | 68 MB | `data/exp1_main/` |
+| 2D monolayer Cell Painting (4-plate run) | Fig 5a–d, Suppl 5 | `exp1_main` | 4 | 37 MB | `data/exp1_main/` |
 | Per-slice profiles for the Fig 2g PCA | Fig 2g | `exp1_main` | 1 | 292 MB | `data/exp1_main/` |
-| Robustness — spheroid size / seeding | Suppl 3c | `exp2_spheroid_size` | 16 | 14 MB | `data/exp2_spheroid_size/` + linked |
+| Robustness — spheroid size / seeding | Suppl 3c | `exp2_spheroid_size` | 16 | 14 MB | `data/exp2_spheroid_size/` |
 | Robustness — clearing, magnification, z-density | Suppl 3b/d/e | `exp3_clearing_mag_z` | 8 | 7 MB | `data/exp3_clearing_mag_z/` |
 | Objective comparison (air vs water immersion) | Suppl 4h–i | `exp4_objective` | 2 | 83 MB | `data/exp4_objective/` |
 | EdU / γH2AX imaging | Fig 6a–b | `—` | 4 | 18 KB | `analysis/3_Figure6/EdU/data/` |
