@@ -249,7 +249,7 @@ def fetch_url(url: str, dest: Path, skip_existing: bool = True,
     return dest  # unreachable
 
 
-def check_parquet_intact(path: Path) -> str | None:
+def check_parquet_intact(path: Path | str) -> str | None:
     """Return a complaint if ``path`` is not a complete parquet file, else None.
 
     A parquet file opens and closes with the 4-byte magic ``PAR1``; the footer holds the
@@ -258,6 +258,7 @@ def check_parquet_intact(path: Path) -> str | None:
     alone — Content-Length matches whatever was actually stored — and the failure would
     otherwise surface as an opaque pyarrow error hours later.
     """
+    path = Path(path)
     if not path.exists():
         return "missing"
     size = path.stat().st_size
