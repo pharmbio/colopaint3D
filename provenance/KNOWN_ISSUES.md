@@ -38,11 +38,21 @@ and later overwritten. Not rebuilt: reconstructing it would mean guessing the do
 pathway encodings. The `perc_replicating_conc_*.csv` that `3_PercentReplicating` writes
 is the input it would need.
 
-**`cytominer-eval==0.1` cannot be imported.** It uses `np.float`, removed in numpy 1.24.
-This blocks `2_Processing/exp1_main/3_GritScores.ipynb`, the only notebook that imports
-it. The pin needs revisiting — a numpy downgrade would conflict with the pandas ≥2
-requirement elsewhere. Fig 5a used to live in that notebook and no longer depends on it
-(see below). Same class of defect as the missing scikit-learn pin.
+**Two pinned packages cannot be imported at all.** `cytominer-eval==0.1` uses `np.float`
+(removed in numpy 1.24); `pycytominer==0.2.0` imports `scipy.stats.median_absolute_deviation`
+(removed in scipy 1.7). Between them they block:
+
+| Notebook | Panel | Package |
+|---|---|---|
+| `2_Processing/exp1_main/3_GritScores` | — (writes `grit_data_*`) | cytominer-eval |
+| `3_SupplFigure5/S_dose_similarity_5FU_Olaparib` | **Suppl 5d** | cytominer-eval |
+| `3_Figure2/RemoveNoise/Prepare_Slice_Features` | — (writes the PCA inputs) | pycytominer |
+| `2_Processing/exp4_objective/*` | **Suppl 4h, 4i** (via missing exp4 profiles) | pycytominer |
+
+The pins predate the current scientific stack; `requirements-frozen.txt` is the environment
+they were written against, and a numpy/scipy downgrade would conflict with the pandas ≥2
+assumption elsewhere. Same class of defect as the missing scikit-learn pin. Fig 5a used to
+live in `3_GritScores` and no longer depends on it (see below).
 
 **Fig 5b / Suppl 5a — 2D UMAP unverified.** `PCAUMAP_pathway_v2` supports `data_type='2D'`
 but no 2D output survives upstream. Marked `UNVERIFIED` in its `PANEL` map.
@@ -119,10 +129,13 @@ Each was silent; the guard matters more than the fix.
 
 ```
 35 notebooks · 0 absolute paths · 0 os.chdir · 0 syntax errors
-28 save_panel calls · 47 panels rendered · 0 blank · 2 live savefig (both intentional)
+28 save_panel calls · 46 panels rendered · 0 blank · 2 live savefig (both intentional)
 18 non-panel savefig commented, not deleted
-run_all.py --verify: green
+run_all.py --verify: green · scripts/check_panels_nonblank.py: green
 ```
+
+Verified from a **clean state**: `figures/` and `MANIFEST.csv` emptied, then every figure
+folder re-run — 32 runs, 28 pass, 4 fail on the environment blockers below.
 
 **Executed.** Every figure folder runs end to end; `run_all.py` expands 31 notebooks
 into ~42 runs via `SWEEPS`. A blank-page check (rasterise each PDF, assert a non-white
@@ -136,4 +149,5 @@ Still not produced, and why:
 | Fig 2e | no plotting code anywhere; inputs are committed |
 | Fig 3g/3h | code lost (above) |
 | Fig 5f (2D/3D) | `normalize_feat` missing; cells guarded, not deleted |
+| Suppl 5d | `cytominer-eval` cannot import (above) |
 | Suppl 4h ×6, 4i ×3 | exp4 profiles absent from `data/`; regenerating them needs `pycytominer`, which cannot import (above). The notebooks themselves are fixed and ready |

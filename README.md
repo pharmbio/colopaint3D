@@ -187,9 +187,13 @@ for reasons outside this repo:
 
 | Notebook | Why |
 |---|---|
-| `2_Processing/exp1_main/3_GritScores` | `cytominer-eval==0.1` imports `np.float`, removed in numpy 1.24 |
-| `3_Figure2/RemoveNoise/Prepare_Slice_Features` | `pycytominer==0.2.0` imports `scipy.stats.median_absolute_deviation`, removed in scipy 1.7 |
-| `1_Data/*`, other `2_Processing/*` | need the 19.5 GB per-slice feature dumps, which are not in either download tier |
+| `2_Processing/exp1_main/3_GritScores`, `3_SupplFigure5/S_dose_similarity_5FU_Olaparib` | `cytominer-eval==0.1` imports `np.float`, removed in numpy 1.24 |
+| `3_Figure2/RemoveNoise/Prepare_Slice_Features`, `2_Processing/exp4_objective/*` | `pycytominer==0.2.0` imports `scipy.stats.median_absolute_deviation`, removed in scipy 1.7 |
+| `1_Data/*` | need the 19.5 GB per-slice feature dumps, which are not in either download tier |
+
+From a clean `figures/` and `MANIFEST.csv`, the figure folders produce **46 panels, none
+blank**. Suppl 5d, Suppl 4h/4i and Fig 5f need the blockers above cleared; Fig 2e and
+Fig 3g/3h have no surviving code (`provenance/KNOWN_ISSUES.md`).
 
 The pinned versions predate the current scientific stack; `requirements-frozen.txt` is
 the environment they were written against. Neither blocks the figures — the download
