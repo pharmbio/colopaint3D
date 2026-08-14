@@ -9,7 +9,10 @@
 
 # --- Downloaded / generated, never committed --------------------------------
 /data/
-/figures/
+# NOTE: this must exclude figures/ *contents*, not the directory. git does not descend
+# into an excluded directory, so with a bare `/figures/` the negations below never fire
+# and the archived originals were silently absent from every clone.
+/figures/*
 # ...except the archived January-2026 originals, which cannot be regenerated
 !/figures/archived_originals/
 !/figures/archived_originals/**

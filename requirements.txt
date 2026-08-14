@@ -41,6 +41,14 @@ openpyxl==3.1.5            # scripts/make_source_data.py, the Source Data workbo
 tifffile==2025.5.10
 pillow==11.3.0
 
+# --- Imported but previously undeclared ------------------------------------
+# Both are imported by code the README tells you to run, so a clean environment
+# built from this file alone used to fail on them. Left unpinned: neither is
+# numerically load-bearing (one measures segmentation overlap, one rasterises a
+# PDF to check it is not blank), and pinning risks another resolver conflict.
+scikit-image               # analysis/3_SupplFigure2/quantify_segmentation_error.ipynb
+pymupdf                    # scripts/check_panels_nonblank.py, the blank-page check
+
 # --- Notebook execution (run_all.py) ---------------------------------------
 papermill
 jupyter==1.1.1

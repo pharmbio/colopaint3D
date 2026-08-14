@@ -55,6 +55,57 @@ SKIP_PARTS = {".ipynb_checkpoints", "__pycache__", ".venv"}
 # (eta2 0.64 -> 0.05); only the percentages move.
 DESTRUCTIVE: set[str] = set()
 
+# Notebooks that need input tiers not everyone has, and what to check for. The figure
+# tier runs off the profile tables in data/<experiment>/, which are a few hundred MB and
+# travel with the release; these need something bigger or something private, so a clone
+# that lacks them should skip the notebook with an explanation rather than die inside
+# pandas 40 minutes into a run.
+#
+#   CLUSTER  raw CellProfiler output under /share/data/cellprofiler — pharmbio only,
+#            and not part of the BioImage Archive deposition.
+#   FEATURES the ~35 GB per-slice feature dumps under data/features/.
+#
+# Skipping is not "these panels are unreproducible": the panels downstream of them are
+# rebuilt from committed tables. It means the *upstream* step cannot be re-run here.
+CLUSTER_ROOT = Path("/share/data/cellprofiler/automation/results")
+
+NEEDS_CLUSTER = {
+    "analysis/1_Data/exp1_main/1_FeatureSorting.ipynb",
+    "analysis/1_Data/exp2_spheroid_size/1_FeatureSorting.ipynb",
+    "analysis/1_Data/exp3_clearing_mag_z/1_FeatureSorting.ipynb",
+    "analysis/1_Data/exp4_objective/1_FeatureSorting.ipynb",
+    "analysis/2_Processing/exp1_main/Pycytominer_MIP.ipynb",
+    "analysis/4_BioImageArchive/4_ImageBioArchive_Metadata.ipynb",
+}
+
+# notebook -> the experiment whose feature dump it reads
+NEEDS_FEATURES = {
+    "analysis/2_Processing/exp1_main/2_Pycytominer.ipynb": "exp1_main",
+    "analysis/2_Processing/exp1_main/2_Pycytominer_certain_slices.ipynb": "exp1_main",
+    "analysis/2_Processing/exp2_spheroid_size/2_Pycytominer.ipynb": "exp2_spheroid_size",
+    "analysis/2_Processing/exp3_clearing_mag_z/2_Pycytominer.ipynb": "exp3_clearing_mag_z",
+    "analysis/2_Processing/exp4_objective/2_DetectandCombine.ipynb": "exp4_objective",
+    "analysis/3_Figure2/CellCoverage/3_CellCoverage.ipynb": "exp1_main",
+    "analysis/3_Figure2/CellDetectionSanityCheck/3_Plot_Spheroids.ipynb": "exp1_main",
+    "analysis/3_Figure2/RemoveNoise/Prepare_Slice_Features.ipynb": "exp1_main",
+    "analysis/3_SupplFigure2/error_propegation.ipynb": "exp1_main",
+    "analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb": "exp1_main",
+}
+
+
+def unavailable(rel: str) -> str | None:
+    """Why ``rel`` cannot run here, or None if it can."""
+    if rel in NEEDS_CLUSTER and not CLUSTER_ROOT.is_dir():
+        return (f"needs raw CellProfiler output at {CLUSTER_ROOT} (pharmbio cluster only; "
+                "the profile tables it would produce ship in data/)")
+    exp = NEEDS_FEATURES.get(rel)
+    if exp is not None:
+        d = DATA_ROOT / "features" / exp
+        if not d.is_dir() or not any(d.iterdir()):
+            return (f"needs the per-slice feature dump at {d} (~35 GB, not in the "
+                    "release; see provenance/DATA_INVENTORY.md)")
+    return None
+
 # Notebooks parameterised by cell line and/or data type. Each reads its parameters
 # from the environment, defaulting to the value it used to hardcode, so one notebook
 # emits every combination its PANEL map promises. Without this the maps offer ten
@@ -185,6 +236,9 @@ def discover(figure: str | None = None, stage: str | None = None,
             rel = path.relative_to(REPO_ROOT).as_posix()
             if rel in DESTRUCTIVE and not include_destructive:
                 print(f"  (skipping {rel}: overwrites shipped data, see KNOWN_ISSUES)")
+                continue
+            if (why := unavailable(rel)) is not None:
+                print(f"  (skipping {rel}: {why})")
                 continue
             for env in SWEEPS.get(rel, [{}]):
                 found.append(Notebook(path, group, env))
