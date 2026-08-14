@@ -73,12 +73,17 @@ SWEEPS = {
     "analysis/3_Figure2/CellDetectionSanityCheck/3_Plot_Spheroids.ipynb": _sweep(lines=_LINES),
     # writes grit_data_{data_type}_{cell_line}.parquet, which everything downstream reads
     "analysis/2_Processing/exp1_main/3_GritScores.ipynb": _sweep(_LINES, _TYPES),
+    # Suppl 4h, one output per exp4 acquisition (air = bomi, WI = wi)
+    "analysis/3_SupplFigure4/3_PCA_objective.ipynb": [
+        {"COLOPAINT3D_PLATE": t} for t in ("bomi", "cleared3d", "wi")
+    ],
 }
 
 
 def _tag(env: dict) -> str:
     """Short suffix identifying one sweep combination, for the executed-copy name."""
-    return "_".join(env[k] for k in ("COLOPAINT3D_CELL_LINE", "COLOPAINT3D_DATA_TYPE") if k in env)
+    return "_".join(env[k] for k in ("COLOPAINT3D_CELL_LINE", "COLOPAINT3D_DATA_TYPE",
+                                 "COLOPAINT3D_PLATE") if k in env)
 
 
 class Notebook:

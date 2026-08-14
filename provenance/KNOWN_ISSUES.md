@@ -17,24 +17,29 @@ in the port-defects table below.
 
 ## Open blockers
 
-**Suppl 4h/4i — which acquisition is "air".** `wi_20250203` is the WI acquisition;
-there are two non-WI ones and **no code combines them**: "air" appears nowhere in either
-AZ folder, `3_PCA.ipynb` runs one plate at a time, `3_Fig_TechnicalReplicates` groups by
-`Metadata_Barcode`, and `2_DetectandCombine` keeps all three distinct. The ported
-notebooks emit one output per acquisition (`bomi`, `cleared3d`, `wi`); no combining step
-was invented.
+**Suppl 4h/4i — RESOLVED. "air" is the `bomi` acquisition**
+(`CellPainting_20241220clearedspheroidsBOMI_20241220_151510`), stated by the author and
+since confirmed two ways:
 
-**The author states air is `CellPainting_20241220clearedspheroidsBOMI_20241220_151510`
-— i.e. `bomi` alone**, not a combination. That settles which plate was used.
+| acquisition | null 95th pct | published dashed line |
+|---|---|---|
+| `bomi` | **0.464** | ≈0.45 (air) ✓ |
+| `wi` | **0.418** | ≈0.40 (water immersion) ✓ |
+| `cleared3d` | 0.513 | not used by the panel |
 
-It does **not** yet reconcile with the numbers this triage recorded. Reproducing Suppl 4i's
-null 95th percentile gave 0.486 for the two non-WI acquisitions combined against a published
-line at ≈0.45, and **0.553 and 0.589 for each alone** — so `bomi` alone should sit at one of
-the latter two, further from the published line than the combined figure. Either that earlier
-inference was wrong, or the published dashed line was computed over a different subset than
-assumed (the panel uses `pos_con` only). **Open:** recompute the null 95th percentile per
-acquisition from the exp4 profiles and check which reproduces ≈0.45. Until then, take
-air = `bomi` as the answer and treat the 0.486-vs-0.45 argument as superseded.
+and the `bomi` UMAPs match the published *air* row of Suppl 4h panel-for-panel. The
+earlier inference here — air = both non-WI acquisitions combined, from "0.486 combined
+vs 0.553 and 0.589 for each alone" — was **wrong**; nothing recomputed from the exp4
+profiles reproduces those numbers. No combining step is needed or wanted.
+
+Two defects surfaced while building it: `3_PCA_objective` did `plate = plates[0]`, so only
+the first acquisition was ever processed (it is now selected by `PLATE_TAG` and swept), and
+it carried a dead `import umap.plot` whose optional dependencies
+(datashader/bokeh/holoviews/colorcet/scikit-image) are declared in neither requirements
+file, so it hard-failed in the documented environment.
+
+**Open (cosmetic):** Suppl 4i's x axis is built as `conc * 1000`, so it reads in nM
+(0.32 … 10000) where the published panel reads µM (0.00316 … 10.0).
 
 **Fig 3g / 3h cannot be reproduced — the code is lost.** Published Figure 3 runs a–h.
 Panels 3e/3f were recovered (see below), but 3g/3h — the MIP-vs-Aggregates scatters,

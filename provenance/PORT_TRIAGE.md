@@ -45,7 +45,7 @@ surviving output files; `SOURCE_SNAPSHOT.tsv` pins the exact versions audited.
 | **Suppl 3f** | *image* | — |
 | **Suppl 4a–f** | Fig 4a–f for **HT29** | same notebooks, `cell_line='HT29'` |
 | **Suppl 4g** | *images* | — |
-| **Suppl 4h** | UMAP unsup. + labelled, air vs WI | **exp4** `UMAP/3_PCA.ipynb` — per compound×conc, **not** per well. **air = `bomi`** (`CellPainting_20241220clearedspheroidsBOMI_20241220_151510`), per the author; `cleared3d` is unused here |
+| **Suppl 4h** | UMAP unsup. + labelled, air vs WI | **exp4** `UMAP/3_PCA.ipynb` — per compound×conc, **not** per well. **air = `bomi`** — author-stated and confirmed: its null 95th pct is 0.464 vs the published ≈0.45, and its UMAPs match the published air row. `cleared3d` is unused |
 | **Suppl 4i** | reproducibility vs concentration, same objectives | **exp4** `3_Fig_TechnicalReplicates.ipynb` — Spearman, `pos_con` only, null 95th pct as the dashed line |
 | **Suppl 5a** | 2D UMAP fingerprints, HT29 | `PCAUMAP_pathway_v2` |
 | **Suppl 5b** | 2D clustermap, HT29 | `3_PairwiseCorrlations copy` |
