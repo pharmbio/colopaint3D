@@ -32,7 +32,7 @@ python run_all.py
 | you want | fetch | then |
 |---|---|---|
 | **the figures** | `python scripts/download_data.py` (241 MB) | `python run_all.py` |
-| **to re-derive the profile tables** from CellProfiler output | `python run_all.py --stage 0_Download` (6.88 GB, and ~40 GB free once `1_FeatureSorting` writes its `FeaturesImages_*` tree) | `python run_all.py --stage 1_Data` |
+| **to re-derive the profile tables** from CellProfiler output | `python run_all.py --stage 0_Download` (16.6 GB, and ~40 GB free once `1_FeatureSorting` writes its `FeaturesImages_*` tree) | `python run_all.py --stage 1_Data` |
 | **to re-extract features from images** | the raw OME-TIFFs and `feature_extraction/*.cppipe` from the archive | CellProfiler, outside this repo |
 
 Almost everyone wants the first row: the figures never read images or raw CellProfiler
@@ -141,8 +141,8 @@ against `scripts/data_manifest.tsv`:
 
 | Tier | Contents | Size |
 |---|---|---|
-| `required` | 65 parquet profile tables (`grit_data_*`, `selected_data_*`) | 147 MB |
-| `normalized` | 3 `normalized_data_*.csv`, Figure 2 PCA only — `--include-normalized` | 570 MB |
+| `required` | 30 profile tables (`grit_data_*`, `selected_data_*`, slices, sections) | 206 MB |
+| `normalized` | `normalized_data_merged_HCT116.csv`, Figure 2g only — `--include-normalized` | 306 MB |
 
 Re-running `1_Data`/`2_Processing` additionally needs the per-slice CellProfiler
 feature dumps (`FeaturesImages_*`, **19.5 GB**), which are not in either tier.
@@ -154,7 +154,7 @@ downstream of `2_Processing`, which is why they are the default entry point.
 Five panels aggregate inputs that are far too large to ship — the feature dumps, the
 7.7 GB expert-annotation set, and 67 MB of EdU per-object CSVs. For those, the
 aggregation each panel actually plots is precomputed and **committed** (4.3 MB total),
-so the whole figure set regenerates from the 147 MB download:
+so the whole figure set regenerates from the 206 MB download:
 
 | Panel | Cached table | Rows |
 |---|---|---|

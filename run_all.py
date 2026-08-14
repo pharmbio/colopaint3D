@@ -42,7 +42,7 @@ ORDERED_STAGES = ["0_Download", "1_Data", "2_Processing"]
 NON_FIGURE = {"0_Download", "1_Data", "2_Processing", "4_BioImageArchive"}
 
 # Stages that only run when named explicitly (--stage / --figure). 0_Download pulls
-# 6.88 GB from the BioImage Archive; that should be a deliberate act, not something a
+# 16.6 GB from the BioImage Archive; that should be a deliberate act, not something a
 # bare `python run_all.py` starts.
 OPT_IN_STAGES = {"0_Download"}
 
@@ -117,7 +117,7 @@ def unavailable(rel: str) -> str | None:
         src = cellprofiler_results(exp_cp)
         if not src.is_dir():
             return (f"needs raw CellProfiler output; none found at {src}. Fetch it with "
-                    "`python run_all.py --stage 0_Download` (6.88 GB), or set "
+                    "`python run_all.py --stage 0_Download` (16.6 GB), or set "
                     "COLOPAINT3D_CP_RESULTS. The tables it would produce ship in data/")
     exp = NEEDS_FEATURES.get(rel)
     if exp is not None:

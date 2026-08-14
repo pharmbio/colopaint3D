@@ -2,12 +2,12 @@
 """Fetch the processed profile tables every figure is built from.
 
 The figures do not run on raw images. They run on well-level and section-level
-feature tables produced by ``1_Data`` and ``2_Processing`` — 65 parquet files,
-about 147 MB. Those are published as a dataset rather than committed here.
+feature tables produced by ``1_Data`` and ``2_Processing`` — 30 files, about
+206 MB. Those are published as a dataset rather than committed here.
 
     python scripts/download_data.py                 # fetch the required tier
     python scripts/download_data.py --check         # verify what is already present
-    python scripts/download_data.py --include-normalized   # + the 598 MB PCA inputs
+    python scripts/download_data.py --include-normalized   # + the 306 MB PCA input
 
 Populating from a local checkout instead of the archive (what to use before the
 dataset is deposited, and much faster on the same filesystem)::
@@ -17,8 +17,8 @@ dataset is deposited, and much faster on the same filesystem)::
 Tiers
 -----
 ``required``    the parquet profiles; every figure needs some of these.
-``normalized``  three large ``normalized_data_*.csv`` used only by the Figure 2
-                PCA panels. Skipped unless asked for, because they are 570 MB.
+``normalized``  ``normalized_data_merged_HCT116.csv``, used only by the Figure 2g
+                PCA panel. Skipped unless asked for, because it is 306 MB.
 
 Not covered here: ``FeaturesImages_<date>_none/``
 -------------------------------------------------
@@ -67,7 +67,7 @@ BIA_DATA_SUBDIR = "processed_profiles"
 BASE_URL = os.environ.get("COLOPAINT3D_DATA_URL",
                           f"{BIA_FILES_URL}/{BIA_DATA_SUBDIR}").rstrip("/")
 
-# Raw CellProfiler output: 3 objects x 6 plates, 6.88 GB. Not a tier in the manifest --
+# Raw CellProfiler output: 3 objects x 6 plates, 16.6 GB. Not a tier in the manifest --
 # it is fetched per-plate by analysis/0_Download, which needs the per-plate image_id/cp_id
 # from the shipped metadata to know where each file goes.
 CP_PLATES = ["PB000137", "PB000138", "PB000139", "PB000140", "PB000141", "PB000142"]
@@ -213,7 +213,7 @@ def fetch_url(url: str, dest: Path, skip_existing: bool = True,
     """Stream ``url`` to ``dest``, via a .part file so a kill cannot leave a truncated
     table that looks complete.
 
-    Retries on transient network errors: the CellProfiler tier is 6.88 GB across 18
+    Retries on transient network errors: the CellProfiler tier is 16.6 GB across 18
     files of ~400 MB each, and EBI drops a connection often enough that a single-shot
     fetch will not get through the set. Retries are whole-file, not ranged — the archive
     does not reliably honour Range on these objects, and a silently-resumed-wrong file
@@ -304,7 +304,7 @@ def main() -> int:
                     help="regenerate the checksum manifest from a local checkout; pass "
                          "the data/ directory itself to hash what will be deposited")
     ap.add_argument("--include-normalized", action="store_true",
-                    help="also fetch the 598 MB normalized_data_*.csv (Figure 2 PCA only)")
+                    help="also fetch the 306 MB normalized_data_merged_HCT116.csv (Fig 2g only)")
     ap.add_argument("--force", action="store_true", help="re-fetch files that already verify")
     args = ap.parse_args()
 
