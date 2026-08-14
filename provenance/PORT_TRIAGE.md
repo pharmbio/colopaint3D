@@ -29,7 +29,7 @@ surviving output files; `SOURCE_SNAPSHOT.tsv` pins the exact versions audited.
 | **Fig 5c** | 2D clustermap | `3_PairwiseCorrlations copy` (`2D`) |
 | **Fig 5d** | 2D − 3D difference map | same → `Difference_*_colored_tails` |
 | **Fig 5e** | *image of cells* | — |
-| **Fig 5f** | 2D + 3D fingerprints, 5-FU & olaparib | same → `fingerprints_2D/3D` — **only the `copy` makes these** |
+| **Fig 5f** | 2D + 3D fingerprints, 5-FU & olaparib | **PRODUCER NOT FOUND.** The `copy`'s fingerprint cells make top-40 × 5-compound clustermaps; the published panel is 2-row all-feature strips. See `KNOWN_ISSUES.md` |
 | **Fig 6b** | EdU / γH2AX: DNA damage, S-phase entry, size | `EdU/EdU_analysis` → `Fig6b_{damage,sphase,size}`; its `savefig` had been commented out as not-a-panel |
 | **Fig 6c** | hallmark GSEA scatter | `DEG/hallmark_nes_scatter` → `hallmark_nes_scatter` |
 | **Fig 6d** | dumbbells: p53 pathway → E2F targets → p53 apoptosis | same → *subset of* `signature_dumbbells_combined` |

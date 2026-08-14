@@ -74,24 +74,27 @@ cycling-dependence recolour and the MoA version was lost; `09b` rebuilds it (pal
 but may not be pixel-identical. `06_analyze_similarity.py` is gone — harmless, the MoA map is
 hardcoded in `09b`.
 
-**Fig 5f cannot run — one helper is still missing from the source.** The fingerprint cells
-call `normalize_feat` (which "normalises the illum prefix so feature names match 3D") and
-`parse_channel`. `normalize_feat` is **defined nowhere in `colopaint3D`, `colopaint3D_fork` or
-`colopaint3D_AZ`**, and since it decides which features are compared between 2D and 3D it has
-not been reinvented. `parse_channel` **has now been recovered** verbatim from line 200 (and
-`_CHANNELS` from line 77) of `plot_cluster_signature.py`, which this triage had wrongly
-excluded as exploratory. `cos_sim`, used by the same section, was simply never imported and is
-plain `cosine_similarity`.
+**Fig 5f — the surviving code does not draw the published panel.** `normalize_feat`
+(which "normalises the illum prefix so feature names match 3D") is defined nowhere in
+`colopaint3D`, `colopaint3D_fork` or `colopaint3D_AZ`; it survived only in a live kernel.
+It has now been **reconstructed** and enabled (`FIG5F_AVAILABLE = True`): the 2D and 3D
+tables differ only in an `illum` prefix on the channel token — 983 of 1093 2D names carry
+it, none of the 598 3D names do, and exact name overlap goes 92 → 467 once stripped.
+`parse_channel` was recovered verbatim from `plot_cluster_signature.py`; `cos_sim` was
+simply never imported and is plain `cosine_similarity`.
 
-The Fig 5f cells are therefore guarded on `FIG5F_AVAILABLE = False` rather than deleted: the
-code is kept verbatim and skipped with a message. Before this, those cells raised `NameError`
-and aborted `3_PairwiseCorrelations` at cell 20 — which is why Fig 4e, Fig 5c, Suppl 4e/4f and
-Suppl 5b/5c never appeared even for combinations that had been run. Setting `FIG5F_AVAILABLE`
-to `True` once `normalize_feat` is recovered is all that is needed.
+**But the panel that code produces is not the one in the paper.** Published Fig 5f is two
+wide strips — 2 rows (`5-FU`, `olaparib`) across *all* features, no dendrogram, colourbars
+±10 (2D) and ±2.5 (3D). The notebook's cells produce two tall clustermaps: top-40 features
+× 5 compounds (etoposide, nutlin, AMG232, 5-FU, olaparib), dendrograms, ±3. Different
+compounds, feature count, orientation and scale. So `get_lowest_passing_profiles` → top-40
+→ `sns.clustermap` is **not** the published code path, and this triage's "only the `copy`
+makes these" is wrong.
 
-The same cells also used `data_2D`, which was defined nowhere; the port restores it as
-`grit_data_2D_{cell_line}` (the only value consistent with `get_lowest_passing_profiles`),
-**flagged for confirmation**.
+Consequences: the `normalize_feat` reconstruction cannot be validated against the published
+figure, because that figure was not drawn by this code; and the current `Fig5f_2D` /
+`Fig5f_3D` outputs are **not** Figure 5f and should not carry that panel name until the real
+producer is found or the strip rendering is written.
 
 **Deposition-dependent.** No BIA accession, so `download_images.py` is a scaffold; no dataset
 URL, so use `download_data.py --from-local`. The CellProfiler `.cppipe` pipelines and Cellpose
