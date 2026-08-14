@@ -10,6 +10,9 @@
 # --- Downloaded / generated, never committed --------------------------------
 /data/
 /figures/
+# ...except the archived January-2026 originals, which cannot be regenerated
+!/figures/archived_originals/
+!/figures/archived_originals/**
 # Intermediate tables a notebook writes next to itself (e.g. exp1 QCFlags.csv).
 # The committed inputs live in analysis/**/data/, which is allow-listed below.
 analysis/**/results/
