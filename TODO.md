@@ -42,11 +42,26 @@ so they do not re-derive. The manuscript is being updated to match this version.
 - [ ] **The 18 CellProfiler tables in S-BIAD2254 are truncated — re-upload them.**
       Every one of `results/PB0001{37..42}/featICF_{nuclei,cells,cytoplasm}.parquet`
       starts with the `PAR1` magic but has no closing `PAR1` footer, so none can be
-      opened; all 18 sizes are exact multiples of 64 KiB, which is the signature of an
-      interrupted upload. Confirmed against the server with Range requests, not just a
-      local download, and against a cluster original (1.35 GB vs the deposited 234 MB
-      for PB000137 nuclei). `analysis/0_Download` now checks the footer and refuses to
-      finish, so this cannot pass silently once fixed.
+      opened. What happened: all 18 carry the identical FTP timestamp **Apr 15 15:33**,
+      every size is an exact multiple of 64 KiB, the truncated sizes cluster near 390 MB
+      regardless of true size (correlation with the originals r = −0.075, and PB000140
+      cells and cytoplasm stopped at byte-identical lengths). That is a concurrent upload
+      of all 18 cut off at one moment, each stream left at a buffer boundary. For
+      contrast `segmentation/` in the same folder is stamped Aug 10 09:00 and is intact.
+
+      Not recoverable by retrying: HTTPS/FIRE, `www.ebi.ac.uk/biostudies/files`, the FTP
+      protocol, the FTP listing and the BioStudies API all report the same short sizes,
+      so the bytes are not in storage. No point reporting it as corruption either — from
+      the archive's side ingestion succeeded and it recorded what arrived; the website
+      declares exactly the truncated sizes with no error flag.
+
+      When re-uploading: do not run all 18 in parallel, and verify from the archive
+      afterwards rather than from local disk (the local originals were always fine — it
+      was the transfer that failed). `check_parquet_intact()` in
+      `scripts/download_data.py` does this, and `analysis/0_Download` calls it and
+      refuses to finish on failure. Note the study is already public (DOI
+      10.6019/S-BIAD2254, released 2026-01-09), so this is a live defect in a citable
+      record, not just an outstanding task.
 - [ ] **Upload the processed profile tables** to S-BIAD2254 as `processed_profiles/`
       (68 files, 547 MB — `data/` minus `features/`). `scripts/data_manifest.tsv` already
       lists them with sha256. Until then a clone cannot draw any figure. If the folder is
