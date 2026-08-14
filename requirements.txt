@@ -15,7 +15,13 @@ pandas==1.5.2
 numpy==1.22.0
 scipy==1.7.3
 scikit-learn==1.6.1        # imported ~50x; was MISSING from the upstream freeze
-statsmodels==0.14.6
+# statsmodels: PIN REMOVED (was ==0.14.6).
+#   It is a transitive dependency of copairs (below), not a direct import --
+#   nothing in analysis/, utils/ or scripts/ imports it. But 0.14.6 requires
+#   numpy>=1.22.3 against the numpy==1.22.0 pinned above, so pinning it made
+#   `pip install -r requirements.txt` -- and therefore
+#   `conda env create -f environment.yml` -- exit ResolutionImpossible.
+#   Unpinned, pip resolves it to 0.14.1, which is numpy-1.22-compatible.
 
 # --- Plotting --------------------------------------------------------------
 matplotlib==3.7.1
