@@ -10,6 +10,7 @@ individually.
     python run_all.py                    # everything, in order
     python run_all.py --figure Fig5      # one figure
     python run_all.py --stage 2_Processing
+    python run_all.py --skip 1_Data      # everything except feature sorting
     python run_all.py --verify           # check every panel has source data
 
 Data is expected under ``data/`` — fetch it first with::
@@ -26,6 +27,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
+from typing import Iterable
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -119,7 +121,8 @@ def _matches_figure(group: str, figure: str) -> bool:
     return norm(group) == norm(figure)
 
 
-def discover(figure: str | None = None, stage: str | None = None) -> list[Notebook]:
+def discover(figure: str | None = None, stage: str | None = None,
+             skip: Iterable[str] = ()) -> list[Notebook]:
     """Return notebooks to run, in execution order."""
     if not ANALYSIS_ROOT.is_dir():
         return []
@@ -130,6 +133,14 @@ def discover(figure: str | None = None, stage: str | None = None) -> list[Notebo
         if name in present:
             groups.append(name)
     groups += [n for n in present if n not in ORDERED_STAGES and n not in NON_FIGURE]
+
+    # --skip accepts a stage name (1_Data) or any spelling of a figure folder
+    # (SupplFig3 / Figure3 / 3_SupplFigure3), so it reads the same as --figure.
+    for name in skip:
+        matched = [g for g in groups if g == name or _matches_figure(g, name)]
+        if not matched:
+            raise SystemExit(f"nothing to skip matches {name!r} (have {present})")
+        groups = [g for g in groups if g not in matched]
 
     if stage:
         groups = [g for g in groups if g == stage]
@@ -210,6 +221,11 @@ def main() -> int:
     )
     ap.add_argument("--figure", help="run one figure, e.g. Fig5 or SupplFig3")
     ap.add_argument("--stage", help="run one stage, e.g. 1_Data or 2_Processing")
+    ap.add_argument(
+        "--skip", action="append", default=[], metavar="NAME",
+        help="skip a stage or figure folder; repeatable. --skip 1_Data leaves out "
+             "feature sorting, which needs the 19.5 GB dumps and rewrites them",
+    )
     ap.add_argument("--dry-run", action="store_true", help="print the plan, execute nothing")
     ap.add_argument("--list", action="store_true", help="alias for --dry-run")
     ap.add_argument(
@@ -234,7 +250,7 @@ def main() -> int:
             print(f"  - {p}", file=sys.stderr)
         return 1
 
-    notebooks = discover(figure=args.figure, stage=args.stage)
+    notebooks = discover(figure=args.figure, stage=args.stage, skip=args.skip)
     if not notebooks:
         print("No notebooks found under analysis/.")
         print("(The analysis code has not been ported into this repo yet — see WP6.)")
