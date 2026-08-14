@@ -120,6 +120,12 @@ JOBS = {
                    "2_Processing/exp1_main/3_GritScores.ipynb", "exp1_main"),
     "GritScores_Fig3": ("colopaint3D/spher_colo52_v1/3_Figure3/GritScores/3_GritScores_Figure3A2B2.ipynb",
                         "3_Figure3/3_GritScores_Fig3cd.ipynb", "exp1_main"),
+    # Fig 3e/3f. Originally excluded as "superseded by 3_Robustness_Combined_Final",
+    # but that notebook is the z-subsampling analysis behind Suppl Fig 3 — a different
+    # question. Its result-images/PercentReplicating_{MIP,aggregates}.pdf are the
+    # published 3e and 3f.
+    "PercentReplicating": ("colopaint3D/spher_colo52_v1/3_Figure3/PercentReplicating/3_PercentReplicating.ipynb",
+                           "3_Figure3/3_PercentReplicating.ipynb", "exp1_main"),
     "PCAUMAP": ("colopaint3D/spher_colo52_v1/3_Figure4/PCAUMAP/PCAUMAP_pathway_v2.ipynb",
                 "3_Figure4/PCAUMAP_pathway_v2.ipynb", "exp1_main"),
     "PairwiseCorrelations": ("colopaint3D/spher_colo52_v1/3_Figure4/PairwiseCorrelations/3_PairwiseCorrlations copy.ipynb",
@@ -467,6 +473,26 @@ POST_EDITS = {
          "HAVE_MASKS = base_dir.is_dir()"),
         (r"raw_dir = Path\('/home/jovyan/share/data/analyses/christa/colopaint3D/expert-annotation/raw_images'\)",
          "raw_dir = external('expert-annotation') / 'raw_images'"),
+    ],
+    "PercentReplicating": [
+        (r"ImagesOut = '3_Figure3/PercentReplicating/result-images/'",
+         "ImagesOut = str(figdir('Fig3')) + '/'"),
+        # Parameterised by data_type only — it loops both cell lines internally.
+        (r"^data_type = 'aggregates'$",
+         "import os\n"
+         "data_type = os.environ.get('COLOPAINT3D_DATA_TYPE', 'aggregates')  # 'MIP' or 'aggregates'\n"
+         "\n"
+         "# Paper panel for this data_type: reproducibility of MIP vs single-cell aggregates.\n"
+         "PR_PANEL = {'MIP': 'Fig3e', 'aggregates': 'Fig3f'}\n"
+         "print(f'data_type={data_type}')"),
+        (r'fig\.savefig\(\n\s*"\{\}PercentReplicating_\{\}\.\{\}"\.format\('
+         r'ImagesOut, data_type, figformat\), dpi=dpi, bbox_inches="tight"\n\s*\)',
+         "save_panel(fig, PR_PANEL[data_type],\n"
+         "           data=pd.concat([corr_dist_all.assign(kind='replicate'),\n"
+         "                           null_dist_all.assign(kind='null')], ignore_index=True),\n"
+         "           caption=f'Median pairwise Pearson correlation by concentration step, "
+         "replicate vs null, {data_type}',\n"
+         "           notebook='analysis/3_Figure3/3_PercentReplicating.ipynb')"),
     ],
     "ErrorProp": [
         (r"fig\.savefig\('error_propagation_depth\.svg', format='svg', bbox_inches='tight'\)",
