@@ -121,10 +121,21 @@ and the pre-2026-01-15 notebook are recovered. Neither survives on disk.
 **Fig 5b / Suppl 5a — 2D UMAP unverified.** `PCAUMAP_pathway_v2` supports `data_type='2D'`
 but no 2D output survives upstream. Marked `UNVERIFIED` in its `PANEL` map.
 
-**Suppl 5e is a reconstruction.** `09_panel_c_recolor.py` was edited in place into a
-cycling-dependence recolour and the MoA version was lost; `09b` rebuilds it (palette matches)
-but may not be pixel-identical. `06_analyze_similarity.py` is gone — harmless, the MoA map is
-hardcoded in `09b`.
+**Suppl 5e — the script is lost, but the panel now replicates from its own data.**
+`09_panel_c_recolor.py` was edited in place into a cycling-dependence recolour, and no
+surviving script writes the published filename `panel_c_moa_class_HCT116.png`;
+`09b_panel_c_moa_class.py` is a later rebuild writing `panel_c_scatter_moa_class.png`.
+
+`09b` also gives the wrong panel: it merges two cached similarity matrices and keeps only
+the 630 pairs common to both (36 drugs), where the published panel has **1275 pairs over
+51 drugs**.
+
+The published panel's own plotted table survives as `panel_c_moa_class_HCT116.csv` — every
+pair with both similarities and its MoA class — so the notebook now plots that directly
+and the panel reproduces rather than being re-derived. The table is committed under
+`analysis/3_SupplFigure5/data/`. Note the published view crops to −0.15…1.05, leaving 261
+of the 1275 pairs outside the axes; that crop is matched, and the count is printed on
+every run.
 
 **Fig 5f — RECONSTRUCTED, and the surviving code does not draw it.** `normalize_feat`
 is defined nowhere in any source tree; it survived only in a live kernel. It has been
