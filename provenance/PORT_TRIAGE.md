@@ -45,7 +45,7 @@ surviving output files; `SOURCE_SNAPSHOT.tsv` pins the exact versions audited.
 | **Suppl 3f** | *image* | — |
 | **Suppl 4a–f** | Fig 4a–f for **HT29** | same notebooks, `cell_line='HT29'` |
 | **Suppl 4g** | *images* | — |
-| **Suppl 4h** | UMAP unsup. + labelled, air vs WI | **exp4** `UMAP/3_PCA.ipynb` — per compound×conc, **not** per well |
+| **Suppl 4h** | UMAP unsup. + labelled, air vs WI | **exp4** `UMAP/3_PCA.ipynb` — per compound×conc, **not** per well. **air = `bomi`** (`CellPainting_20241220clearedspheroidsBOMI_20241220_151510`), per the author; `cleared3d` is unused here |
 | **Suppl 4i** | reproducibility vs concentration, same objectives | **exp4** `3_Fig_TechnicalReplicates.ipynb` — Spearman, `pos_con` only, null 95th pct as the dashed line |
 | **Suppl 5a** | 2D UMAP fingerprints, HT29 | `PCAUMAP_pathway_v2` |
 | **Suppl 5b** | 2D clustermap, HT29 | `3_PairwiseCorrlations copy` |
@@ -146,7 +146,7 @@ would move Suppl 4i's numbers.
 
 ### Settled
 
-exp4 air = both non-WI acquisitions combined · Fig 2d = cell coverage · Fig 2f = spheroid plot · Fig 2g = PCA before/after · Fig 3c/3d = grit MIP/scAgg (renamed from A2/B2) · Fig 6b = EdU /
+exp4 air = the `bomi` acquisition alone (author-confirmed; supersedes the earlier "both non-WI combined" inference — see KNOWN_ISSUES) · Fig 2d = cell coverage · Fig 2f = spheroid plot · Fig 2g = PCA before/after · Fig 3c/3d = grit MIP/scAgg (renamed from A2/B2) · Fig 6b = EdU /
 γH2AX · Fig 6c = hallmark GSEA scatter · Fig 6d = p53/E2F/p53-apoptosis dumbbells · Fig 6e =
 `fig_5fu_neighbours_frozen_doses` · Suppl 1 (except 1d) and Suppl 2a/2b are images ·
 Suppl 5e = `09b_panel_c_moa_class` (confirmed by its grey/blue/red/orange palette) ·
