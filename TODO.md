@@ -74,6 +74,12 @@ so they do not re-derive. The manuscript is being updated to match this version.
 - [ ] **RNA-seq DGE tables** (`3_Figure6/DEG/data`, ~11 MB) are inputs that nothing in the
       repo can regenerate. They need a GEO/ArrayExpress accession or to travel with the
       release.
+- [ ] **Nothing in the repo generates the exp2/exp3 `grit_*` tables.** Both
+      `2_Pycytominer` notebooks write only `selected_*`; the grit tier came from upstream
+      and has no derivation path here. Suppl 3c reads three of them
+      (`grit_section1_12planes`, `grit_section2`, `grit_section3`), so those are terminal
+      inputs and must be deposited. Either port the grit step for these experiments or
+      state in the methods that the exp2 grit scores are provided rather than recomputed.
 - [ ] Fill the accession into `CITATION.cff`.
 - [ ] Pin `gseapy` (Figure 6 hallmark panels); it is present in neither analysis venv.
 
