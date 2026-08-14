@@ -31,14 +31,20 @@ from typing import Iterable
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from utils.paths import ANALYSIS_ROOT, DATA_ROOT, REPO_ROOT  # noqa: E402
+from utils.paths import (ANALYSIS_ROOT, CLUSTER_CP_RESULTS, DATA_ROOT,  # noqa: E402
+                         REPO_ROOT, cellprofiler_results)
 
 # Stages run in this order. Anything in analysis/ not named here is treated as a
 # figure folder and run afterwards, alphabetically.
-ORDERED_STAGES = ["1_Data", "2_Processing"]
+ORDERED_STAGES = ["0_Download", "1_Data", "2_Processing"]
 
 # Folders that hold code but produce no figures on their own.
-NON_FIGURE = {"1_Data", "2_Processing", "4_BioImageArchive"}
+NON_FIGURE = {"0_Download", "1_Data", "2_Processing", "4_BioImageArchive"}
+
+# Stages that only run when named explicitly (--stage / --figure). 0_Download pulls
+# 6.88 GB from the BioImage Archive; that should be a deliberate act, not something a
+# bare `python run_all.py` starts.
+OPT_IN_STAGES = {"0_Download"}
 
 SKIP_PARTS = {".ipynb_checkpoints", "__pycache__", ".venv"}
 
@@ -47,12 +53,12 @@ SKIP_PARTS = {".ipynb_checkpoints", "__pycache__", ".venv"}
 #
 # Prepare_Slice_Features used to be listed here: it rebuilds
 # normalized_data_merged_HCT116.csv, and its rebuild keeps 779 selected features where
-# the file shipped with the port has 781, which moves Fig 2g's variance-explained
+# the file shipped with the port had 781, which moves Fig 2g's variance-explained
 # figures. It now runs by default, because a figure the repo cannot rebuild from its own
 # data is the worse problem: the panel is regenerated from data/exp1_main rather than
-# inherited. The 781-feature input is kept alongside as
-# normalized_data_merged_HCT116.as_shipped.csv. The slice effect is unchanged either way
-# (eta2 0.64 -> 0.05); only the percentages move.
+# inherited. The slice effect is unchanged either way (eta2 0.64 -> 0.05); only the
+# percentages move. The superseded 781-feature table is not kept here -- it survives
+# upstream at colopaint3D/spher_colo52_v1/1_Data/results/.
 DESTRUCTIVE: set[str] = set()
 
 # Notebooks that need input tiers not everyone has, and what to check for. The figure
@@ -61,19 +67,27 @@ DESTRUCTIVE: set[str] = set()
 # that lacks them should skip the notebook with an explanation rather than die inside
 # pandas 40 minutes into a run.
 #
-#   CLUSTER  raw CellProfiler output under /share/data/cellprofiler — pharmbio only,
-#            and not part of the BioImage Archive deposition.
+#   CP_INPUT raw CellProfiler output — either the pharmbio mount or the copy fetched
+#            from the BioImage Archive by 0_Download, whichever cellprofiler_results()
+#            resolves to.
+#   CLUSTER  the same mount, but for the QC / featICF_spheroid tier that the deposit
+#            does *not* carry, so a download cannot substitute.
 #   FEATURES the ~35 GB per-slice feature dumps under data/features/.
 #
 # Skipping is not "these panels are unreproducible": the panels downstream of them are
 # rebuilt from committed tables. It means the *upstream* step cannot be re-run here.
-CLUSTER_ROOT = Path("/share/data/cellprofiler/automation/results")
 
+# notebook -> the experiment whose CellProfiler output it sorts
+NEEDS_CP_INPUT = {
+    "analysis/1_Data/exp1_main/1_FeatureSorting.ipynb": "exp1_main",
+    "analysis/1_Data/exp2_spheroid_size/1_FeatureSorting.ipynb": "exp2_spheroid_size",
+    "analysis/1_Data/exp3_clearing_mag_z/1_FeatureSorting.ipynb": "exp3_clearing_mag_z",
+    "analysis/1_Data/exp4_objective/1_FeatureSorting.ipynb": "exp4_objective",
+}
+
+# These read tiers absent from S-BIAD2254 (per-plate QC tables, featICF_spheroid, and
+# the raw image tree), so only the cluster will do.
 NEEDS_CLUSTER = {
-    "analysis/1_Data/exp1_main/1_FeatureSorting.ipynb",
-    "analysis/1_Data/exp2_spheroid_size/1_FeatureSorting.ipynb",
-    "analysis/1_Data/exp3_clearing_mag_z/1_FeatureSorting.ipynb",
-    "analysis/1_Data/exp4_objective/1_FeatureSorting.ipynb",
     "analysis/2_Processing/exp1_main/Pycytominer_MIP.ipynb",
     "analysis/4_BioImageArchive/4_ImageBioArchive_Metadata.ipynb",
 }
@@ -95,9 +109,16 @@ NEEDS_FEATURES = {
 
 def unavailable(rel: str) -> str | None:
     """Why ``rel`` cannot run here, or None if it can."""
-    if rel in NEEDS_CLUSTER and not CLUSTER_ROOT.is_dir():
-        return (f"needs raw CellProfiler output at {CLUSTER_ROOT} (pharmbio cluster only; "
-                "the profile tables it would produce ship in data/)")
+    if rel in NEEDS_CLUSTER and not CLUSTER_CP_RESULTS.is_dir():
+        return (f"needs the QC / featICF_spheroid tier under {CLUSTER_CP_RESULTS}, which "
+                "S-BIAD2254 does not carry (pharmbio cluster only)")
+    exp_cp = NEEDS_CP_INPUT.get(rel)
+    if exp_cp is not None:
+        src = cellprofiler_results(exp_cp)
+        if not src.is_dir():
+            return (f"needs raw CellProfiler output; none found at {src}. Fetch it with "
+                    "`python run_all.py --stage 0_Download` (6.88 GB), or set "
+                    "COLOPAINT3D_CP_RESULTS. The tables it would produce ship in data/")
     exp = NEEDS_FEATURES.get(rel)
     if exp is not None:
         d = DATA_ROOT / "features" / exp
@@ -204,6 +225,12 @@ def discover(figure: str | None = None, stage: str | None = None,
         if name in present:
             groups.append(name)
     groups += [n for n in present if n not in ORDERED_STAGES and n not in NON_FIGURE]
+
+    # Opt-in stages appear only when asked for by name. Kept out of the default run
+    # rather than out of ORDERED_STAGES, so --stage 0_Download still finds it and it
+    # still sorts ahead of 1_Data when it does run.
+    if stage is None:
+        groups = [g for g in groups if g not in OPT_IN_STAGES]
 
     # --skip accepts a stage name (1_Data) or any spelling of a figure folder
     # (SupplFig3 / Figure3 / 3_SupplFigure3), so it reads the same as --figure.

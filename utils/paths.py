@@ -27,7 +27,7 @@ __all__ = [
     "EXTERNAL_ROOT",
     "EXPERIMENTS", "UPSTREAM_NAMES",
     "profiles", "features", "feature_output", "figdir", "source_data", "analysis", "data_dir",
-    "metadata", "external", "require",
+    "metadata", "external", "require", "cellprofiler_results",
 ]
 
 # paths.py lives at <repo>/utils/paths.py, so the root is two levels up. This is
@@ -45,6 +45,10 @@ EXTERNAL_ROOT = Path(os.environ.get("COLOPAINT3D_EXTERNAL",
                                     "/share/data/analyses/christa/colopaint3D"))
 SOURCE_DATA_ROOT = REPO_ROOT / "source_data"
 ANALYSIS_ROOT = REPO_ROOT / "analysis"
+
+# Raw CellProfiler output, the input to 1_FeatureSorting. On the pharmbio cluster this
+# is a mount; everyone else downloads it from the BioImage Archive into DATA_ROOT.
+CLUSTER_CP_RESULTS = Path("/share/data/cellprofiler/automation/results")
 
 # The three experiments in the paper. Keys are used everywhere; the values record
 # which upstream folder each came from, so the port stays traceable.
@@ -184,6 +188,31 @@ def metadata(name: str, exp: str = "exp1_main") -> Path:
     """Path to a plate/compound metadata table shipped with the analysis."""
     _check_experiment(exp)
     return ANALYSIS_ROOT / "1_Data" / exp / name
+
+
+def cellprofiler_results(exp: str = "exp1_main") -> Path:
+    """Where the raw CellProfiler output tables live, for ``1_FeatureSorting``.
+
+    Three sources, tried in order:
+
+    1. ``COLOPAINT3D_CP_RESULTS`` — an explicit override, always wins;
+    2. ``<DATA_ROOT>/cellprofiler_results/<exp>`` — the copy fetched from the
+       BioImage Archive by ``analysis/0_Download``;
+    3. the pharmbio cluster mount.
+
+    The returned path is not guaranteed to exist: only the cluster fallback is
+    returned unconditionally, so that the error a user without any of the three
+    sees names the cluster rather than a directory they have never heard of.
+    Pass it through :func:`require` if you need it to be present.
+    """
+    _check_experiment(exp)
+    override = os.environ.get("COLOPAINT3D_CP_RESULTS")
+    if override:
+        return Path(override)
+    downloaded = DATA_ROOT / "cellprofiler_results" / exp
+    if downloaded.is_dir() and any(downloaded.iterdir()):
+        return downloaded
+    return CLUSTER_CP_RESULTS
 
 
 def require(path: Path, hint: str | None = None) -> Path:

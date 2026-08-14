@@ -39,21 +39,35 @@ so they do not re-derive. The manuscript is being updated to match this version.
 
 ## External actions
 
-- [ ] **BioImage Archive accession.** Nothing in the repo has one; `download_images.py` is
-      a scaffold and `CITATION.cff` has a placeholder.
-- [ ] **A public source for the processed profile tables.** `data/` is ~650 MB, is
-      gitignored, and `download_data.py` has no URL — so a clone currently cannot run any
-      figure. This is the single biggest reproducibility gap. Deposit `data/` and set
-      `COLOPAINT3D_DATA_URL`.
-- [ ] **CellProfiler `.cppipe` pipelines and Cellpose models are in no repository.** Raw
-      images alone do not reproduce the features, so the image deposition does not close
-      the loop by itself.
+- [ ] **The 18 CellProfiler tables in S-BIAD2254 are truncated — re-upload them.**
+      Every one of `results/PB0001{37..42}/featICF_{nuclei,cells,cytoplasm}.parquet`
+      starts with the `PAR1` magic but has no closing `PAR1` footer, so none can be
+      opened; all 18 sizes are exact multiples of 64 KiB, which is the signature of an
+      interrupted upload. Confirmed against the server with Range requests, not just a
+      local download, and against a cluster original (1.35 GB vs the deposited 234 MB
+      for PB000137 nuclei). `analysis/0_Download` now checks the footer and refuses to
+      finish, so this cannot pass silently once fixed.
+- [ ] **Upload the processed profile tables** to S-BIAD2254 as `processed_profiles/`
+      (68 files, 547 MB — `data/` minus `features/`). `scripts/data_manifest.tsv` already
+      lists them with sha256. Until then a clone cannot draw any figure. If the folder is
+      named something other than `processed_profiles`, change `BIA_DATA_SUBDIR` in
+      `scripts/download_data.py`.
 - [ ] **Deposition covers exp1 only** (PB000137–142). The 2D monolayer arm and the exp2 /
-      exp3 / exp4 robustness runs have no raw-data deposition.
+      exp3 / exp4 robustness runs have no raw-data deposition, so for those panels the
+      processed tables are the only reproducible artefact — worth one sentence in Data
+      Availability.
 - [ ] **RNA-seq DGE tables** (`3_Figure6/DEG/data`, ~11 MB) are inputs that nothing in the
       repo can regenerate. They need a GEO/ArrayExpress accession or to travel with the
       release.
+- [ ] Fill the accession into `CITATION.cff`.
 - [ ] Pin `gseapy` (Figure 6 hallmark panels); it is present in neither analysis venv.
+
+### Closed
+
+- ~~CellProfiler `.cppipe` pipelines and Cellpose models are in no repository.~~ They are
+  in the deposit, under `feature_extraction/`
+  (`HMPSC_FEAT_ICFImg_Cellpose_v2_152219_spheroids_v3.cppipe`, plus the `CP_2023*`
+  folders). Acquisition configs are there too, under `image_acquisition/`.
 
 ## Known cosmetic defects
 

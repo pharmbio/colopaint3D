@@ -61,3 +61,6 @@ __pycache__/
 # of the method a reader cannot reconstruct from the notebooks.
 !/acquisition/
 !/acquisition/**
+
+# Scratch comparison renders — working notes, not part of the release
+/checks/

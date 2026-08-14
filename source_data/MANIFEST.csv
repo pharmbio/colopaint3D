@@ -2,14 +2,14 @@ panel,figure,source_data,figure_files,notebook,n_rows,caption,written_utc
 Fig2d,Fig2,Fig2d.csv,Fig2d.pdf,analysis/3_Figure2/CellCoverage/3_CellCoverage.ipynb,1470,"Cells per spheroid per z-slice and in total, DMSO wells, both cell lines",2026-08-14T16:16:46Z
 Fig2e,Fig2,Fig2e.csv,Fig2e.pdf,analysis/3_Figure2/CellDetectionSanityCheck/3_DuplicateDetections.ipynb,126,"Detections per cell through the z-stack, by cell line",2026-08-14T16:17:02Z
 Fig2f,Fig2,Fig2f.csv,Fig2f.pdf,analysis/3_Figure2/CellDetectionSanityCheck/3_Plot_Spheroids.ipynb,1813,"Detected cell centroids through a spheroid, HCT116",2026-08-14T16:17:40Z
-Fig2g_after,Fig2,Fig2g_after.csv,Fig2g_after.pdf,analysis/3_Figure2/RemoveNoise/5_PCA_RemoveNoise_BatchStratified.ipynb,348,"PCA after batch stratification, HCT116",2026-08-14T16:18:42Z
-Fig2g_before,Fig2,Fig2g_before.csv,Fig2g_before.pdf,analysis/3_Figure2/RemoveNoise/5_PCA_RemoveNoise_BatchStratified.ipynb,348,"PCA before batch stratification, HCT116",2026-08-14T16:18:41Z
+Fig2g_after,Fig2,Fig2g_after.csv,Fig2g_after.pdf,analysis/3_Figure2/RemoveNoise/5_PCA_RemoveNoise_BatchStratified.ipynb,348,"PCA after batch stratification, HCT116",2026-08-14T18:34:16Z
+Fig2g_before,Fig2,Fig2g_before.csv,Fig2g_before.pdf,analysis/3_Figure2/RemoveNoise/5_PCA_RemoveNoise_BatchStratified.ipynb,348,"PCA before batch stratification, HCT116",2026-08-14T18:34:15Z
 Fig3c,Fig3,Fig3c.csv,Fig3c.pdf,analysis/3_Figure3/3_GritScores_Fig3cd.ipynb,199,"Grit scores per compound, MIP",2026-08-14T17:35:11Z
 Fig3d,Fig3,Fig3d.csv,Fig3d.pdf,analysis/3_Figure3/3_GritScores_Fig3cd.ipynb,225,"Grit scores per compound, scAgg",2026-08-14T17:35:14Z
 Fig3e,Fig3,Fig3e.csv,Fig3e.pdf,analysis/3_Figure3/3_PercentReplicating.ipynb,2059,"Median pairwise Pearson correlation by concentration step, replicate vs null, MIP",2026-08-14T17:35:35Z
 Fig3f,Fig3,Fig3f.csv,Fig3f.pdf,analysis/3_Figure3/3_PercentReplicating.ipynb,2059,"Median pairwise Pearson correlation by concentration step, replicate vs null, aggregates",2026-08-14T17:35:55Z
-Fig3g,Fig3,Fig3g.csv,Fig3g.pdf,analysis/3_Figure3/3_Fig3gh_MIP_vs_Aggregates.ipynb,395,"Replicate correlation, MIP vs aggregates, coloured by concentration step",2026-08-14T17:34:52Z
-Fig3h,Fig3,Fig3h.csv,Fig3h.pdf,analysis/3_Figure3/3_Fig3gh_MIP_vs_Aggregates.ipynb,395,"Replicate correlation, MIP vs aggregates, coloured by pathway",2026-08-14T17:34:53Z
+Fig3g,Fig3,Fig3g.csv,Fig3g.pdf,analysis/3_Figure3/4_Fig3gh_MIP_vs_Aggregates.ipynb,383,"Replicate correlation, MIP vs aggregates, coloured by concentration step",2026-08-14T18:40:50Z
+Fig3h,Fig3,Fig3h.csv,Fig3h.pdf,analysis/3_Figure3/4_Fig3gh_MIP_vs_Aggregates.ipynb,383,"Replicate correlation, MIP vs aggregates, coloured by pathway",2026-08-14T18:40:51Z
 Fig4a,Fig4,Fig4a.csv,Fig4a.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,677,"Supervised UMAP coloured by pathway, HCT116 MIP",2026-08-14T17:58:18Z
 Fig4b,Fig4,Fig4b.csv,Fig4b.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,747,"Supervised UMAP coloured by pathway, HCT116 aggregates",2026-08-14T18:11:37Z
 Fig4c,Fig4,Fig4c.csv,Fig4c.pdf,analysis/3_Figure4/PCAUMAP_pathway_v2.ipynb,252,"Unsupervised UMAP, KMeans clusters vs pathway, HCT116 MIP",2026-08-14T17:58:24Z
@@ -52,5 +52,5 @@ SupplFig5a,SupplFig5,SupplFig5a.csv,SupplFig5a.pdf,analysis/3_Figure4/PCAUMAP_pa
 SupplFig5b,SupplFig5,SupplFig5b.csv,SupplFig5b.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,47,"Pairwise compound similarity clustermap, HT29 2D",2026-08-14T17:57:39Z
 SupplFig5c,SupplFig5,SupplFig5c.csv,SupplFig5c.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,528,"2D minus 3D pairwise similarity, HT29",2026-08-14T17:57:42Z
 SupplFig5d,SupplFig5,SupplFig5d.csv,SupplFig5d.pdf,analysis/3_SupplFigure5/S_dose_similarity_5FU_Olaparib.ipynb,41,"Dose-resolved 5-FU vs olaparib similarity, 2D vs 3D",2026-08-14T16:36:52Z
-SupplFig5e,SupplFig5,SupplFig5e.csv,SupplFig5e.pdf,analysis/3_SupplFigure5/3_SupplFig5e_moa_class.ipynb,1275,"Drug-pair similarity 2D vs 3D, coloured by MoA pair class, HCT116",2026-08-14T18:19:07Z
+SupplFig5e,SupplFig5,SupplFig5e.csv,SupplFig5e.pdf,analysis/3_SupplFigure5/3_SupplFig5e_moa_class.ipynb,1275,"Drug-pair similarity 2D vs 3D, coloured by MoA pair class, HCT116",2026-08-14T18:24:49Z
 SupplFig6b,SupplFig6,SupplFig6b.csv,SupplFig6b.pdf,analysis/3_Figure6/DEG/hallmark_nes_scatter.ipynb,30,Gene-set signatures — HCT116 spheroids,2026-08-14T16:29:10Z

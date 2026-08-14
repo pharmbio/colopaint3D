@@ -19,13 +19,29 @@ conda env create -f environment.yml
 conda activate colopaint3d
 # There is no package to install — helpers are imported from utils/ directly.
 
-# 2. Processed profile tables (~147 MB)
+# 2. Processed profile tables (241 MB; --include-normalized adds 306 MB for Fig 2g)
 python scripts/download_data.py
 
 # 3. See what would run, then run it
 python run_all.py --dry-run
 python run_all.py
 ```
+
+### Three ways in, depending on how far back you want to start
+
+| you want | fetch | then |
+|---|---|---|
+| **the figures** | `python scripts/download_data.py` (241 MB) | `python run_all.py` |
+| **to re-derive the profile tables** from CellProfiler output | `python run_all.py --stage 0_Download` (6.88 GB, and ~40 GB free once `1_FeatureSorting` writes its `FeaturesImages_*` tree) | `python run_all.py --stage 1_Data` |
+| **to re-extract features from images** | the raw OME-TIFFs and `feature_extraction/*.cppipe` from the archive | CellProfiler, outside this repo |
+
+Almost everyone wants the first row: the figures never read images or raw CellProfiler
+output, only the processed tables. Stage `0_Download` is excluded from a bare
+`run_all.py` for that reason — it is a large download you should ask for deliberately.
+
+Everything comes from BioImage Archive accession **S-BIAD2254**. Notebooks that need an
+input tier you do not have are skipped with an explanation naming it, rather than failing
+part-way through a run.
 
 Individual figures, and checking the result:
 

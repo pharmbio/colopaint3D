@@ -36,9 +36,11 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import http.client
 import os
 import shutil
 import sys
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -49,9 +51,27 @@ from utils.paths import DATA_ROOT, UPSTREAM_NAMES  # noqa: E402
 
 MANIFEST = Path(__file__).resolve().parent / "data_manifest.tsv"
 
-# Base URL of the published dataset. Set once the data is deposited; until then
-# --from-local is the way to populate data/.
-BASE_URL = os.environ.get("COLOPAINT3D_DATA_URL", "").rstrip("/")
+# The BioImage Archive deposition. `Files/` is the root of everything in the study:
+# spher-colo52/ (raw OME-TIFFs), results/ (CellProfiler output + segmentation masks),
+# feature_extraction/ (the .cppipe and Cellpose folders) and image_acquisition/.
+BIA_ACCESSION = "S-BIAD2254"
+BIA_FILES_URL = ("https://ftp.ebi.ac.uk/biostudies/fire/S-BIAD/254/"
+                 f"{BIA_ACCESSION}/Files")
+
+# Folder inside the deposit holding the processed profile tables. Must match the name
+# used when uploading; change it here rather than in several places.
+BIA_DATA_SUBDIR = "processed_profiles"
+
+# Base URL of the published profile tables. Override with COLOPAINT3D_DATA_URL to point
+# somewhere else (a mirror, a staging copy, a Zenodo record).
+BASE_URL = os.environ.get("COLOPAINT3D_DATA_URL",
+                          f"{BIA_FILES_URL}/{BIA_DATA_SUBDIR}").rstrip("/")
+
+# Raw CellProfiler output: 3 objects x 6 plates, 6.88 GB. Not a tier in the manifest --
+# it is fetched per-plate by analysis/0_Download, which needs the per-plate image_id/cp_id
+# from the shipped metadata to know where each file goes.
+CP_PLATES = ["PB000137", "PB000138", "PB000139", "PB000140", "PB000141", "PB000142"]
+CP_OBJECTS = ["featICF_nuclei", "featICF_cells", "featICF_cytoplasm"]
 
 # Where each destination subtree came from upstream, as
 #   dest_subdir -> (upstream experiment folder, relative results path, glob, tier)
@@ -85,8 +105,40 @@ def read_manifest() -> list[dict]:
     return list(csv.DictReader(lines, delimiter="\t"))
 
 
+def _tier_for(rel: str) -> str:
+    """Which download tier a path belongs to."""
+    return "normalized" if Path(rel).name.startswith("normalized_data_") else "required"
+
+
+def write_manifest_from_data() -> int:
+    """Hash ``data/`` itself, rather than the upstream checkout it was copied from.
+
+    This is the manifest that matches what gets deposited: once a table has been
+    regenerated locally it no longer matches upstream, and a manifest describing files
+    nobody will download is worse than none. ``features/`` and ``cellprofiler_results/``
+    are excluded — they are separate tiers, far too large to ship with the profiles.
+    """
+    rows: list[dict] = []
+    for path in sorted(DATA_ROOT.rglob("*")):
+        if not path.is_file():
+            continue
+        rel = path.relative_to(DATA_ROOT).as_posix()
+        if rel.startswith(("features/", "cellprofiler_results/")):
+            continue
+        rows.append({
+            "path": rel,
+            "size_bytes": str(path.stat().st_size),
+            "sha256": sha256(path),
+            "tier": _tier_for(rel),
+        })
+        print(f"  hashed {rel}")
+    return _save_manifest(rows)
+
+
 def write_manifest(source: Path) -> int:
     """Build the checksum manifest from a local copy of the data."""
+    if source.resolve() == DATA_ROOT.resolve():
+        return write_manifest_from_data()
     rows: list[dict] = []
     for dest_sub, exp, results_rel, pattern, tier in SOURCE_MAP:
         src_dir = source / UPSTREAM_NAMES[exp] / results_rel
@@ -106,6 +158,10 @@ def write_manifest(source: Path) -> int:
             )
             print(f"  hashed {dest_sub}/{path.name}")
 
+    return _save_manifest(rows)
+
+
+def _save_manifest(rows: list[dict]) -> int:
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     with MANIFEST.open("w", newline="") as fh:
         fh.write("# Processed profile tables for the colopaint3D paper analysis.\n")
@@ -152,26 +208,85 @@ def fetch_local(row: dict, source: Path, link: bool) -> None:
     raise FileNotFoundError(f"{row['path']} not found under {source} (experiment {exp})")
 
 
+def fetch_url(url: str, dest: Path, skip_existing: bool = True,
+              attempts: int = 4) -> Path:
+    """Stream ``url`` to ``dest``, via a .part file so a kill cannot leave a truncated
+    table that looks complete.
+
+    Retries on transient network errors: the CellProfiler tier is 6.88 GB across 18
+    files of ~400 MB each, and EBI drops a connection often enough that a single-shot
+    fetch will not get through the set. Retries are whole-file, not ranged — the archive
+    does not reliably honour Range on these objects, and a silently-resumed-wrong file
+    is worse than a slow one.
+
+    Shared with ``analysis/0_Download``, so both fetchers behave the same way and there
+    is one place where download semantics live.
+    """
+    dest = Path(dest)
+    if skip_existing and dest.exists() and dest.stat().st_size > 0:
+        return dest
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dest.with_suffix(dest.suffix + ".part")
+    req = urllib.request.Request(url, headers={"User-Agent": "colopaint3D-paper/1.0"})
+
+    for attempt in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=120) as resp, tmp.open("wb") as out:
+                expected = resp.headers.get("Content-Length")
+                shutil.copyfileobj(resp, out, CHUNK)
+            if expected is not None and tmp.stat().st_size != int(expected):
+                raise OSError(f"short read: {tmp.stat().st_size} of {expected} bytes")
+            tmp.replace(dest)
+            return dest
+        except (urllib.error.URLError, OSError, http.client.HTTPException) as exc:
+            tmp.unlink(missing_ok=True)
+            if attempt == attempts:
+                raise SystemExit(
+                    f"download failed for {url} after {attempts} attempts: {exc}")
+            wait = 2 ** attempt
+            print(f"    retry {attempt}/{attempts - 1} in {wait}s ({exc})", flush=True)
+            time.sleep(wait)
+    return dest  # unreachable
+
+
+def check_parquet_intact(path: Path) -> str | None:
+    """Return a complaint if ``path`` is not a complete parquet file, else None.
+
+    A parquet file opens and closes with the 4-byte magic ``PAR1``; the footer holds the
+    schema, so a file missing it is unreadable no matter how much of the data arrived.
+    Checked here because a truncated upload is indistinguishable from a good one by size
+    alone — Content-Length matches whatever was actually stored — and the failure would
+    otherwise surface as an opaque pyarrow error hours later.
+    """
+    if not path.exists():
+        return "missing"
+    size = path.stat().st_size
+    if size < 8:
+        return f"too small ({size} bytes)"
+    with path.open("rb") as fh:
+        head = fh.read(4)
+        fh.seek(-4, os.SEEK_END)
+        tail = fh.read(4)
+    if head != b"PAR1":
+        return "not a parquet file (bad header)"
+    if tail != b"PAR1":
+        extra = ("; size is an exact multiple of 64 KiB, which is the signature of an "
+                 "interrupted upload" if size % 65536 == 0 else "")
+        return f"truncated — no PAR1 footer{extra}"
+    return None
+
+
 def fetch_remote(row: dict) -> None:
     if not BASE_URL:
         raise SystemExit(
-            "No dataset URL configured yet — the data has not been deposited.\n"
-            "Populate from a local checkout instead:\n"
+            "No dataset URL configured — set COLOPAINT3D_DATA_URL, or populate from a "
+            "local checkout instead:\n"
             "    python scripts/download_data.py --from-local "
-            "/share/data/analyses/christa/colopaint3D --link\n"
-            "or set COLOPAINT3D_DATA_URL to the published dataset base URL."
+            "/share/data/analyses/christa/colopaint3D --link"
         )
-    url = f"{BASE_URL}/{row['path']}"
-    dest = DATA_ROOT / row["path"]
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    tmp = dest.with_suffix(dest.suffix + ".part")
-    try:
-        with urllib.request.urlopen(url) as resp, tmp.open("wb") as out:
-            shutil.copyfileobj(resp, out, CHUNK)
-    except urllib.error.URLError as exc:
-        tmp.unlink(missing_ok=True)
-        raise SystemExit(f"download failed for {url}: {exc}")
-    tmp.replace(dest)
+    # skip_existing=False: the caller has already decided this file needs (re)fetching,
+    # having checked size and sha256 against the manifest.
+    fetch_url(f"{BASE_URL}/{row['path']}", DATA_ROOT / row["path"], skip_existing=False)
 
 
 def main() -> int:
@@ -185,7 +300,8 @@ def main() -> int:
     ap.add_argument("--check", action="store_true",
                     help="verify files already in data/ against the manifest, then exit")
     ap.add_argument("--write-manifest", type=Path, metavar="DIR",
-                    help="regenerate the checksum manifest from a local checkout")
+                    help="regenerate the checksum manifest from a local checkout; pass "
+                         "the data/ directory itself to hash what will be deposited")
     ap.add_argument("--include-normalized", action="store_true",
                     help="also fetch the 598 MB normalized_data_*.csv (Figure 2 PCA only)")
     ap.add_argument("--force", action="store_true", help="re-fetch files that already verify")
