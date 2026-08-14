@@ -48,21 +48,23 @@ and later overwritten. Not rebuilt: reconstructing it would mean guessing the do
 pathway encodings. The `perc_replicating_conc_*.csv` that `3_PercentReplicating` writes
 is the input it would need.
 
-**Two pinned packages cannot be imported at all.** `cytominer-eval==0.1` uses `np.float`
-(removed in numpy 1.24); `pycytominer==0.2.0` imports `scipy.stats.median_absolute_deviation`
-(removed in scipy 1.7). Between them they block:
+**`requirements.txt` did not resolve.** `statsmodels==0.14.6` requires numpy ≥1.22.3
+against the pinned `numpy==1.22.0`, so `pip install -r requirements.txt` — and therefore
+the documented `conda env create -f environment.yml` — exited `ResolutionImpossible`.
+statsmodels is a transitive dependency of `copairs`, not a direct import; **unpinned it
+resolves to 0.14.1**, which is numpy-1.22 compatible. Fixed. Same class as the missing
+scikit-learn pin.
 
-| Notebook | Panel | Package |
-|---|---|---|
-| `2_Processing/exp1_main/3_GritScores` | — (writes `grit_data_*`) | cytominer-eval |
-| `3_SupplFigure5/S_dose_similarity_5FU_Olaparib` | **Suppl 5d** | cytominer-eval |
-| `3_Figure2/RemoveNoise/Prepare_Slice_Features` | — (writes the PCA inputs) | pycytominer |
-| `2_Processing/exp4_objective/*` | **Suppl 4h, 4i** (via missing exp4 profiles) | pycytominer |
+`cytominer-eval==0.1` and `pycytominer==0.2.0` import **fine** under the declared stack
+(python 3.10, numpy 1.22.0, scipy 1.7.3, pandas 1.5.2). Earlier notes here claiming
+otherwise were written from a python 3.11 / numpy 2 / pandas 3 interpreter and were wrong.
+Build the environment before concluding a notebook is blocked.
 
-The pins predate the current scientific stack; `requirements-frozen.txt` is the environment
-they were written against, and a numpy/scipy downgrade would conflict with the pandas ≥2
-assumption elsewhere. Same class of defect as the missing scikit-learn pin. Fig 5a used to
-live in `3_GritScores` and no longer depends on it (see below).
+**The expert-annotation `.npy` masks were written by numpy 2** (they reference
+`numpy._core`) and cannot be unpickled by the pinned numpy 1.22. Suppl 2d does not need
+them — it is drawn from the committed `segmentation_iou_cached.csv` — but the notebook's
+`HAVE_MASKS` flag was computed and never consulted, so it died mid-load instead of falling
+back. It now probes readability and uses the cache.
 
 **Fig 5b / Suppl 5a — 2D UMAP unverified.** `PCAUMAP_pathway_v2` supports `data_type='2D'`
 but no 2D output survives upstream. Marked `UNVERIFIED` in its `PANEL` map.
@@ -156,8 +158,6 @@ Still not produced, and why:
 
 | Panel | Blocked on |
 |---|---|
-| Fig 2e | no plotting code anywhere; inputs are committed |
 | Fig 3g/3h | code lost (above) |
 | Fig 5f (2D/3D) | `normalize_feat` missing; cells guarded, not deleted |
-| Suppl 5d | `cytominer-eval` cannot import (above) |
 | Suppl 4h ×6, 4i ×3 | exp4 profiles absent from `data/`; regenerating them needs `pycytominer`, which cannot import (above). The notebooks themselves are fixed and ready |
