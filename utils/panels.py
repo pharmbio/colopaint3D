@@ -173,8 +173,10 @@ def save_panel(
         )
 
     figure = panel_figure(panel)
-    name_slug = slug or (_slug(caption) if caption else "source_data")
-    table_path = SOURCE_DATA_ROOT / f"{panel}_{name_slug}.csv"
+    # Named for the panel alone: source_data/Fig5c.csv. The description lives in the
+    # manifest's caption column, so the filename does not have to carry it, and a
+    # reader looking for a panel's data can find it without consulting the manifest.
+    table_path = SOURCE_DATA_ROOT / f"{panel}.csv"
     SOURCE_DATA_ROOT.mkdir(parents=True, exist_ok=True)
     n_rows = _write_table(data, table_path)
 
