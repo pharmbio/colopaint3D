@@ -43,12 +43,17 @@ NON_FIGURE = {"1_Data", "2_Processing", "4_BioImageArchive"}
 SKIP_PARTS = {".ipynb_checkpoints", "__pycache__", ".venv"}
 
 # Notebooks that overwrite shipped data tables in place and whose output is not
-# bit-reproducible. Prepare_Slice_Features rewrites normalized_data_merged_HCT116.csv
-# with 779 selected features where the published file has 781, which visibly moves
-# Fig 2g. Skipped by default; --include-destructive runs them anyway.
-DESTRUCTIVE = {
-    "analysis/3_Figure2/RemoveNoise/Prepare_Slice_Features.ipynb",
-}
+# bit-reproducible. Skipped by default; --include-destructive runs them anyway.
+#
+# Prepare_Slice_Features used to be listed here: it rebuilds
+# normalized_data_merged_HCT116.csv, and its rebuild keeps 779 selected features where
+# the file shipped with the port has 781, which moves Fig 2g's variance-explained
+# figures. It now runs by default, because a figure the repo cannot rebuild from its own
+# data is the worse problem: the panel is regenerated from data/exp1_main rather than
+# inherited. The 781-feature input is kept alongside as
+# normalized_data_merged_HCT116.as_shipped.csv. The slice effect is unchanged either way
+# (eta2 0.64 -> 0.05); only the percentages move.
+DESTRUCTIVE: set[str] = set()
 
 # Notebooks parameterised by cell line and/or data type. Each reads its parameters
 # from the environment, defaulting to the value it used to hardcode, so one notebook
