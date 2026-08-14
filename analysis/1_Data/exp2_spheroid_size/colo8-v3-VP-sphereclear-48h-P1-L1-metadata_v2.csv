@@ -1,0 +1,385 @@
+layout_id,well_id,image_id,cp_id,barcode,plate_well,cmpd_code,cmpdname,solvent,cmpd_conc,cmpd_conc_unit,stock_conc,stock_conc_unit,cmpd_vol,cmpd_vol_unit,well_vol,well_vol_unit,pert_type,article_id,target,pathway,pubchemID,smiles,inkey,target_type,clinical_status,cell_line
+pilot3_withoutWGA_01BSA_run2,A01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A01,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A02,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A03,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A04,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A05,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A06,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A07,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A08,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B01,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B02,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B03,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B04,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B05,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B06,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B07,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B08,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C01,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C02,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C03,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C04,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C05,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C06,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C07,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C08,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D01,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D02,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D03,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D04,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D05,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D06,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D07,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D08,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E01,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E02,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E03,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E04,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E05,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E06,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E07,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E08,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F01,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F02,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F03,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F04,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F05,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F06,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F07,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F08,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G01,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G02,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G03,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G04,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G05,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G06,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G07,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G08,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H01,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H02,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H03,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H04,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H05,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H06,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H07,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H08,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A09,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A10,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A11,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A12,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A13,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A14,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A15,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A16,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B09,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B10,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B11,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B12,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B13,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B14,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B15,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B16,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C09,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C10,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C11,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C12,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C13,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C14,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C15,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C16,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D09,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D10,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D11,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D12,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D13,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D14,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D15,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D16,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E09,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E10,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E11,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E12,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E13,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E14,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E15,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E16,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F09,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F10,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F11,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F12,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F13,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F14,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F15,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F16,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G09,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G10,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G11,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G12,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G13,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G14,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G15,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G16,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H09,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H10,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H11,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H12,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H13,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H14,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H15,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H16,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A17,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A18,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A19,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A20,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A21,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A22,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A23,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,A24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_A24,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B17,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B18,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B19,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B20,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B21,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B22,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B23,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,B24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_B24,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C17,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C18,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C19,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C20,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C21,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C22,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C23,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,C24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_C24,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D17,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D18,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D19,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D20,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D21,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D22,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D23,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,D24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_D24,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E17,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E18,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E19,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E20,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E21,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E22,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E23,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,E24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_E24,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F17,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F18,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F19,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F20,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F21,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F22,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F23,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,F24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_F24,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G17,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G18,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G19,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G20,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G21,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G22,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G23,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,G24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_G24,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H17,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H18,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H19,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H20,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H21,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H22,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H23,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,H24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_H24,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I01,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I02,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I03,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I04,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I05,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I06,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I07,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I08,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J01,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J02,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J03,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J04,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J05,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J06,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J07,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J08,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K01,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K02,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K03,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K04,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K05,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K06,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K07,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K08,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L01,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L02,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L03,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L04,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L05,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L06,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L07,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L08,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M01,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M02,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M03,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M04,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M05,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M06,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M07,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M08,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N01,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N02,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N03,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N04,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N05,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N06,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N07,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N08,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O01,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O02,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O03,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O04,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O05,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O06,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O07,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O08,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P01,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P01,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P02,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P02,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P03,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P03,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P04,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P04,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P05,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P05,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P06,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P06,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P07,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P07,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P08,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P08,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I09,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I10,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I11,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I12,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I13,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I14,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I15,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I16,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J09,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J10,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J11,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J12,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J13,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J14,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J15,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J16,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K09,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K10,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K11,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K12,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K13,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K14,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K15,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K16,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L09,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L10,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L11,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L12,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L13,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L14,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L15,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L16,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M09,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M10,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M11,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M12,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M13,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M14,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M15,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M16,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N09,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N10,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N11,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N12,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N13,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N14,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N15,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N16,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O09,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O10,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O11,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O12,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O13,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O14,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O15,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O16,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P09,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P09,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P10,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P10,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P11,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P11,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P12,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P12,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P13,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P13,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P14,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P14,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P15,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P15,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P16,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P16,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I17,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I18,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I19,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I20,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I21,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I22,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I23,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,I24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_I24,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J17,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J18,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J19,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J20,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J21,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J22,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J23,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,J24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_J24,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K17,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K18,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K19,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K20,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K21,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K22,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K23,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,K24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_K24,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L17,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L18,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L19,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L20,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L21,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L22,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L23,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,L24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_L24,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M17,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M18,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M19,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M20,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M21,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M22,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M23,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,M24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_M24,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N17,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N18,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N19,colo-028,gemcitabine,dmso,0.3,µM,1.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N20,colo-009,olaparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N21,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N22,colo-041,binimetinib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N23,colo-044,abemaciclib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,N24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_N24,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O17,colo-002,veliparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O18,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O19,ref-002,fenbendazole,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O20,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O21,colo-002,veliparib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O22,colo-028,gemcitabine,dmso,1.0,µM,1.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O23,ref-003,berberine chloride,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,O24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_O24,colo-040,sn-38,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P17,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P17,colo-009,olaparib,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P18,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P18,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P19,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P19,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,60.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P20,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P20,ref-001,etoposide,dmso,2.5,µM,10.0,mM,15.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P21,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P21,colo-040,sn-38,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P22,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P22,dmso,dmso,dmso,0.1,µM,100.0,mM,60.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P23,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P23,colo-020,fluorouracil,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+pilot3_withoutWGA_01BSA_run2,P24,7548,12142,pilot3_withoutWGA_01BSA_run2,pilot3_withoutWGA_01BSA_run2_P24,colo-029,trifluridine,dmso,3.0,µM,10.0,mM,17.5,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116

@@ -1,0 +1,769 @@
+layout_id,well_id,barcode,plate_well,cmpd_code,cmpdname,solvent,cmpd_conc,cmpd_conc_unit,stock_conc,stock_conc_unit,cmpd_vol,cmpd_vol_unit,well_vol,well_vol_unit,pert_type,article_id,target,pathway,pubchemID,smiles,inkey,target_type,clinical_status,cell_line
+colo8-v1-L1-P1,A01,PB100082,PB100082_A01,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A02,PB100082,PB100082_A02,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A03,PB100082,PB100082_A03,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A04,PB100082,PB100082_A04,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A05,PB100082,PB100082_A05,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,A06,PB100082,PB100082_A06,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A07,PB100082,PB100082_A07,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A08,PB100082,PB100082_A08,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B01,PB100082,PB100082_B01,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B02,PB100082,PB100082_B02,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B03,PB100082,PB100082_B03,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B04,PB100082,PB100082_B04,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B05,PB100082,PB100082_B05,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B06,PB100082,PB100082_B06,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B07,PB100082,PB100082_B07,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B08,PB100082,PB100082_B08,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C01,PB100082,PB100082_C01,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C02,PB100082,PB100082_C02,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,C03,PB100082,PB100082_C03,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C04,PB100082,PB100082_C04,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C05,PB100082,PB100082_C05,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C06,PB100082,PB100082_C06,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C07,PB100082,PB100082_C07,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C08,PB100082,PB100082_C08,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D01,PB100082,PB100082_D01,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D02,PB100082,PB100082_D02,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,D03,PB100082,PB100082_D03,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D04,PB100082,PB100082_D04,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,D05,PB100082,PB100082_D05,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D06,PB100082,PB100082_D06,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D07,PB100082,PB100082_D07,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D08,PB100082,PB100082_D08,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E01,PB100082,PB100082_E01,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,E02,PB100082,PB100082_E02,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E03,PB100082,PB100082_E03,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E04,PB100082,PB100082_E04,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E05,PB100082,PB100082_E05,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E06,PB100082,PB100082_E06,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E07,PB100082,PB100082_E07,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,E08,PB100082,PB100082_E08,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F01,PB100082,PB100082_F01,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F02,PB100082,PB100082_F02,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F03,PB100082,PB100082_F03,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F04,PB100082,PB100082_F04,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,F05,PB100082,PB100082_F05,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F06,PB100082,PB100082_F06,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,F07,PB100082,PB100082_F07,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F08,PB100082,PB100082_F08,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G01,PB100082,PB100082_G01,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G02,PB100082,PB100082_G02,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G03,PB100082,PB100082_G03,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G04,PB100082,PB100082_G04,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G05,PB100082,PB100082_G05,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G06,PB100082,PB100082_G06,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G07,PB100082,PB100082_G07,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G08,PB100082,PB100082_G08,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H01,PB100082,PB100082_H01,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H02,PB100082,PB100082_H02,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H03,PB100082,PB100082_H03,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,H04,PB100082,PB100082_H04,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H05,PB100082,PB100082_H05,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H06,PB100082,PB100082_H06,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,H07,PB100082,PB100082_H07,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H08,PB100082,PB100082_H08,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A09,PB100082,PB100082_A09,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A10,PB100082,PB100082_A10,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A11,PB100082,PB100082_A11,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A12,PB100082,PB100082_A12,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A13,PB100082,PB100082_A13,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,A14,PB100082,PB100082_A14,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A15,PB100082,PB100082_A15,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A16,PB100082,PB100082_A16,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B09,PB100082,PB100082_B09,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B10,PB100082,PB100082_B10,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B11,PB100082,PB100082_B11,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B12,PB100082,PB100082_B12,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B13,PB100082,PB100082_B13,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B14,PB100082,PB100082_B14,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B15,PB100082,PB100082_B15,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B16,PB100082,PB100082_B16,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C09,PB100082,PB100082_C09,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C10,PB100082,PB100082_C10,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,C11,PB100082,PB100082_C11,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C12,PB100082,PB100082_C12,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C13,PB100082,PB100082_C13,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C14,PB100082,PB100082_C14,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C15,PB100082,PB100082_C15,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C16,PB100082,PB100082_C16,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D09,PB100082,PB100082_D09,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D10,PB100082,PB100082_D10,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,D11,PB100082,PB100082_D11,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D12,PB100082,PB100082_D12,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,D13,PB100082,PB100082_D13,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D14,PB100082,PB100082_D14,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D15,PB100082,PB100082_D15,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D16,PB100082,PB100082_D16,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E09,PB100082,PB100082_E09,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,E10,PB100082,PB100082_E10,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E11,PB100082,PB100082_E11,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E12,PB100082,PB100082_E12,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E13,PB100082,PB100082_E13,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E14,PB100082,PB100082_E14,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E15,PB100082,PB100082_E15,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,E16,PB100082,PB100082_E16,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F09,PB100082,PB100082_F09,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F10,PB100082,PB100082_F10,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F11,PB100082,PB100082_F11,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F12,PB100082,PB100082_F12,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,F13,PB100082,PB100082_F13,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F14,PB100082,PB100082_F14,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,F15,PB100082,PB100082_F15,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F16,PB100082,PB100082_F16,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G09,PB100082,PB100082_G09,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G10,PB100082,PB100082_G10,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G11,PB100082,PB100082_G11,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G12,PB100082,PB100082_G12,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G13,PB100082,PB100082_G13,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G14,PB100082,PB100082_G14,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G15,PB100082,PB100082_G15,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G16,PB100082,PB100082_G16,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H09,PB100082,PB100082_H09,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H10,PB100082,PB100082_H10,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H11,PB100082,PB100082_H11,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,H12,PB100082,PB100082_H12,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H13,PB100082,PB100082_H13,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H14,PB100082,PB100082_H14,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,H15,PB100082,PB100082_H15,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H16,PB100082,PB100082_H16,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A17,PB100082,PB100082_A17,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A18,PB100082,PB100082_A18,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A19,PB100082,PB100082_A19,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A20,PB100082,PB100082_A20,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A21,PB100082,PB100082_A21,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,A22,PB100082,PB100082_A22,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A23,PB100082,PB100082_A23,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A24,PB100082,PB100082_A24,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B17,PB100082,PB100082_B17,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B18,PB100082,PB100082_B18,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B19,PB100082,PB100082_B19,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B20,PB100082,PB100082_B20,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B21,PB100082,PB100082_B21,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B22,PB100082,PB100082_B22,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B23,PB100082,PB100082_B23,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B24,PB100082,PB100082_B24,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C17,PB100082,PB100082_C17,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C18,PB100082,PB100082_C18,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,C19,PB100082,PB100082_C19,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C20,PB100082,PB100082_C20,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C21,PB100082,PB100082_C21,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C22,PB100082,PB100082_C22,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C23,PB100082,PB100082_C23,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C24,PB100082,PB100082_C24,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D17,PB100082,PB100082_D17,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D18,PB100082,PB100082_D18,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,D19,PB100082,PB100082_D19,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D20,PB100082,PB100082_D20,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,D21,PB100082,PB100082_D21,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D22,PB100082,PB100082_D22,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D23,PB100082,PB100082_D23,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D24,PB100082,PB100082_D24,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E17,PB100082,PB100082_E17,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,E18,PB100082,PB100082_E18,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E19,PB100082,PB100082_E19,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E20,PB100082,PB100082_E20,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E21,PB100082,PB100082_E21,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E22,PB100082,PB100082_E22,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E23,PB100082,PB100082_E23,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,E24,PB100082,PB100082_E24,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F17,PB100082,PB100082_F17,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F18,PB100082,PB100082_F18,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F19,PB100082,PB100082_F19,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F20,PB100082,PB100082_F20,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,F21,PB100082,PB100082_F21,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F22,PB100082,PB100082_F22,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,F23,PB100082,PB100082_F23,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F24,PB100082,PB100082_F24,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G17,PB100082,PB100082_G17,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G18,PB100082,PB100082_G18,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G19,PB100082,PB100082_G19,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G20,PB100082,PB100082_G20,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G21,PB100082,PB100082_G21,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G22,PB100082,PB100082_G22,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G23,PB100082,PB100082_G23,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G24,PB100082,PB100082_G24,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H17,PB100082,PB100082_H17,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H18,PB100082,PB100082_H18,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H19,PB100082,PB100082_H19,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,H20,PB100082,PB100082_H20,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H21,PB100082,PB100082_H21,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H22,PB100082,PB100082_H22,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,H23,PB100082,PB100082_H23,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H24,PB100082,PB100082_H24,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I01,PB100082,PB100082_I01,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I02,PB100082,PB100082_I02,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I03,PB100082,PB100082_I03,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I04,PB100082,PB100082_I04,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I05,PB100082,PB100082_I05,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,I06,PB100082,PB100082_I06,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I07,PB100082,PB100082_I07,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I08,PB100082,PB100082_I08,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J01,PB100082,PB100082_J01,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J02,PB100082,PB100082_J02,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J03,PB100082,PB100082_J03,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J04,PB100082,PB100082_J04,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J05,PB100082,PB100082_J05,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J06,PB100082,PB100082_J06,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J07,PB100082,PB100082_J07,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J08,PB100082,PB100082_J08,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K01,PB100082,PB100082_K01,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K02,PB100082,PB100082_K02,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,K03,PB100082,PB100082_K03,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K04,PB100082,PB100082_K04,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K05,PB100082,PB100082_K05,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K06,PB100082,PB100082_K06,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K07,PB100082,PB100082_K07,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K08,PB100082,PB100082_K08,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L01,PB100082,PB100082_L01,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L02,PB100082,PB100082_L02,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,L03,PB100082,PB100082_L03,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L04,PB100082,PB100082_L04,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,L05,PB100082,PB100082_L05,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L06,PB100082,PB100082_L06,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L07,PB100082,PB100082_L07,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L08,PB100082,PB100082_L08,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M01,PB100082,PB100082_M01,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,M02,PB100082,PB100082_M02,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M03,PB100082,PB100082_M03,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M04,PB100082,PB100082_M04,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M05,PB100082,PB100082_M05,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M06,PB100082,PB100082_M06,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M07,PB100082,PB100082_M07,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,M08,PB100082,PB100082_M08,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N01,PB100082,PB100082_N01,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N02,PB100082,PB100082_N02,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N03,PB100082,PB100082_N03,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N04,PB100082,PB100082_N04,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,N05,PB100082,PB100082_N05,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N06,PB100082,PB100082_N06,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,N07,PB100082,PB100082_N07,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N08,PB100082,PB100082_N08,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O01,PB100082,PB100082_O01,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O02,PB100082,PB100082_O02,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O03,PB100082,PB100082_O03,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O04,PB100082,PB100082_O04,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O05,PB100082,PB100082_O05,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O06,PB100082,PB100082_O06,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O07,PB100082,PB100082_O07,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O08,PB100082,PB100082_O08,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P01,PB100082,PB100082_P01,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P02,PB100082,PB100082_P02,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P03,PB100082,PB100082_P03,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,P04,PB100082,PB100082_P04,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P05,PB100082,PB100082_P05,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P06,PB100082,PB100082_P06,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,P07,PB100082,PB100082_P07,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P08,PB100082,PB100082_P08,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I09,PB100082,PB100082_I09,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I10,PB100082,PB100082_I10,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I11,PB100082,PB100082_I11,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I12,PB100082,PB100082_I12,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I13,PB100082,PB100082_I13,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,I14,PB100082,PB100082_I14,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I15,PB100082,PB100082_I15,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I16,PB100082,PB100082_I16,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J09,PB100082,PB100082_J09,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J10,PB100082,PB100082_J10,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J11,PB100082,PB100082_J11,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J12,PB100082,PB100082_J12,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J13,PB100082,PB100082_J13,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J14,PB100082,PB100082_J14,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J15,PB100082,PB100082_J15,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J16,PB100082,PB100082_J16,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K09,PB100082,PB100082_K09,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K10,PB100082,PB100082_K10,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,K11,PB100082,PB100082_K11,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K12,PB100082,PB100082_K12,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K13,PB100082,PB100082_K13,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K14,PB100082,PB100082_K14,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K15,PB100082,PB100082_K15,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K16,PB100082,PB100082_K16,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L09,PB100082,PB100082_L09,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L10,PB100082,PB100082_L10,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,L11,PB100082,PB100082_L11,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L12,PB100082,PB100082_L12,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,L13,PB100082,PB100082_L13,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L14,PB100082,PB100082_L14,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L15,PB100082,PB100082_L15,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L16,PB100082,PB100082_L16,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M09,PB100082,PB100082_M09,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,M10,PB100082,PB100082_M10,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M11,PB100082,PB100082_M11,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M12,PB100082,PB100082_M12,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M13,PB100082,PB100082_M13,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M14,PB100082,PB100082_M14,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M15,PB100082,PB100082_M15,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,M16,PB100082,PB100082_M16,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N09,PB100082,PB100082_N09,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N10,PB100082,PB100082_N10,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N11,PB100082,PB100082_N11,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N12,PB100082,PB100082_N12,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,N13,PB100082,PB100082_N13,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N14,PB100082,PB100082_N14,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,N15,PB100082,PB100082_N15,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N16,PB100082,PB100082_N16,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O09,PB100082,PB100082_O09,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O10,PB100082,PB100082_O10,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O11,PB100082,PB100082_O11,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O12,PB100082,PB100082_O12,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O13,PB100082,PB100082_O13,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O14,PB100082,PB100082_O14,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O15,PB100082,PB100082_O15,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O16,PB100082,PB100082_O16,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P09,PB100082,PB100082_P09,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P10,PB100082,PB100082_P10,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P11,PB100082,PB100082_P11,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,P12,PB100082,PB100082_P12,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P13,PB100082,PB100082_P13,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P14,PB100082,PB100082_P14,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,P15,PB100082,PB100082_P15,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P16,PB100082,PB100082_P16,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I17,PB100082,PB100082_I17,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I18,PB100082,PB100082_I18,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I19,PB100082,PB100082_I19,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I20,PB100082,PB100082_I20,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I21,PB100082,PB100082_I21,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,I22,PB100082,PB100082_I22,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I23,PB100082,PB100082_I23,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I24,PB100082,PB100082_I24,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J17,PB100082,PB100082_J17,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J18,PB100082,PB100082_J18,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J19,PB100082,PB100082_J19,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J20,PB100082,PB100082_J20,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J21,PB100082,PB100082_J21,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J22,PB100082,PB100082_J22,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J23,PB100082,PB100082_J23,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J24,PB100082,PB100082_J24,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K17,PB100082,PB100082_K17,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K18,PB100082,PB100082_K18,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,K19,PB100082,PB100082_K19,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K20,PB100082,PB100082_K20,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K21,PB100082,PB100082_K21,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K22,PB100082,PB100082_K22,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K23,PB100082,PB100082_K23,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K24,PB100082,PB100082_K24,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L17,PB100082,PB100082_L17,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L18,PB100082,PB100082_L18,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,L19,PB100082,PB100082_L19,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L20,PB100082,PB100082_L20,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,L21,PB100082,PB100082_L21,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L22,PB100082,PB100082_L22,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L23,PB100082,PB100082_L23,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L24,PB100082,PB100082_L24,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M17,PB100082,PB100082_M17,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,M18,PB100082,PB100082_M18,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M19,PB100082,PB100082_M19,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M20,PB100082,PB100082_M20,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M21,PB100082,PB100082_M21,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M22,PB100082,PB100082_M22,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M23,PB100082,PB100082_M23,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,M24,PB100082,PB100082_M24,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N17,PB100082,PB100082_N17,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N18,PB100082,PB100082_N18,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N19,PB100082,PB100082_N19,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N20,PB100082,PB100082_N20,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,N21,PB100082,PB100082_N21,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N22,PB100082,PB100082_N22,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,N23,PB100082,PB100082_N23,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N24,PB100082,PB100082_N24,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O17,PB100082,PB100082_O17,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O18,PB100082,PB100082_O18,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O19,PB100082,PB100082_O19,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O20,PB100082,PB100082_O20,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O21,PB100082,PB100082_O21,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O22,PB100082,PB100082_O22,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O23,PB100082,PB100082_O23,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O24,PB100082,PB100082_O24,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P17,PB100082,PB100082_P17,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P18,PB100082,PB100082_P18,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P19,PB100082,PB100082_P19,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,P20,PB100082,PB100082_P20,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P21,PB100082,PB100082_P21,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P22,PB100082,PB100082_P22,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,P23,PB100082,PB100082_P23,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P24,PB100082,PB100082_P24,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A01,PB100083,PB100083_A01,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A02,PB100083,PB100083_A02,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A03,PB100083,PB100083_A03,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A04,PB100083,PB100083_A04,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A05,PB100083,PB100083_A05,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,A06,PB100083,PB100083_A06,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A07,PB100083,PB100083_A07,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A08,PB100083,PB100083_A08,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B01,PB100083,PB100083_B01,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B02,PB100083,PB100083_B02,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B03,PB100083,PB100083_B03,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B04,PB100083,PB100083_B04,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B05,PB100083,PB100083_B05,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B06,PB100083,PB100083_B06,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B07,PB100083,PB100083_B07,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B08,PB100083,PB100083_B08,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C01,PB100083,PB100083_C01,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C02,PB100083,PB100083_C02,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,C03,PB100083,PB100083_C03,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C04,PB100083,PB100083_C04,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C05,PB100083,PB100083_C05,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C06,PB100083,PB100083_C06,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C07,PB100083,PB100083_C07,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C08,PB100083,PB100083_C08,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D01,PB100083,PB100083_D01,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D02,PB100083,PB100083_D02,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,D03,PB100083,PB100083_D03,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D04,PB100083,PB100083_D04,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,D05,PB100083,PB100083_D05,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D06,PB100083,PB100083_D06,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D07,PB100083,PB100083_D07,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D08,PB100083,PB100083_D08,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E01,PB100083,PB100083_E01,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,E02,PB100083,PB100083_E02,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E03,PB100083,PB100083_E03,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E04,PB100083,PB100083_E04,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E05,PB100083,PB100083_E05,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E06,PB100083,PB100083_E06,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E07,PB100083,PB100083_E07,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,E08,PB100083,PB100083_E08,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F01,PB100083,PB100083_F01,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F02,PB100083,PB100083_F02,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F03,PB100083,PB100083_F03,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F04,PB100083,PB100083_F04,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,F05,PB100083,PB100083_F05,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F06,PB100083,PB100083_F06,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,F07,PB100083,PB100083_F07,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F08,PB100083,PB100083_F08,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G01,PB100083,PB100083_G01,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G02,PB100083,PB100083_G02,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G03,PB100083,PB100083_G03,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G04,PB100083,PB100083_G04,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G05,PB100083,PB100083_G05,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G06,PB100083,PB100083_G06,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G07,PB100083,PB100083_G07,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G08,PB100083,PB100083_G08,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H01,PB100083,PB100083_H01,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H02,PB100083,PB100083_H02,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H03,PB100083,PB100083_H03,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,H04,PB100083,PB100083_H04,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H05,PB100083,PB100083_H05,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H06,PB100083,PB100083_H06,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,H07,PB100083,PB100083_H07,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H08,PB100083,PB100083_H08,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A09,PB100083,PB100083_A09,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A10,PB100083,PB100083_A10,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A11,PB100083,PB100083_A11,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A12,PB100083,PB100083_A12,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A13,PB100083,PB100083_A13,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,A14,PB100083,PB100083_A14,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A15,PB100083,PB100083_A15,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A16,PB100083,PB100083_A16,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B09,PB100083,PB100083_B09,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B10,PB100083,PB100083_B10,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B11,PB100083,PB100083_B11,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B12,PB100083,PB100083_B12,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B13,PB100083,PB100083_B13,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B14,PB100083,PB100083_B14,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B15,PB100083,PB100083_B15,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B16,PB100083,PB100083_B16,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C09,PB100083,PB100083_C09,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C10,PB100083,PB100083_C10,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,C11,PB100083,PB100083_C11,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C12,PB100083,PB100083_C12,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C13,PB100083,PB100083_C13,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C14,PB100083,PB100083_C14,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C15,PB100083,PB100083_C15,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C16,PB100083,PB100083_C16,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D09,PB100083,PB100083_D09,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D10,PB100083,PB100083_D10,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,D11,PB100083,PB100083_D11,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D12,PB100083,PB100083_D12,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,D13,PB100083,PB100083_D13,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D14,PB100083,PB100083_D14,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D15,PB100083,PB100083_D15,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D16,PB100083,PB100083_D16,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E09,PB100083,PB100083_E09,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,E10,PB100083,PB100083_E10,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E11,PB100083,PB100083_E11,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E12,PB100083,PB100083_E12,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E13,PB100083,PB100083_E13,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E14,PB100083,PB100083_E14,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E15,PB100083,PB100083_E15,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,E16,PB100083,PB100083_E16,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F09,PB100083,PB100083_F09,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F10,PB100083,PB100083_F10,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F11,PB100083,PB100083_F11,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F12,PB100083,PB100083_F12,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,F13,PB100083,PB100083_F13,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F14,PB100083,PB100083_F14,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,F15,PB100083,PB100083_F15,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F16,PB100083,PB100083_F16,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G09,PB100083,PB100083_G09,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G10,PB100083,PB100083_G10,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G11,PB100083,PB100083_G11,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G12,PB100083,PB100083_G12,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G13,PB100083,PB100083_G13,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G14,PB100083,PB100083_G14,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G15,PB100083,PB100083_G15,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G16,PB100083,PB100083_G16,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H09,PB100083,PB100083_H09,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H10,PB100083,PB100083_H10,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H11,PB100083,PB100083_H11,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,H12,PB100083,PB100083_H12,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H13,PB100083,PB100083_H13,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H14,PB100083,PB100083_H14,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,H15,PB100083,PB100083_H15,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H16,PB100083,PB100083_H16,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A17,PB100083,PB100083_A17,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A18,PB100083,PB100083_A18,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A19,PB100083,PB100083_A19,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A20,PB100083,PB100083_A20,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A21,PB100083,PB100083_A21,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,A22,PB100083,PB100083_A22,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,A23,PB100083,PB100083_A23,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,A24,PB100083,PB100083_A24,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B17,PB100083,PB100083_B17,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B18,PB100083,PB100083_B18,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B19,PB100083,PB100083_B19,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B20,PB100083,PB100083_B20,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B21,PB100083,PB100083_B21,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B22,PB100083,PB100083_B22,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,B23,PB100083,PB100083_B23,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,B24,PB100083,PB100083_B24,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C17,PB100083,PB100083_C17,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C18,PB100083,PB100083_C18,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,C19,PB100083,PB100083_C19,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C20,PB100083,PB100083_C20,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C21,PB100083,PB100083_C21,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,C22,PB100083,PB100083_C22,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,C23,PB100083,PB100083_C23,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,C24,PB100083,PB100083_C24,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D17,PB100083,PB100083_D17,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D18,PB100083,PB100083_D18,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,D19,PB100083,PB100083_D19,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D20,PB100083,PB100083_D20,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,D21,PB100083,PB100083_D21,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D22,PB100083,PB100083_D22,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,D23,PB100083,PB100083_D23,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,D24,PB100083,PB100083_D24,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E17,PB100083,PB100083_E17,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,E18,PB100083,PB100083_E18,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E19,PB100083,PB100083_E19,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E20,PB100083,PB100083_E20,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E21,PB100083,PB100083_E21,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,E22,PB100083,PB100083_E22,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,E23,PB100083,PB100083_E23,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,E24,PB100083,PB100083_E24,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F17,PB100083,PB100083_F17,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F18,PB100083,PB100083_F18,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F19,PB100083,PB100083_F19,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F20,PB100083,PB100083_F20,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,F21,PB100083,PB100083_F21,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,F22,PB100083,PB100083_F22,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,F23,PB100083,PB100083_F23,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,F24,PB100083,PB100083_F24,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G17,PB100083,PB100083_G17,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G18,PB100083,PB100083_G18,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G19,PB100083,PB100083_G19,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G20,PB100083,PB100083_G20,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G21,PB100083,PB100083_G21,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G22,PB100083,PB100083_G22,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,G23,PB100083,PB100083_G23,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,G24,PB100083,PB100083_G24,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H17,PB100083,PB100083_H17,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H18,PB100083,PB100083_H18,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H19,PB100083,PB100083_H19,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,H20,PB100083,PB100083_H20,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,H21,PB100083,PB100083_H21,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H22,PB100083,PB100083_H22,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,H23,PB100083,PB100083_H23,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,H24,PB100083,PB100083_H24,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I01,PB100083,PB100083_I01,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I02,PB100083,PB100083_I02,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I03,PB100083,PB100083_I03,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I04,PB100083,PB100083_I04,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I05,PB100083,PB100083_I05,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,I06,PB100083,PB100083_I06,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I07,PB100083,PB100083_I07,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I08,PB100083,PB100083_I08,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J01,PB100083,PB100083_J01,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J02,PB100083,PB100083_J02,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J03,PB100083,PB100083_J03,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J04,PB100083,PB100083_J04,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J05,PB100083,PB100083_J05,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J06,PB100083,PB100083_J06,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J07,PB100083,PB100083_J07,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J08,PB100083,PB100083_J08,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K01,PB100083,PB100083_K01,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K02,PB100083,PB100083_K02,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,K03,PB100083,PB100083_K03,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K04,PB100083,PB100083_K04,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K05,PB100083,PB100083_K05,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K06,PB100083,PB100083_K06,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K07,PB100083,PB100083_K07,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K08,PB100083,PB100083_K08,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L01,PB100083,PB100083_L01,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L02,PB100083,PB100083_L02,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,L03,PB100083,PB100083_L03,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L04,PB100083,PB100083_L04,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,L05,PB100083,PB100083_L05,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L06,PB100083,PB100083_L06,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L07,PB100083,PB100083_L07,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L08,PB100083,PB100083_L08,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M01,PB100083,PB100083_M01,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,M02,PB100083,PB100083_M02,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M03,PB100083,PB100083_M03,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M04,PB100083,PB100083_M04,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M05,PB100083,PB100083_M05,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M06,PB100083,PB100083_M06,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M07,PB100083,PB100083_M07,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,M08,PB100083,PB100083_M08,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N01,PB100083,PB100083_N01,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N02,PB100083,PB100083_N02,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N03,PB100083,PB100083_N03,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N04,PB100083,PB100083_N04,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,N05,PB100083,PB100083_N05,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N06,PB100083,PB100083_N06,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,N07,PB100083,PB100083_N07,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N08,PB100083,PB100083_N08,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O01,PB100083,PB100083_O01,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O02,PB100083,PB100083_O02,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O03,PB100083,PB100083_O03,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O04,PB100083,PB100083_O04,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O05,PB100083,PB100083_O05,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O06,PB100083,PB100083_O06,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O07,PB100083,PB100083_O07,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O08,PB100083,PB100083_O08,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P01,PB100083,PB100083_P01,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P02,PB100083,PB100083_P02,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P03,PB100083,PB100083_P03,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,P04,PB100083,PB100083_P04,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P05,PB100083,PB100083_P05,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P06,PB100083,PB100083_P06,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,P07,PB100083,PB100083_P07,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P08,PB100083,PB100083_P08,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I09,PB100083,PB100083_I09,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I10,PB100083,PB100083_I10,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I11,PB100083,PB100083_I11,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I12,PB100083,PB100083_I12,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I13,PB100083,PB100083_I13,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,I14,PB100083,PB100083_I14,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I15,PB100083,PB100083_I15,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I16,PB100083,PB100083_I16,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J09,PB100083,PB100083_J09,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J10,PB100083,PB100083_J10,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J11,PB100083,PB100083_J11,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J12,PB100083,PB100083_J12,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J13,PB100083,PB100083_J13,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J14,PB100083,PB100083_J14,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J15,PB100083,PB100083_J15,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J16,PB100083,PB100083_J16,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K09,PB100083,PB100083_K09,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K10,PB100083,PB100083_K10,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,K11,PB100083,PB100083_K11,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K12,PB100083,PB100083_K12,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K13,PB100083,PB100083_K13,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K14,PB100083,PB100083_K14,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K15,PB100083,PB100083_K15,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K16,PB100083,PB100083_K16,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L09,PB100083,PB100083_L09,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L10,PB100083,PB100083_L10,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,L11,PB100083,PB100083_L11,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L12,PB100083,PB100083_L12,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,L13,PB100083,PB100083_L13,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L14,PB100083,PB100083_L14,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L15,PB100083,PB100083_L15,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L16,PB100083,PB100083_L16,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M09,PB100083,PB100083_M09,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,M10,PB100083,PB100083_M10,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M11,PB100083,PB100083_M11,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M12,PB100083,PB100083_M12,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M13,PB100083,PB100083_M13,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M14,PB100083,PB100083_M14,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M15,PB100083,PB100083_M15,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,M16,PB100083,PB100083_M16,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N09,PB100083,PB100083_N09,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N10,PB100083,PB100083_N10,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N11,PB100083,PB100083_N11,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N12,PB100083,PB100083_N12,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,N13,PB100083,PB100083_N13,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N14,PB100083,PB100083_N14,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,N15,PB100083,PB100083_N15,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N16,PB100083,PB100083_N16,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O09,PB100083,PB100083_O09,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O10,PB100083,PB100083_O10,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O11,PB100083,PB100083_O11,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O12,PB100083,PB100083_O12,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O13,PB100083,PB100083_O13,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O14,PB100083,PB100083_O14,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O15,PB100083,PB100083_O15,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O16,PB100083,PB100083_O16,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P09,PB100083,PB100083_P09,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P10,PB100083,PB100083_P10,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P11,PB100083,PB100083_P11,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,P12,PB100083,PB100083_P12,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P13,PB100083,PB100083_P13,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P14,PB100083,PB100083_P14,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,P15,PB100083,PB100083_P15,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P16,PB100083,PB100083_P16,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I17,PB100083,PB100083_I17,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I18,PB100083,PB100083_I18,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I19,PB100083,PB100083_I19,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I20,PB100083,PB100083_I20,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I21,PB100083,PB100083_I21,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,I22,PB100083,PB100083_I22,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,I23,PB100083,PB100083_I23,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,I24,PB100083,PB100083_I24,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J17,PB100083,PB100083_J17,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J18,PB100083,PB100083_J18,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J19,PB100083,PB100083_J19,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J20,PB100083,PB100083_J20,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J21,PB100083,PB100083_J21,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J22,PB100083,PB100083_J22,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,J23,PB100083,PB100083_J23,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,J24,PB100083,PB100083_J24,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K17,PB100083,PB100083_K17,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K18,PB100083,PB100083_K18,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,K19,PB100083,PB100083_K19,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K20,PB100083,PB100083_K20,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K21,PB100083,PB100083_K21,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,K22,PB100083,PB100083_K22,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,K23,PB100083,PB100083_K23,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,K24,PB100083,PB100083_K24,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L17,PB100083,PB100083_L17,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L18,PB100083,PB100083_L18,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,L19,PB100083,PB100083_L19,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L20,PB100083,PB100083_L20,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,L21,PB100083,PB100083_L21,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L22,PB100083,PB100083_L22,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,L23,PB100083,PB100083_L23,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,L24,PB100083,PB100083_L24,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M17,PB100083,PB100083_M17,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,M18,PB100083,PB100083_M18,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M19,PB100083,PB100083_M19,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M20,PB100083,PB100083_M20,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M21,PB100083,PB100083_M21,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,M22,PB100083,PB100083_M22,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,M23,PB100083,PB100083_M23,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,M24,PB100083,PB100083_M24,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N17,PB100083,PB100083_N17,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N18,PB100083,PB100083_N18,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N19,PB100083,PB100083_N19,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N20,PB100083,PB100083_N20,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,N21,PB100083,PB100083_N21,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,N22,PB100083,PB100083_N22,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,N23,PB100083,PB100083_N23,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,N24,PB100083,PB100083_N24,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O17,PB100083,PB100083_O17,colo-020,fluorouracil,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O18,PB100083,PB100083_O18,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O19,PB100083,PB100083_O19,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O20,PB100083,PB100083_O20,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O21,PB100083,PB100083_O21,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O22,PB100083,PB100083_O22,ref-002,fenbendazole,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,O23,PB100083,PB100083_O23,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,O24,PB100083,PB100083_O24,ref-003,staurosporine,dmso,0.2,µM,1.0,mM,20.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P17,PB100083,PB100083_P17,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P18,PB100083,PB100083_P18,colo-040,sn-38,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P19,PB100083,PB100083_P19,colo-041,binimetinib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,MAPK,,,,,,HCT116
+colo8-v1-L1-P1,P20,PB100083,PB100083_P20,colo-029,trifluridine,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116
+colo8-v1-L1-P1,P21,PB100083,PB100083_P21,ref-001,etoposide,dmso,2.5,µM,10.0,mM,25.0,nl,40.0,µl,pos_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P22,PB100083,PB100083_P22,colo-044,abemaciclib,dmso,10.0,µM,10.0,mM,100.0,nl,40.0,µl,trt,,,Cell Cycle,,,,,,HCT116
+colo8-v1-L1-P1,P23,PB100083,PB100083_P23,dmso,dmso,dmso,0.1,µM,100.0,mM,100.0,nl,40.0,µl,neg_con,,,,,,,,,HCT116
+colo8-v1-L1-P1,P24,PB100083,PB100083_P24,colo-028,gemcitabine,dmso,1.0,µM,10.0,mM,10.0,nl,40.0,µl,trt,,,DNA Damage,,,,,,HCT116

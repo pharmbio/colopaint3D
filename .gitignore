@@ -10,6 +10,9 @@
 # --- Downloaded / generated, never committed --------------------------------
 /data/
 /figures/
+# Intermediate tables a notebook writes next to itself (e.g. exp1 QCFlags.csv).
+# The committed inputs live in analysis/**/data/, which is allow-listed below.
+analysis/**/results/
 
 # --- Large binary data formats ---------------------------------------------
 *.parquet
@@ -39,6 +42,10 @@ __pycache__/
 !/source_data/
 !/source_data/**/*.csv
 !/source_data/MANIFEST.csv
+
+# Small analysis inputs shipped with the notebooks (sphere detection, cached tables)
+!/analysis/**/data/
+!/analysis/**/data/**
 
 # Provenance record of the tree this port came from
 !/provenance/

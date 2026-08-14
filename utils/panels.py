@@ -11,7 +11,7 @@ in one call, so there is no way to produce one without the others.
 
 That writes:
 
-    figures/Fig5/Fig5c.pdf                       (and .png)
+    figures/Fig5/Fig5c.pdf
     source_data/Fig5c_hierarchical_clustering.csv
     source_data/MANIFEST.csv                     (one row appended)
 
@@ -42,10 +42,15 @@ MANIFEST_FIELDS = [
 ]
 
 # "Fig5c" -> ("Fig5", "c");  "SupplFig3a" -> ("SupplFig3", "a")
-_PANEL_RE = re.compile(r"^(?P<figure>(?:Suppl)?Fig\d+)(?P<panel>[A-Za-z]\d?)?$")
+# A trailing "_part" covers a panel assembled from more than one file, e.g. Fig 5f
+# is the 2D and 3D fingerprint clustermaps side by side: "Fig5f_2D", "Fig5f_3D".
+_PANEL_RE = re.compile(
+    r"^(?P<figure>(?:Suppl)?Fig\d+)(?P<panel>[A-Za-z]\d?)?(?P<part>_[A-Za-z0-9]+)?$"
+)
 
-# Editable text in PDFs, as the paper's methods specify.
-DEFAULT_FORMATS = ("pdf", "png")
+# PDF only: vector, editable text, and what the figure assembly actually consumes.
+# Pass formats=("pdf", "png") on a call that also needs a raster preview.
+DEFAULT_FORMATS = ("pdf",)
 
 
 def apply_figure_defaults() -> None:
@@ -226,6 +231,12 @@ def verify_manifest() -> list[str]:
 
     if FIGURES_ROOT.is_dir():
         for path in FIGURES_ROOT.rglob("*.pdf"):
+            if ".ipynb_checkpoints" in path.parts:
+                continue          # Jupyter's own copies, not outputs
+            try:
+                panel_figure(path.stem)
+            except ValueError:
+                continue          # not a panel name: a notebook's own extra output
             if str(path) not in recorded_figure_files:
                 problems.append(f"{path.relative_to(FIGURES_ROOT)}: rendered but has no MANIFEST row")
     return problems

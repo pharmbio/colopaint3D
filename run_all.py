@@ -116,8 +116,10 @@ def _runner() -> tuple[str, list[str]]:
         return "papermill", []
     except ImportError:
         pass
+    # sys.executable, not a bare "jupyter": the runner must stay in whatever
+    # interpreter invoked it, so `<venv>/bin/python run_all.py` uses that venv.
     if subprocess.run(
-        ["jupyter", "nbconvert", "--version"], capture_output=True
+        [sys.executable, "-m", "nbconvert", "--version"], capture_output=True
     ).returncode == 0:
         return "nbconvert", []
     raise SystemExit(
@@ -132,10 +134,11 @@ def execute(nb: Notebook, backend: str) -> tuple[bool, float, str]:
     started = time.time()
     out = nb.path.with_suffix(".executed.ipynb")
     if backend == "papermill":
-        cmd = ["papermill", str(nb.path), str(out), "--cwd", str(nb.path.parent), "--log-output"]
+        cmd = [sys.executable, "-m", "papermill", str(nb.path), str(out),
+               "--cwd", str(nb.path.parent), "--log-output"]
     else:
         cmd = [
-            "jupyter", "nbconvert", "--to", "notebook", "--execute",
+            sys.executable, "-m", "nbconvert", "--to", "notebook", "--execute",
             f"--output={out.name}", str(nb.path),
         ]
     proc = subprocess.run(cmd, capture_output=True, text=True)

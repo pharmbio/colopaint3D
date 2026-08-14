@@ -24,8 +24,10 @@ from pathlib import Path
 
 __all__ = [
     "REPO_ROOT", "DATA_ROOT", "FEATURES_ROOT", "FIGURES_ROOT", "SOURCE_DATA_ROOT", "ANALYSIS_ROOT",
+    "EXTERNAL_ROOT",
     "EXPERIMENTS", "UPSTREAM_NAMES",
-    "profiles", "features", "feature_output", "figdir", "source_data", "analysis", "metadata", "require",
+    "profiles", "features", "feature_output", "figdir", "source_data", "analysis", "data_dir",
+    "metadata", "external", "require",
 ]
 
 # paths.py lives at <repo>/utils/paths.py, so the root is two levels up. This is
@@ -38,6 +40,9 @@ DATA_ROOT = Path(os.environ.get("COLOPAINT3D_DATA", REPO_ROOT / "data"))
 # tier, so this points wherever they actually live.
 FEATURES_ROOT = Path(os.environ.get("COLOPAINT3D_FEATURES", DATA_ROOT / "features"))
 FIGURES_ROOT = Path(os.environ.get("COLOPAINT3D_FIGURES", REPO_ROOT / "figures"))
+# Bulk inputs kept outside the repo and outside every download tier.
+EXTERNAL_ROOT = Path(os.environ.get("COLOPAINT3D_EXTERNAL",
+                                    "/share/data/analyses/christa/colopaint3D"))
 SOURCE_DATA_ROOT = REPO_ROOT / "source_data"
 ANALYSIS_ROOT = REPO_ROOT / "analysis"
 
@@ -150,6 +155,29 @@ def source_data(filename: str) -> Path:
 def analysis(*parts: str) -> Path:
     """Path inside ``analysis/``, e.g. ``analysis("3_Figure5", "GritScores")``."""
     return ANALYSIS_ROOT.joinpath(*parts)
+
+
+def external(name: str) -> Path:
+    """A bulk input held outside the repo (expert annotations, mask stacks, ...).
+
+    These are too large to ship or to put in a download tier — the expert-annotation
+    set alone is 7.7 GB. Notebooks that need them read from here when present and
+    otherwise fall back to a small cached table committed under the figure folder,
+    so the published figure still regenerates. Point ``COLOPAINT3D_EXTERNAL`` at
+    wherever the bulk inputs live.
+    """
+    return EXTERNAL_ROOT / name
+
+
+def data_dir(exp: str) -> Path:
+    """The shipped ``1_Data`` folder for an experiment (metadata, file maps).
+
+    Upstream this was one ``rootDir`` holding metadata, feature dumps and results
+    together; here those are split across ``analysis/1_Data``, ``data/features``
+    and ``data/``, so this covers only the small shipped metadata.
+    """
+    _check_experiment(exp)
+    return ANALYSIS_ROOT / "1_Data" / exp
 
 
 def metadata(name: str, exp: str = "exp1_main") -> Path:
