@@ -72,34 +72,40 @@ them — it is drawn from the committed `segmentation_iou_cached.csv` — but th
 `HAVE_MASKS` flag was computed and never consulted, so it died mid-load instead of falling
 back. It now probes readability and uses the cache.
 
-**Fig 4c/4d, Suppl 4c/4d — the published ARI/NMI/SC cannot be reproduced from this
-tree, and the port is not the reason.** Current values against published:
+**Fig 4c/4d — the published ARI/NMI/SC do not re-derive, for two datable reasons.**
 
 | panel | published | now |
 |---|---|---|
 | Fig 4c (MIP) | ARI 0.143 · NMI 0.252 · SC 0.413 | 0.134 · 0.248 · 0.415 |
-| Fig 4d (scAgg) | ARI 0.240 · NMI 0.344 · SC 0.478 | 0.240 · 0.349 · 0.454 |
+| Fig 4d (scAgg) | ARI **0.240** · NMI 0.344 · SC 0.478 | **0.240** · 0.349 · 0.454 |
 
-Everything that could explain it was ruled out on the original machine:
+The timeline explains both, and the fact that Fig 4d's ARI still matches exactly is the
+clue that separates them:
 
-* **Not the port.** The untouched upstream `PCAUMAP_pathway_v2.ipynb`, run in the
-  author's own `colopaint3D/.venv`, gives 0.134/0.248/0.415 (MIP) and 0.240/0.349/0.454
-  (aggregates) — identical to the ported notebook, and not the values stored in its own
-  saved output.
-* **Not the environment.** `colopaint3D/.venv` and this repo's `.venv` match on
-  umap-learn 0.5.3, numba 0.56.4, llvmlite 0.39.1, numpy 1.22.0, scipy 1.7.3,
-  scikit-learn 1.6.1, pandas 1.5.2.
-* **Not the seed.** `random_state=42` throughout, and the embedding is reproducible:
-  two runs are bitwise identical, and identical again at 1, 2 and 8 numba threads.
-* **Not the feature extraction.** The fork's `150125` tables and the main tree's
-  `011225` tables give the same metrics to three decimals through the notebook.
-* **Not the NMI convention.** geometric and arithmetic averaging both give 0.349.
+| when | what |
+|---|---|
+| 2025-12-19 | `grit_data_aggregates_HCT116.parquet` written |
+| **2026-01-13** | the published Fig 4 PDFs written (`result-images/UMAP_*.pdf`) |
+| 2026-01-15 | `PCAUMAP_pathway_v2.ipynb` last edited — two days *after* the figures |
+| **2026-08-14** | `grit_data_MIP_HCT116.parquet` regenerated — seven months after |
 
-The stored output in the upstream notebook is therefore stale with respect to the code
-and data now in the tree: the published numbers came from an earlier pipeline state that
-no longer exists here. The panels' claim is unaffected — the ordering (4d > 4c,
-aggregates > MIP) and the magnitudes hold — but the figure legend numbers will not match
-a re-run.
+* **Fig 4c: the input is gone.** The MIP table postdates the figure by seven months, so
+  whatever produced ARI 0.143 no longer exists. The fork's MIP table (2025-01-15) also
+  gives 0.134, so neither surviving copy is the one used.
+* **Fig 4d: the code changed after the figure.** The aggregates table is untouched since
+  December — which is why ARI still reproduces exactly at 0.240, same input, same
+  partition. The notebook was edited two days after the PDFs were written, so the stored
+  NMI/SC come from the pre-edit code.
+
+Ruled out along the way, all on the original machine: the port (the untouched upstream
+notebook in the author's own `.venv` gives the same numbers as the ported one); the
+environment (both venvs match on all seven relevant packages); the seed (two runs bitwise
+identical, and identical at 1/2/8 numba threads and 1/4/128 BLAS threads); the feature
+extraction (`150125` and `011225` give the same metrics through the notebook); and the
+NMI averaging convention (geometric and arithmetic both 0.349).
+
+The panels' claim is unaffected — ordering and magnitudes hold — but the legend numbers
+will not match a re-run, and cannot until the January MIP table is recovered.
 
 **Fig 5b / Suppl 5a — 2D UMAP unverified.** `PCAUMAP_pathway_v2` supports `data_type='2D'`
 but no 2D output survives upstream. Marked `UNVERIFIED` in its `PANEL` map.
