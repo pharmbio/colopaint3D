@@ -74,8 +74,10 @@ SWEEPS = {
     # writes grit_data_{data_type}_{cell_line}.parquet, which everything downstream reads
     "analysis/2_Processing/exp1_main/3_GritScores.ipynb": _sweep(_LINES, _TYPES),
     # Suppl 4h, one output per exp4 acquisition (air = bomi, WI = wi)
+    # Suppl 4h is air vs WI only: air = bomi, WI = wi. cleared3d is a third exp4
+    # acquisition that the published panel does not use.
     "analysis/3_SupplFigure4/3_PCA_objective.ipynb": [
-        {"COLOPAINT3D_PLATE": t} for t in ("bomi", "cleared3d", "wi")
+        {"COLOPAINT3D_PLATE": t} for t in ("bomi", "wi")
     ],
 }
 
