@@ -43,13 +43,6 @@ dependencies:
       - llvmlite==0.39.1
       - tqdm==4.67.1
 
-      # scikit-image must stay pinned even though it is not numerically
-      # load-bearing: unpinned, pip resolves 0.25.x, which drags numpy to 2.x and
-      # scipy to 1.11 and takes the environment down with it — numba 0.56.4
-      # requires numpy<1.24, and pycytominer imports
-      # scipy.stats.median_absolute_deviation, removed after scipy 1.7.
-      - scikit-image==0.19.3   # Suppl 2d, segmentation error
-
       # --- Notebook execution -------------------------------------------------
       # run_all.py prefers papermill and falls back to nbconvert. Only nbconvert
       # is declared: it is the backend every run has actually used, so it is the
@@ -62,6 +55,12 @@ dependencies:
 #                  data/gsea_prerank_results.csv is missing; that table is
 #                  committed, and the cell it feeds is marked "not a paper panel"
 #   statsmodels -> was only ever pulled in transitively by copairs
+#   scikit-image -> only the mask overlays in quantify_segmentation_error, which are
+#                  guarded by a raw_images check and marked "not a paper panel". Suppl 2d
+#                  itself comes from the committed segmentation_iou_cached.csv. Dropping
+#                  it also drops the worst pin here: unpinned it resolves to 0.25.x, which
+#                  drags numpy to 2.x and scipy to 1.11 and takes numba and pycytominer
+#                  down with it. Install it yourself to render those overlays.
 #   tifffile, pillow -> the image-plotting code they served is no longer in the paper
 #   nbformat    -> 0 imports; nbconvert pulls it in anyway
 #   jupyter     -> meta-package; nbconvert is the only part run_all.py invokes
