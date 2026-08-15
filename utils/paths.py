@@ -102,8 +102,7 @@ def features(exp: str, version: str, level: str, name: str | None = None) -> Pat
 
     ``version`` is the DDMMYY extraction stamp. These dumps total ~19.5 GB and are
     outside every download tier, so point ``COLOPAINT3D_FEATURES`` at wherever they
-    live. Extraction stamps are re-runs of the same images, not different data —
-    see provenance/PORT_TRIAGE.md.
+    live. Extraction stamps are re-runs of the same images, not different data.
     """
     _check_experiment(exp)
     base = FEATURES_ROOT / exp / f"FeaturesImages_{version}_none" / level

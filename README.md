@@ -7,7 +7,7 @@ A scalable adaptation of Cell Painting to 3D spheroids: adaptive spheroid detect
 z-placement at acquisition, per-slice feature extraction and normalisation, and a comparison
 of what 3D recovers relative to 2D and to maximum-intensity projections.
 
-Only the analysis published in the paper; see `provenance/` for what was included and why.
+Only the analysis published in the paper.
 
 ---
 
@@ -86,12 +86,6 @@ analysis/
 source_data/          One table per figure panel, plus MANIFEST.csv
 figures/              Rendered panels (generated, not tracked)
 data/                 Downloaded profile tables (not tracked)
-provenance/           Record of the port
-  PORT_TRIAGE.md      Panel map, what was included/excluded and why
-  KNOWN_ISSUES.md     Open blockers, source defects, port defects and guards
-  SOURCE_SNAPSHOT.tsv Content hashes of the tree this was ported from
-  port_notebook.py    Reproduces the port from source
-  build_caches.py     Rebuilds the committed cache tables
 ```
 
 `1_Data` and `2_Processing` produce every reusable table; figure folders only
@@ -165,7 +159,7 @@ so the whole figure set regenerates from the 206 MB download:
 | Suppl 5e | `similarities_{2D,3D}.csv` | 1035 / 703 |
 | Fig 6b | `panel_source_data.csv` | per spheroid |
 
-`python provenance/build_caches.py --all` regenerates them where the bulk inputs are
+`python scripts/build_caches.py --all` regenerates them where the bulk inputs are
 available; point `COLOPAINT3D_EXTERNAL` at them. The regenerated 3D similarity matrix is
 validated against the surviving original (703/703 pairs, max |diff| 1.6e-15).
 
@@ -188,15 +182,7 @@ statistics (Percent Replicating, its matched non-replicate null, the tests) are 
 `analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb`; the paper's methods section is
 the authority for how they are described.
 
-`provenance/SOURCE_SNAPSHOT.tsv` records a content hash for every file in the working
-tree this release was ported from; `provenance/PORT_TRIAGE.md` records what was included,
-excluded and why; and `provenance/KNOWN_ISSUES.md` records the open blockers and the
-defects found on both sides of the port.
-
-`provenance/port_notebook.py` records how the port was made and can still bring a new
-notebook across from the source tree one at a time. It is **no longer the maintenance
-path** — the notebooks are committed and git is the change history. Do not run
-`--all`; it regenerates from source and would discard everything since.
+The notebooks are committed and git is the change history.
 
 **Execution status.** Every figure folder now runs end to end. Three notebooks do not,
 for reasons outside this repo:
@@ -209,7 +195,7 @@ for reasons outside this repo:
 
 From a clean `figures/` and `MANIFEST.csv`, the figure folders produce **46 panels, none
 blank**. Suppl 5d, Suppl 4h/4i and Fig 5f need the blockers above cleared; Fig 2e and
-Fig 3g/3h have no surviving code (`provenance/KNOWN_ISSUES.md`).
+Fig 3g/3h are reconstructions, rebuilt from the same replicate correlations Fig 3e/3f use.
 
 The pinned versions predate the current scientific stack; `requirements-frozen.txt` is
 the environment they were written against. Neither blocks the figures — the download

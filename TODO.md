@@ -1,8 +1,8 @@
 # TODO before submission
 
 Things that need a human decision or an external action. Kept here because it is the
-one file that survives stripping `provenance/`, `checks/` and the porting tools out of
-the public repo.
+one file that stayed behind when `provenance/`, `checks/` and the porting tools left the
+public repo.
 
 Grouped by who has to act.
 
@@ -119,21 +119,30 @@ so they do not re-derive. The manuscript is being updated to match this version.
 
 ## Repo shape for the public release
 
-- [ ] Strip `provenance/`, `checks/` and the porting tools; keep the analysis, `utils/`,
-      `run_all.py` and the figure code.
+- [x] ~~Strip `provenance/`, `checks/` and the porting tools.~~ **DONE (2026-08-15).**
+      Moved to the archive, not deleted — see below. `checks/` was already untracked.
+      `build_caches.py` was kept and moved to `scripts/`: it is a live tool that rebuilds
+      the eight committed cache tables, and it is the only record of how they derive.
+      `data_inventory.py` went to the archive with the file it generates.
 - [ ] Drop the heavy regenerable files (~160 MB of the 184 MB tracked): `Source Data.xlsx`
       (46 MB, rebuilt by `scripts/make_source_data.py`, and it goes to the journal), the
       BioImage Archive manifests (47 MB, rebuilt by `4_ImageBioArchive_Metadata` and
       hosted at BIA), and the six source tables over 6 MB (rebuilt by `run_all.py`).
       That leaves ~13 MB. The blocker on this — `data/` not being fetchable — cleared on
       2026-08-15 when `processed_profiles/` went up and verified.
-- [ ] Carry the paper-facing caveats above into the manuscript before `provenance/` goes.
-- [ ] When `scripts/data_inventory.py` goes, note that it writes into `provenance/` and
-      `mkdir`s the directory back, so shipping it re-grows what the strip removed.
+- [ ] Carry the paper-facing caveats above into the manuscript. The record now lives only
+      in the archive, so read `KNOWN_ISSUES.md` and `PORT_TRIAGE.md` there while drafting.
+- [ ] Nine notebooks still cite `KNOWN_ISSUES.md` / `PORT_TRIAGE.md` in comments, which no
+      longer resolve from a clone. Only `3_Figure4/3_PairwiseCorrelations.ipynb` is worth
+      fixing: eight of its mentions are runtime `print()` strings a reader will see.
 
-**The published figures live outside this repo, at `../colopaint3D_paper_reference/`.**
-They are checking material and must not ship, but they also cannot be regenerated, so they
-are deliberately somewhere no release step can reach:
+**Everything not shipped lives in `../colopaint3D_paper_archive/`.** It is checking and
+provenance material — none of it belongs in the public repo, but none of it can be
+regenerated either, so it sits where no release step can reach it:
+
+- `provenance/` — `PORT_TRIAGE.md` (panel map, what was included and why),
+  `KNOWN_ISSUES.md` (open blockers, source and port defects), `SOURCE_SNAPSHOT.tsv`,
+  and the porting tools `port_notebook.py`, `make_snapshot.py`, `data_inventory.py`.
 
 - `actual_panels/` — the 12 published figure PNGs. Recovered 2026-08-15 from
   `/share/data/analyses/.Trash-1000/`, where they had been sitting since 2026-08-14,

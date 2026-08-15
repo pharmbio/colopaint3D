@@ -10,8 +10,8 @@ figure set regenerates from the 147 MB profile download.
 The aggregation logic is lifted verbatim from the notebooks — this script is a
 runner, not a reimplementation.
 
-    python provenance/build_caches.py --list
-    python provenance/build_caches.py suppl3g suppl3h
+    python scripts/build_caches.py --list
+    python scripts/build_caches.py suppl3g suppl3h
 """
 from __future__ import annotations
 

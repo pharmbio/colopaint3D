@@ -53,10 +53,6 @@ __pycache__/
 !/analysis/**/data/
 !/analysis/**/data/**
 
-# Provenance record of the tree this port came from
-!/provenance/
-!/provenance/*.tsv
-
 # Acquisition protocols: instrument config, not data. Small, and the one part
 # of the method a reader cannot reconstruct from the notebooks.
 !/acquisition/
