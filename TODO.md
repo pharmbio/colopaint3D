@@ -6,26 +6,6 @@ public repo.
 
 Grouped by who has to act.
 
-## Must be stated in the paper
-
-- [ ] **Fig 6e substitutes Crizotinib for Vinorelbine.** `fig_5fu_neighbours_frozen_doses`
-      drops Vinorelbine because its matched dose fails the grit cutoff. The panel is
-      correct; the legend does not currently say this.
-- [ ] **Fig 3g/3h are a reconstruction, not the original code.** `AggVsMIP` exists in no
-      notebook, script or checkpoint in any of the three source trees, and in none of the
-      194 commits of history. Rebuilt from the same replicate correlations Fig 3e/3f use;
-      axes, diagonal, palettes and the dot/plus convention match the surviving PDFs.
-      n = 383 plotted perturbations. Compare against the archived PDFs before publishing.
-- [ ] **Suppl 5e's four labelled MoA classes were chosen by hypothesis, not by a scan.**
-      Of the 20 class pairings present, the two most 3D-similar are both shown
-      (Antimetabolite × Topo I +0.334, Antimetabolite × MDM2i +0.252), but comparably
-      extreme pairings are not (MAPKi × MDM2i −0.203 on n = 20; PARPi × PARPi −0.251).
-      Three of the four labelled classes rest on n = 3–6 pairs. Defensible as an a-priori
-      choice given the paper's 5-FU / olaparib focus — but say so in the legend.
-- [ ] **Fig 5f's colour limits (±12 for 2D, ±2.7 for 3D) are not derived by any code.**
-      Set interactively; the author's recollection is the only record. The 3D limit is the
-      99th percentile of |value| of the plotted rows, but the same rule gives 4.3 for 2D,
-      not 12 — so the two blocks were not scaled by one rule.
 
 ## Locked to the current re-run values (decided)
 
@@ -39,46 +19,6 @@ so they do not re-derive. The manuscript is being updated to match this version.
 
 ## External actions
 
-- [x] ~~**The 18 CellProfiler tables in S-BIAD2254 are truncated — re-upload them.**~~
-      **DONE (2026-08-15).** Re-uploaded and verified against the cluster originals with
-      `python scripts/verify_deposit.py`: all 18 match on byte size, row count and column
-      count (e.g. PB000137 nuclei, 1,351,678,271 B / 498,636 rows). Keep the note below
-      as the record of what went wrong, and re-run that script after any future upload.
-
-      <details><summary>what had happened</summary>
-      Every one of `results/PB0001{37..42}/featICF_{nuclei,cells,cytoplasm}.parquet`
-      started with the `PAR1` magic but had no closing `PAR1` footer, so none could be
-      opened. All 18 carried the identical FTP timestamp **Apr 15 15:33**,
-      every size is an exact multiple of 64 KiB, the truncated sizes cluster near 390 MB
-      regardless of true size (correlation with the originals r = −0.075, and PB000140
-      cells and cytoplasm stopped at byte-identical lengths). That is a concurrent upload
-      of all 18 cut off at one moment, each stream left at a buffer boundary. For
-      contrast `segmentation/` in the same folder is stamped Aug 10 09:00 and is intact.
-
-      Not recoverable by retrying: HTTPS/FIRE, `www.ebi.ac.uk/biostudies/files`, the FTP
-      protocol, the FTP listing and the BioStudies API all report the same short sizes,
-      so the bytes are not in storage. No point reporting it as corruption either — from
-      the archive's side ingestion succeeded and it recorded what arrived; the website
-      declares exactly the truncated sizes with no error flag.
-
-      Fixed by re-uploading from
-      `/share/data/cellprofiler/automation/results/{barcode}/{image_id}/{cp_id}/`, taking
-      the id pair from the shipped metadata — PB000137 has a second run at `4185/11613`
-      that holds 147 rows against 5532's 498,636, and an early attempt uploaded that one
-      by mistake.
-      </details>
-- [x] ~~**Upload the processed profile tables** to S-BIAD2254 as `processed_profiles/`
-      (31 files, 488 MB — `data/` minus `features/`).~~ **DONE (2026-08-15).** Landed under
-      the expected `processed_profiles/` name, so `BIA_DATA_SUBDIR` in
-      `scripts/download_data.py` needs no change. `python scripts/verify_deposit.py
-      --profiles` passes on both tiers: all 18 CellProfiler tables and all 31 profile
-      files match the local originals on byte size, row count and column count (the one
-      CSV, `normalized_data_merged_HCT116.csv` at 305,863,934 B, on size alone — it has no
-      footer to read). A clone can now fetch everything the figures read.
-- [ ] **Deposition covers exp1 only** (PB000137–142). The 2D monolayer arm and the exp2 /
-      exp3 / exp4 robustness runs have no raw-data deposition, so for those panels the
-      processed tables are the only reproducible artefact — worth one sentence in Data
-      Availability.
 - [ ] **RNA-seq DGE tables** (`3_Figure6/DEG/data`, ~11 MB) are inputs that nothing in the
       repo can regenerate. They need a GEO/ArrayExpress accession or to travel with the
       release.
@@ -130,8 +70,6 @@ so they do not re-derive. The manuscript is being updated to match this version.
       hosted at BIA), and the six source tables over 6 MB (rebuilt by `run_all.py`).
       That leaves ~13 MB. The blocker on this — `data/` not being fetchable — cleared on
       2026-08-15 when `processed_profiles/` went up and verified.
-- [ ] Carry the paper-facing caveats above into the manuscript. The record now lives only
-      in the archive, so read `KNOWN_ISSUES.md` and `PORT_TRIAGE.md` there while drafting.
 - [ ] Nine notebooks still cite `KNOWN_ISSUES.md` / `PORT_TRIAGE.md` in comments, which no
       longer resolve from a clone. Only `3_Figure4/3_PairwiseCorrelations.ipynb` is worth
       fixing: eight of its mentions are runtime `print()` strings a reader will see.
