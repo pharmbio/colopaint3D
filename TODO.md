@@ -39,10 +39,16 @@ so they do not re-derive. The manuscript is being updated to match this version.
 
 ## External actions
 
-- [ ] **The 18 CellProfiler tables in S-BIAD2254 are truncated — re-upload them.**
+- [x] ~~**The 18 CellProfiler tables in S-BIAD2254 are truncated — re-upload them.**~~
+      **DONE (2026-08-15).** Re-uploaded and verified against the cluster originals with
+      `python scripts/verify_deposit.py`: all 18 match on byte size, row count and column
+      count (e.g. PB000137 nuclei, 1,351,678,271 B / 498,636 rows). Keep the note below
+      as the record of what went wrong, and re-run that script after any future upload.
+
+      <details><summary>what had happened</summary>
       Every one of `results/PB0001{37..42}/featICF_{nuclei,cells,cytoplasm}.parquet`
-      starts with the `PAR1` magic but has no closing `PAR1` footer, so none can be
-      opened. What happened: all 18 carry the identical FTP timestamp **Apr 15 15:33**,
+      started with the `PAR1` magic but had no closing `PAR1` footer, so none could be
+      opened. All 18 carried the identical FTP timestamp **Apr 15 15:33**,
       every size is an exact multiple of 64 KiB, the truncated sizes cluster near 390 MB
       regardless of true size (correlation with the originals r = −0.075, and PB000140
       cells and cytoplasm stopped at byte-identical lengths). That is a concurrent upload
@@ -55,18 +61,18 @@ so they do not re-derive. The manuscript is being updated to match this version.
       the archive's side ingestion succeeded and it recorded what arrived; the website
       declares exactly the truncated sizes with no error flag.
 
-      When re-uploading: do not run all 18 in parallel, and verify from the archive
-      afterwards rather than from local disk (the local originals were always fine — it
-      was the transfer that failed). `check_parquet_intact()` in
-      `scripts/download_data.py` does this, and `analysis/0_Download` calls it and
-      refuses to finish on failure. Note the study is already public (DOI
-      10.6019/S-BIAD2254, released 2026-01-09), so this is a live defect in a citable
-      record, not just an outstanding task.
+      Fixed by re-uploading from
+      `/share/data/cellprofiler/automation/results/{barcode}/{image_id}/{cp_id}/`, taking
+      the id pair from the shipped metadata — PB000137 has a second run at `4185/11613`
+      that holds 147 rows against 5532's 498,636, and an early attempt uploaded that one
+      by mistake.
+      </details>
 - [ ] **Upload the processed profile tables** to S-BIAD2254 as `processed_profiles/`
-      (68 files, 547 MB — `data/` minus `features/`). `scripts/data_manifest.tsv` already
-      lists them with sha256. Until then a clone cannot draw any figure. If the folder is
-      named something other than `processed_profiles`, change `BIA_DATA_SUBDIR` in
-      `scripts/download_data.py`.
+      (31 files, 488 MB — `data/` minus `features/`). `scripts/data_manifest.tsv` lists
+      them with sha256, and they are already in the study FileList. Until this lands a
+      clone cannot draw any figure. If the folder is named something other than
+      `processed_profiles`, change `BIA_DATA_SUBDIR` in `scripts/download_data.py`.
+      Afterwards verify with `python scripts/verify_deposit.py --only-profiles`.
 - [ ] **Deposition covers exp1 only** (PB000137–142). The 2D monolayer arm and the exp2 /
       exp3 / exp4 robustness runs have no raw-data deposition, so for those panels the
       processed tables are the only reproducible artefact — worth one sentence in Data
