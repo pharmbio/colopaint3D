@@ -76,3 +76,8 @@ __pycache__/
 /analysis/4_BioImageArchive/spher_colo52-Annotations.tsv
 /analysis/4_BioImageArchive/spher-colo52.tsv
 /analysis/4_BioImageArchive/results.tsv
+
+# Regenerated tables. data/ holds the deposit and is never written to; anything a
+# run produces lands here instead, so a re-run cannot overwrite a deposited file.
+# Always safe to delete.
+/derived/

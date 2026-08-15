@@ -83,13 +83,29 @@ def _slug(text: str) -> str:
     return re.sub(r"_+", "_", text).strip("_")
 
 
-def _write_table(data: Any, dest: Path) -> int:
-    """Write ``data`` to ``dest`` as CSV; return the number of data rows.
+def _write_table(data: Any, dest: Path) -> tuple[int, bool]:
+    """Write ``data`` to ``dest`` as CSV; return (row count, content changed).
 
     Accepts a pandas DataFrame/Series, a mapping of columns, or an iterable of
     dicts, so notebooks do not have to normalise before saving. Duck-typed rather
     than importing pandas at module load, so a plain list of dicts also works.
+
+    Writes via a temporary file and only replaces ``dest`` when the bytes differ, so
+    a re-run that reproduces a table leaves its mtime alone and reports no change.
     """
+    tmp = dest.with_name(dest.name + ".tmp")
+    try:
+        n_rows = _render_table(data, tmp)
+        changed = not (dest.exists() and dest.read_bytes() == tmp.read_bytes())
+        if changed:
+            tmp.replace(dest)
+        return n_rows, changed
+    finally:
+        tmp.unlink(missing_ok=True)
+
+
+def _render_table(data: Any, dest: Path) -> int:
+    """Write ``data`` to ``dest`` as CSV; return the number of data rows."""
     if hasattr(data, "to_csv"):
         frame = data
         if getattr(frame, "ndim", 2) == 1 and hasattr(frame, "to_frame"):
@@ -124,12 +140,31 @@ def _write_table(data: Any, dest: Path) -> int:
     return len(rows)
 
 
-def _append_manifest(row: dict) -> None:
+def _append_manifest(row: dict, *, table_changed: bool = True) -> None:
+    """Replace this panel's manifest row, keeping the file sorted by panel.
+
+    ``written_utc`` is preserved when nothing else about the panel changed. Without
+    that, re-running a notebook rewrote the timestamp even when its table came out
+    byte-identical, so ``git status`` was dirty after every run and could not be used
+    to answer "did regenerating change anything?". With it, a clean tree means the
+    run reproduced exactly and any diff is real drift.
+    """
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     existing: list[dict] = []
+    previous: dict | None = None
     if MANIFEST.exists():
         with MANIFEST.open(newline="") as fh:
-            existing = [r for r in csv.DictReader(fh) if r.get("panel") != row["panel"]]
+            for r in csv.DictReader(fh):
+                if r.get("panel") == row["panel"]:
+                    previous = r
+                else:
+                    existing.append(r)
+
+    if previous is not None and not table_changed:
+        same = all(previous.get(f) == row[f] for f in MANIFEST_FIELDS if f != "written_utc")
+        if same:
+            row = {**row, "written_utc": previous["written_utc"]}
+
     with MANIFEST.open("w", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=MANIFEST_FIELDS)
         writer.writeheader()
@@ -178,7 +213,7 @@ def save_panel(
     # reader looking for a panel's data can find it without consulting the manifest.
     table_path = SOURCE_DATA_ROOT / f"{panel}.csv"
     SOURCE_DATA_ROOT.mkdir(parents=True, exist_ok=True)
-    n_rows = _write_table(data, table_path)
+    n_rows, table_changed = _write_table(data, table_path)
 
     apply_figure_defaults()
     out_dir = figdir(figure)
@@ -198,7 +233,7 @@ def save_panel(
         "caption": caption or "",
         "written_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
-    _append_manifest(row)
+    _append_manifest(row, table_changed=table_changed)
     print(f"[save_panel] {panel} -> {table_path.name} ({n_rows} rows), {', '.join(written)}")
     return row
 

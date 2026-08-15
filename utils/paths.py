@@ -24,9 +24,10 @@ from pathlib import Path
 
 __all__ = [
     "REPO_ROOT", "DATA_ROOT", "FEATURES_ROOT", "FIGURES_ROOT", "SOURCE_DATA_ROOT", "ANALYSIS_ROOT",
-    "EXTERNAL_ROOT",
+    "EXTERNAL_ROOT", "DERIVED_ROOT",
     "EXPERIMENTS", "UPSTREAM_NAMES",
-    "profiles", "features", "feature_output", "figdir", "source_data", "analysis", "data_dir",
+    "profiles", "profile_input", "derived",
+    "features", "feature_output", "figdir", "source_data", "analysis", "data_dir",
     "metadata", "external", "require", "cellprofiler_results",
 ]
 
@@ -43,7 +44,11 @@ FIGURES_ROOT = Path(os.environ.get("COLOPAINT3D_FIGURES", REPO_ROOT / "figures")
 # Bulk inputs kept outside the repo and outside every download tier.
 EXTERNAL_ROOT = Path(os.environ.get("COLOPAINT3D_EXTERNAL",
                                     "/share/data/analyses/christa/colopaint3D"))
-SOURCE_DATA_ROOT = REPO_ROOT / "source_data"
+SOURCE_DATA_ROOT = Path(os.environ.get("COLOPAINT3D_SOURCE_DATA", REPO_ROOT / "source_data"))
+# Anything a run *generates* that is not a panel. Separate from DATA_ROOT on purpose:
+# DATA_ROOT holds the deposited tables listed in scripts/data_manifest.tsv and is never
+# written to, so regenerating can never overwrite a deposited artifact. See derived().
+DERIVED_ROOT = Path(os.environ.get("COLOPAINT3D_DERIVED", REPO_ROOT / "derived"))
 ANALYSIS_ROOT = REPO_ROOT / "analysis"
 
 # Raw CellProfiler output, the input to 1_FeatureSorting. On the pharmbio cluster this
@@ -93,6 +98,42 @@ def profiles(exp: str, name: str) -> Path:
     """
     _check_experiment(exp)
     return DATA_ROOT / exp / name
+
+
+def derived(exp: str, name: str = "") -> Path:
+    """Destination for a table a notebook *generates*, mirroring :func:`profiles`.
+
+    >>> derived("exp1_main", "normalized_data_merged_HCT116.csv")
+
+    ``data/`` holds what was downloaded — every file in ``scripts/data_manifest.tsv``,
+    SHA256-verified — and notebooks never write there. Anything regenerated lands here
+    instead, so a re-run cannot overwrite a deposited artifact. It did once:
+    ``Prepare_Slice_Features`` rebuilt ``normalized_data_merged_HCT116.csv`` straight
+    into ``data/``, leaving the local copy 305,902,842 B against the deposit's
+    305,863,934 B, with nothing to report the drift.
+
+    ``derived/`` is gitignored and always safe to delete. To adopt a regenerated table,
+    copy it into ``data/`` deliberately and re-hash the manifest.
+    """
+    _check_experiment(exp)
+    base = DERIVED_ROOT / exp
+    base.mkdir(parents=True, exist_ok=True)
+    return base / name if name else base
+
+
+def profile_input(exp: str, name: str) -> Path:
+    """Read a profile table: the deposit first, a local regeneration second.
+
+    The deposit wins, so a stale ``derived/`` can never shadow it. The fallback is for
+    someone who skipped the ``normalized`` download tier and rebuilt the table from the
+    feature dumps instead. Returns the canonical ``data/`` path when neither exists, so
+    :func:`require` names the file a reader is expected to fetch.
+    """
+    deposited = profiles(exp, name)
+    if deposited.exists():
+        return deposited
+    regenerated = DERIVED_ROOT / exp / name
+    return regenerated if regenerated.exists() else deposited
 
 
 def features(exp: str, version: str, level: str, name: str | None = None) -> Path:

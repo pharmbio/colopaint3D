@@ -8,14 +8,15 @@ and to maximum-intensity projections.
 ## Quick start
 
 ```bash
-conda env create -f environment.yml     # one environment for everything
-conda activate colopaint3d              # no package to install; utils/ is imported directly
+python3.10 -m venv .venv                # Python 3.10; numba/llvmlite need it
+source .venv/bin/activate
+pip install -r requirements.txt         # no package to install; utils/ is imported directly
 
 python scripts/download_data.py         # profile tables, 206 MB, SHA256-verified
 python run_all.py                       # every figure and source-data table
 ```
 
-`environment.yml` is the only install path, and holds only what a paper panel needs.
+`requirements.txt` is the only install path, and holds only what a paper panel needs.
 
 Useful variants:
 
@@ -45,7 +46,23 @@ scripts/         download_data.py · make_source_data.py · build_caches.py · c
 analysis/        1_Data → 2_Processing → one folder per paper figure
 source_data/     One table per panel, plus MANIFEST.csv
 figures/         Rendered panels (generated, not tracked)
-data/            Downloaded profile tables (not tracked)
+data/            Downloaded profile tables (not tracked) — never written to
+derived/         Anything a run regenerates (not tracked) — safe to delete
+```
+
+`data/` holds the deposit and is read-only in practice: every file in it is listed in
+`scripts/data_manifest.tsv` with a SHA256. Notebooks that rebuild one of those tables
+write to `derived/` instead, and readers prefer the deposit and fall back to `derived/`,
+so regenerating can never overwrite a deposited artifact. To adopt a regenerated table,
+copy it into `data/` deliberately and re-hash the manifest.
+
+Re-running is idempotent: a panel whose table comes out byte-identical leaves both the
+table and its manifest row untouched, so `git status` after a run reports real drift only.
+To generate somewhere else entirely — a reproducibility check that touches nothing:
+
+```bash
+COLOPAINT3D_FIGURES=/tmp/fresh/figures \
+COLOPAINT3D_SOURCE_DATA=/tmp/fresh/source_data python run_all.py
 ```
 
 `1_Data` and `2_Processing` produce every reusable table; figure folders only consume
