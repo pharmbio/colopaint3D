@@ -61,8 +61,11 @@ nbformat==5.10.4
 tqdm==4.67.1
 
 # --- Figure-specific -------------------------------------------------------
-gseapy                     # Figure 6 hallmark/GSEA panels. UNPINNED: not present
-                           # in either analysis venv; pin before submission.
+gseapy==1.3.1              # Figure 6 GSEA. Only hallmark_nes_scatter.ipynb imports it,
+                           # and only if data/gsea_prerank_results.csv is absent -- that
+                           # table is committed, so a clean clone never needs it. Version
+                           # taken from the upstream colopaint3D venv, the one place it
+                           # was installed.
 copairs==0.5.4             # mAP scoring (Suppl Fig 3, if the mAP panel is kept)
 
 # --- Notes -----------------------------------------------------------------

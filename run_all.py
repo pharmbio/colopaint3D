@@ -39,7 +39,7 @@ from utils.paths import (ANALYSIS_ROOT, CLUSTER_CP_RESULTS, DATA_ROOT,  # noqa: 
 ORDERED_STAGES = ["0_Download", "1_Data", "2_Processing"]
 
 # Folders that hold code but produce no figures on their own.
-NON_FIGURE = {"0_Download", "1_Data", "2_Processing", "4_BioImageArchive"}
+NON_FIGURE = set(ORDERED_STAGES) | {"4_BioImageArchive"}
 
 # Stages that only run when named explicitly (--stage / --figure). 0_Download pulls
 # 16.6 GB from the BioImage Archive; that should be a deliberate act, not something a
@@ -47,19 +47,6 @@ NON_FIGURE = {"0_Download", "1_Data", "2_Processing", "4_BioImageArchive"}
 OPT_IN_STAGES = {"0_Download"}
 
 SKIP_PARTS = {".ipynb_checkpoints", "__pycache__", ".venv"}
-
-# Notebooks that overwrite shipped data tables in place and whose output is not
-# bit-reproducible. Skipped by default; --include-destructive runs them anyway.
-#
-# Prepare_Slice_Features used to be listed here: it rebuilds
-# normalized_data_merged_HCT116.csv, and its rebuild keeps 779 selected features where
-# the file shipped with the port had 781, which moves Fig 2g's variance-explained
-# figures. It now runs by default, because a figure the repo cannot rebuild from its own
-# data is the worse problem: the panel is regenerated from data/exp1_main rather than
-# inherited. The slice effect is unchanged either way (eta2 0.64 -> 0.05); only the
-# percentages move. The superseded 781-feature table is not kept here -- it survives
-# upstream at colopaint3D/spher_colo52_v1/1_Data/results/.
-DESTRUCTIVE: set[str] = set()
 
 # Notebooks that need input tiers not everyone has, and what to check for. The figure
 # tier runs off the profile tables in data/<experiment>/, which are a few hundred MB and
@@ -124,7 +111,7 @@ def unavailable(rel: str) -> str | None:
         d = DATA_ROOT / "features" / exp
         if not d.is_dir() or not any(d.iterdir()):
             return (f"needs the per-slice feature dump at {d} (~35 GB, not in the "
-                    "release; see provenance/DATA_INVENTORY.md)")
+                    "release; the tables it would produce ship in data/)")
     return None
 
 # Notebooks parameterised by cell line and/or data type. Each reads its parameters
@@ -214,7 +201,7 @@ def _matches_figure(group: str, figure: str) -> bool:
 
 
 def discover(figure: str | None = None, stage: str | None = None,
-             skip: Iterable[str] = (), include_destructive: bool = False) -> list[Notebook]:
+             skip: Iterable[str] = ()) -> list[Notebook]:
     """Return notebooks to run, in execution order."""
     if not ANALYSIS_ROOT.is_dir():
         return []
@@ -261,9 +248,6 @@ def discover(figure: str | None = None, stage: str | None = None,
             if path.name.endswith(".executed.ipynb"):
                 continue
             rel = path.relative_to(REPO_ROOT).as_posix()
-            if rel in DESTRUCTIVE and not include_destructive:
-                print(f"  (skipping {rel}: overwrites shipped data, see KNOWN_ISSUES)")
-                continue
             if (why := unavailable(rel)) is not None:
                 print(f"  (skipping {rel}: {why})")
                 continue
@@ -272,12 +256,12 @@ def discover(figure: str | None = None, stage: str | None = None,
     return found
 
 
-def _runner() -> tuple[str, list[str]]:
+def _runner() -> str:
     """Pick an execution backend, preferring papermill."""
     try:
         import papermill  # noqa: F401
 
-        return "papermill", []
+        return "papermill"
     except ImportError:
         pass
     # sys.executable, not a bare "jupyter": the runner must stay in whatever
@@ -285,7 +269,7 @@ def _runner() -> tuple[str, list[str]]:
     if subprocess.run(
         [sys.executable, "-m", "nbconvert", "--version"], capture_output=True
     ).returncode == 0:
-        return "nbconvert", []
+        return "nbconvert"
     raise SystemExit(
         "no notebook runner available. Install one of:\n"
         "    pip install papermill        (preferred)\n"
@@ -319,6 +303,20 @@ def execute(nb: Notebook, backend: str) -> tuple[bool, float, str]:
     return True, elapsed, ""
 
 
+def _verify(ok_message: str, lead: str = "source-data problems") -> int:
+    """Check every rendered panel has source data. Returns an exit code."""
+    from utils.panels import verify_manifest
+
+    problems = verify_manifest()
+    if not problems:
+        print(ok_message)
+        return 0
+    print(f"{lead} ({len(problems)}):", file=sys.stderr)
+    for p in problems:
+        print(f"  - {p}", file=sys.stderr)
+    return 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -326,17 +324,11 @@ def main() -> int:
     ap.add_argument("--figure", help="run one figure, e.g. Fig5 or SupplFig3")
     ap.add_argument("--stage", help="run one stage, e.g. 1_Data or 2_Processing")
     ap.add_argument(
-        "--include-destructive", action="store_true",
-        help="also run notebooks that overwrite shipped data tables in place "
-             "(currently Prepare_Slice_Features; see provenance/KNOWN_ISSUES.md)",
-    )
-    ap.add_argument(
         "--skip", action="append", default=[], metavar="NAME",
         help="skip a stage or figure folder; repeatable. --skip 1_Data leaves out "
              "feature sorting, which needs the 19.5 GB dumps and rewrites them",
     )
     ap.add_argument("--dry-run", action="store_true", help="print the plan, execute nothing")
-    ap.add_argument("--list", action="store_true", help="alias for --dry-run")
     ap.add_argument(
         "--verify", action="store_true",
         help="check every rendered panel has source data, then exit",
@@ -348,25 +340,15 @@ def main() -> int:
     args = ap.parse_args()
 
     if args.verify:
-        from utils.panels import verify_manifest
+        return _verify("source data OK: every rendered panel has a table and a "
+                       "manifest row")
 
-        problems = verify_manifest()
-        if not problems:
-            print("source data OK: every rendered panel has a table and a manifest row")
-            return 0
-        print(f"source-data problems ({len(problems)}):", file=sys.stderr)
-        for p in problems:
-            print(f"  - {p}", file=sys.stderr)
-        return 1
-
-    notebooks = discover(figure=args.figure, stage=args.stage, skip=args.skip,
-                         include_destructive=args.include_destructive)
+    notebooks = discover(figure=args.figure, stage=args.stage, skip=args.skip)
     if not notebooks:
         print("No notebooks found under analysis/.")
-        print("(The analysis code has not been ported into this repo yet — see WP6.)")
         return 0
 
-    dry = args.dry_run or args.list
+    dry = args.dry_run
     print(f"{'Would run' if dry else 'Running'} {len(notebooks)} notebook(s):\n")
     current = None
     for nb in notebooks:
@@ -387,7 +369,7 @@ def main() -> int:
             file=sys.stderr,
         )
 
-    backend, _ = _runner()
+    backend = _runner()
     print(f"backend: {backend}\n")
 
     failures: list[tuple[Notebook, str]] = []
@@ -411,16 +393,8 @@ def main() -> int:
             print(f"  - {nb.label}", file=sys.stderr)
         return 1
 
-    from utils.panels import verify_manifest
-
-    problems = verify_manifest()
-    if problems:
-        print(f"all notebooks ran, but {len(problems)} source-data problem(s):", file=sys.stderr)
-        for p in problems:
-            print(f"  - {p}", file=sys.stderr)
-        return 1
-    print("done: all notebooks ran and every panel has source data.")
-    return 0
+    return _verify("done: all notebooks ran and every panel has source data.",
+                   lead="all notebooks ran, but source-data problems")
 
 
 if __name__ == "__main__":

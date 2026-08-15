@@ -67,12 +67,14 @@ so they do not re-derive. The manuscript is being updated to match this version.
       that holds 147 rows against 5532's 498,636, and an early attempt uploaded that one
       by mistake.
       </details>
-- [ ] **Upload the processed profile tables** to S-BIAD2254 as `processed_profiles/`
-      (31 files, 488 MB — `data/` minus `features/`). `scripts/data_manifest.tsv` lists
-      them with sha256, and they are already in the study FileList. Until this lands a
-      clone cannot draw any figure. If the folder is named something other than
-      `processed_profiles`, change `BIA_DATA_SUBDIR` in `scripts/download_data.py`.
-      Afterwards verify with `python scripts/verify_deposit.py --only-profiles`.
+- [x] ~~**Upload the processed profile tables** to S-BIAD2254 as `processed_profiles/`
+      (31 files, 488 MB — `data/` minus `features/`).~~ **DONE (2026-08-15).** Landed under
+      the expected `processed_profiles/` name, so `BIA_DATA_SUBDIR` in
+      `scripts/download_data.py` needs no change. `python scripts/verify_deposit.py
+      --profiles` passes on both tiers: all 18 CellProfiler tables and all 31 profile
+      files match the local originals on byte size, row count and column count (the one
+      CSV, `normalized_data_merged_HCT116.csv` at 305,863,934 B, on size alone — it has no
+      footer to read). A clone can now fetch everything the figures read.
 - [ ] **Deposition covers exp1 only** (PB000137–142). The 2D monolayer arm and the exp2 /
       exp3 / exp4 robustness runs have no raw-data deposition, so for those panels the
       processed tables are the only reproducible artefact — worth one sentence in Data
@@ -92,12 +94,21 @@ so they do not re-derive. The manuscript is being updated to match this version.
       you did not mean to deposit.**
 - [ ] **Nothing in the repo generates the exp2/exp3 `grit_*` tables.** Both
       `2_Pycytominer` notebooks write only `selected_*`; the grit tier came from upstream
-      and has no derivation path here. Suppl 3c reads three of them
-      (`grit_section1_12planes`, `grit_section2`, `grit_section3`), so those are terminal
-      inputs and must be deposited. Either port the grit step for these experiments or
-      state in the methods that the exp2 grit scores are provided rather than recomputed.
-- [ ] Fill the accession into `CITATION.cff`.
-- [ ] Pin `gseapy` (Figure 6 hallmark panels); it is present in neither analysis venv.
+      and has no derivation path here. **Decided (2026-08-15): document, do not port** —
+      the methods will state that exp2 grit scores are provided rather than recomputed.
+      Scope is narrower than this heading suggests: only **exp2** has grit tables, and
+      only three, all read by Suppl 3c (`grit_section1_12planes`, `grit_section2`,
+      `grit_section3`); exp3 has none at all. All three are deposited and verified, so
+      nothing further is needed in the repo — this is now a manuscript sentence only.
+- [ ] `CITATION.cff`: the BIA accession **is already there** (S-BIAD2254, under
+      `identifiers` and `references`). What is still missing needs a human — the author
+      list in publication order with ORCIDs and affiliations, the paper DOI under
+      `preferred-citation` once it exists, and `version` / `date-released` at tag time.
+- [x] ~~Pin `gseapy`.~~ **DONE (2026-08-15).** `gseapy==1.3.1`, the version in the upstream
+      `colopaint3D/.venv` — the earlier note that it was in neither venv was wrong. It is
+      needed by nothing on a clean clone: the one import in `hallmark_nes_scatter.ipynb`
+      is behind a check for the committed `data/gsea_prerank_results.csv`, and it feeds a
+      cell marked `# [not a paper panel]`.
 
 ### Closed
 
@@ -105,11 +116,6 @@ so they do not re-derive. The manuscript is being updated to match this version.
   in the deposit, under `feature_extraction/`
   (`HMPSC_FEAT_ICFImg_Cellpose_v2_152219_spheroids_v3.cppipe`, plus the `CP_2023*`
   folders). Acquisition configs are there too, under `image_acquisition/`.
-
-## Known cosmetic defects
-
-- [ ] Suppl 4i's x axis is built as `conc * 1000`, so it reads in nM (0.32 … 10000) where
-      the published panel reads µM (0.00316 … 10.0).
 
 ## Repo shape for the public release
 
@@ -119,6 +125,6 @@ so they do not re-derive. The manuscript is being updated to match this version.
       (46 MB, rebuilt by `scripts/make_source_data.py`, and it goes to the journal), the
       BioImage Archive manifests (47 MB, rebuilt by `4_ImageBioArchive_Metadata` and
       hosted at BIA), and the six source tables over 6 MB (rebuilt by `run_all.py`).
-      That leaves ~13 MB. **Only safe once `data/` is fetchable** — otherwise a clone can
-      regenerate nothing.
+      That leaves ~13 MB. The blocker on this — `data/` not being fetchable — cleared on
+      2026-08-15 when `processed_profiles/` went up and verified.
 - [ ] Carry the paper-facing caveats above into the manuscript before `provenance/` goes.
