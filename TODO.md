@@ -128,3 +128,21 @@ so they do not re-derive. The manuscript is being updated to match this version.
       That leaves ~13 MB. The blocker on this — `data/` not being fetchable — cleared on
       2026-08-15 when `processed_profiles/` went up and verified.
 - [ ] Carry the paper-facing caveats above into the manuscript before `provenance/` goes.
+- [ ] When `scripts/data_inventory.py` goes, note that it writes into `provenance/` and
+      `mkdir`s the directory back, so shipping it re-grows what the strip removed.
+
+**The published figures live outside this repo, at `../colopaint3D_paper_reference/`.**
+They are checking material and must not ship, but they also cannot be regenerated, so they
+are deliberately somewhere no release step can reach:
+
+- `actual_panels/` — the 12 published figure PNGs. Recovered 2026-08-15 from
+  `/share/data/analyses/.Trash-1000/`, where they had been sitting since 2026-08-14,
+  never committed, one trash purge from gone.
+- `archived_originals/` — the 8 Jan-13 UMAP PDFs behind Fig 4a–d, the only record of the
+  published Fig 4c/4d whose ARI/NMI/SC no longer re-derive. Committed at `53e1765`, then
+  deleted from HEAD by `952803d` as collateral of an unrelated commit; recovered from
+  history the same day. **A history rewrite is the one thing that would have lost them**
+  — which is why they now live outside git as well.
+
+Diff rebuilt panels against `actual_panels/` at the clean-clone rehearsal; that is the
+last point they are useful.
