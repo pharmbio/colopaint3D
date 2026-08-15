@@ -52,5 +52,5 @@ SupplFig5a,SupplFig5,SupplFig5a.csv,SupplFig5a.pdf,analysis/3_Figure4/PCAUMAP_pa
 SupplFig5b,SupplFig5,SupplFig5b.csv,SupplFig5b.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,47,"Pairwise compound similarity clustermap, HT29 2D",2026-08-14T17:57:39Z
 SupplFig5c,SupplFig5,SupplFig5c.csv,SupplFig5c.pdf,analysis/3_Figure4/3_PairwiseCorrelations.ipynb,528,"2D minus 3D pairwise similarity, HT29",2026-08-14T17:57:42Z
 SupplFig5d,SupplFig5,SupplFig5d.csv,SupplFig5d.pdf,analysis/3_SupplFigure5/S_dose_similarity_5FU_Olaparib.ipynb,41,"Dose-resolved 5-FU vs olaparib similarity, 2D vs 3D",2026-08-14T16:36:52Z
-SupplFig5e,SupplFig5,SupplFig5e.csv,SupplFig5e.pdf,analysis/3_SupplFigure5/3_SupplFig5e_moa_class.ipynb,1275,"Drug-pair similarity 2D vs 3D, coloured by MoA pair class, HCT116",2026-08-14T18:24:49Z
+SupplFig5e,SupplFig5,SupplFig5e.csv,SupplFig5e.pdf,analysis/3_SupplFigure5/3_SupplFig5e_moa_class.ipynb,1275,"Drug-pair similarity 2D vs 3D, coloured by MoA pair class, HCT116",2026-08-15T01:41:43Z
 SupplFig6b,SupplFig6,SupplFig6b.csv,SupplFig6b.pdf,analysis/3_Figure6/DEG/hallmark_nes_scatter.ipynb,30,Gene-set signatures — HCT116 spheroids,2026-08-14T16:29:10Z

@@ -104,8 +104,9 @@ identical, and identical at 1/2/8 numba threads and 1/4/128 BLAS threads); the f
 extraction (`150125` and `011225` give the same metrics through the notebook); and the
 NMI averaging convention (geometric and arithmetic both 0.349).
 
-**The embeddings themselves do reproduce.** `figures/archived_originals/` holds the
-Jan-13 PDFs, and `checks/fig4_umap_shape.png` puts them beside the regenerated panels:
+**The embeddings themselves do reproduce.** `../colopaint3D_paper_reference/archived_originals/`
+holds the Jan-13 PDFs — outside this repo, since they are checking material and do not ship —
+and `checks/fig4_umap_shape.png` puts them beside the regenerated panels:
 the cluster layout matches in all four (PI3K top, MAPK right, DNA Damage left, Cell Cycle
 left; the same single-blob 4c and two-lobe 4d). What does not reproduce is the printed
 ARI/NMI/SC — and note those come from a *different* UMAP fit (cell 16) than the plotted
