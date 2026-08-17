@@ -90,8 +90,11 @@ NEEDS_FEATURES = {
     "analysis/3_Figure2/CellDetectionSanityCheck/3_Plot_Spheroids.ipynb": "exp1_main",
     "analysis/3_Figure2/RemoveNoise/Prepare_Slice_Features.ipynb": "exp1_main",
     "analysis/3_SupplFigure2/error_propegation.ipynb": "exp1_main",
-    "analysis/3_SupplFigure3/3_Robustness_Combined_Final.ipynb": "exp1_main",
 }
+# 3_Robustness_Combined_Final used to be listed here, which cost all seven SupplFig3
+# panels whenever the dumps were absent. Only g and h need them; a-e come from the
+# deposited section and slice tables. The two cells that read per-object data now guard
+# themselves and print what is missing, so the notebook runs either way.
 
 
 def unavailable(rel: str) -> str | None:

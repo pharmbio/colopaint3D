@@ -27,6 +27,7 @@ __all__ = [
     "EXTERNAL_ROOT", "DERIVED_ROOT",
     "EXPERIMENTS", "UPSTREAM_NAMES",
     "profiles", "profile_input", "derived",
+    "analysis_input", "analysis_input_output",
     "features", "feature_output", "figdir", "source_data", "analysis", "data_dir",
     "metadata", "external", "require", "cellprofiler_results",
 ]
@@ -173,6 +174,55 @@ def feature_output(exp: str, version: str, *, allow_existing: bool = False) -> P
             "the published profiles. Either choose a new version stamp, or pass\n"
             "allow_existing=True if you really mean to replace it."
         )
+    return dest
+
+
+ANALYSIS_INPUT_SUBDIR = "analysis_inputs"
+
+
+def analysis_input(relpath: str) -> Path:
+    """Resolve a small analysis input, archive first.
+
+    >>> analysis_input("3_SupplFigure3/data/suppl3g_bleaching_perwell.csv")
+
+    These are the aggregations a panel plots when its real inputs are too large to
+    ship — the 19.5 GB feature dumps, the 7.7 GB expert-annotation set, 67 MB of EdU
+    per-object CSVs. They used to be committed under ``analysis/**/data/``, which made
+    a code repository the authority on numbers that belong to the deposit.
+
+    Resolution order, highest priority first:
+
+    1. ``data/analysis_inputs/<relpath>`` — downloaded from S-BIAD2254 and checksummed
+       against ``scripts/data_manifest.tsv``. The archive is authoritative.
+    2. ``derived/analysis_inputs/<relpath>`` — rebuilt locally by
+       ``scripts/build_caches.py`` from the raw CellProfiler dumps. Only five of these
+       tables have a generator; the rest exist nowhere else and must be fetched.
+    3. ``analysis/<relpath>`` — the committed copy. Transitional, and removed once the
+       archive tier is live; until then it keeps every panel drawable.
+
+    ``relpath`` is the path relative to ``analysis/``, so the archive folder mirrors the
+    repo tree and no lookup table is needed. Returns the archive path when nothing
+    exists, so :func:`require` names the file a reader is expected to fetch.
+    """
+    fetched = DATA_ROOT / ANALYSIS_INPUT_SUBDIR / relpath
+    if fetched.exists():
+        return fetched
+    rebuilt = DERIVED_ROOT / ANALYSIS_INPUT_SUBDIR / relpath
+    if rebuilt.exists():
+        return rebuilt
+    committed = ANALYSIS_ROOT / relpath
+    return committed if committed.exists() else fetched
+
+
+def analysis_input_output(relpath: str) -> Path:
+    """Where ``build_caches.py`` writes a rebuilt analysis input.
+
+    Always under ``derived/`` — never back into ``analysis/**/data/``, which is the
+    committed copy this is meant to replace, and never into ``data/``, which holds the
+    deposit and is not written to.
+    """
+    dest = DERIVED_ROOT / ANALYSIS_INPUT_SUBDIR / relpath
+    dest.parent.mkdir(parents=True, exist_ok=True)
     return dest
 
 

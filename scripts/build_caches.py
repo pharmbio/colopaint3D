@@ -25,10 +25,14 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from utils.paths import external, features  # noqa: E402
+from utils.paths import analysis_input_output, external, features  # noqa: E402
 
-OUT_S3 = Path(__file__).resolve().parents[1] / "analysis" / "3_SupplFigure3" / "data"
-OUT_S2 = Path(__file__).resolve().parents[1] / "analysis" / "3_SupplFigure2" / "data"
+# Rebuilt tables go to derived/, never back into analysis/**/data/. This script is the
+# priority-2 route: the archive copy in data/analysis_inputs/ is authoritative, and this
+# regenerates from the raw CellProfiler dumps when someone has them. Writing into the
+# committed tree would overwrite the very copies it is meant to replace.
+OUT_S3 = analysis_input_output("3_SupplFigure3/data")
+OUT_S2 = analysis_input_output("3_SupplFigure2/data")
 
 # From 3_Robustness_Combined_Final cell 1, complete. (An earlier truncated copy of
 # this dict silently produced a cache missing the 20_40 and noclear conditions.)
@@ -184,7 +188,7 @@ def build_similarities() -> Path:
         "PairwiseCorrelations")
 
     sim = ns["sim"]
-    out_dir = repo / "analysis" / "3_SupplFigure5" / "data"
+    out_dir = analysis_input_output("3_SupplFigure5/data")
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
     for key, name in (("2D", "similarities_2D.csv"), ("aggregates", "similarities_3D.csv")):
