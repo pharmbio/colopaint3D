@@ -1,7 +1,0 @@
-,n_nuclei,n_nuclei,edu_positive_count,edu_positive_count,edu_fraction,edu_fraction,n_yH2AX_foci,n_yH2AX_foci,yH2AX_foci_per_nucleus,yH2AX_foci_per_nucleus
-,mean,std,mean,std,mean,std,mean,std,mean,std
-Drug,,,,,,,,,,
-Etoposide,493.625,85.33,0.375,0.744,0.001,0.002,7193.25,2268.15,14.854,4.658
-Olaparib,898.231,130.1,153.846,47.833,0.169,0.04,3977.923,1490.327,4.337,1.365
-5-FU,805.923,197.248,75.077,44.32,0.09,0.045,1484.692,867.037,1.759,0.835
-DMSO,1093.308,209.608,376.923,106.944,0.343,0.062,1021.385,585.672,0.897,0.396

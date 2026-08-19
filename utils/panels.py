@@ -16,13 +16,10 @@ That writes:
     source_data/MANIFEST.csv                     (one row appended)
 
 Panel naming drives everything: ``Fig5c`` -> figure ``Fig5``, panel ``c``.
-Supplementary panels use ``SupplFig3a``. This generalises a convention already
-present upstream (``panel_source_data.csv``, ``Figure3A2B2_n_per_condition.csv``).
+Supplementary panels use ``SupplFig3a``.
 
-Note on multi-figure notebooks: several notebooks are parameterised by
-``data_type`` and emit panels into more than one figure. Because the target
-figure is derived from the panel name, one notebook can write into Fig4, Fig5
-and SupplFig5 without any per-figure bookkeeping.
+The target figure comes from the panel name, so one parameterised notebook can
+write into Fig4, Fig5 and SupplFig5 without per-figure bookkeeping.
 """
 from __future__ import annotations
 
@@ -56,10 +53,9 @@ DEFAULT_FORMATS = ("pdf",)
 def apply_figure_defaults() -> None:
     """Keep vector text editable so panels can be assembled downstream.
 
-    Type-42 (TrueType) embedding means the text in exported PDFs stays selectable
-    and editable in Illustrator/Inkscape rather than being converted to outlines.
-    Set immediately before every save, because a notebook that calls
-    ``plt.style.use`` or ``seaborn.set_theme`` after import would otherwise reset it.
+    Type-42 embedding keeps PDF text selectable in Illustrator/Inkscape instead of
+    outlined. Set before every save, since ``plt.style.use`` or ``seaborn.set_theme``
+    would otherwise reset it.
     """
     import matplotlib as mpl
 
@@ -86,12 +82,11 @@ def _slug(text: str) -> str:
 def _write_table(data: Any, dest: Path) -> tuple[int, bool]:
     """Write ``data`` to ``dest`` as CSV; return (row count, content changed).
 
-    Accepts a pandas DataFrame/Series, a mapping of columns, or an iterable of
-    dicts, so notebooks do not have to normalise before saving. Duck-typed rather
-    than importing pandas at module load, so a plain list of dicts also works.
+    Accepts a DataFrame/Series, a column mapping, or an iterable of dicts. Duck-typed,
+    so pandas is not imported at module load.
 
-    Writes via a temporary file and only replaces ``dest`` when the bytes differ, so
-    a re-run that reproduces a table leaves its mtime alone and reports no change.
+    Writes via a temporary file and replaces ``dest`` only when the bytes differ, so a
+    re-run that reproduces a table leaves its mtime alone.
     """
     tmp = dest.with_name(dest.name + ".tmp")
     try:
@@ -110,9 +105,7 @@ def _render_table(data: Any, dest: Path) -> int:
         frame = data
         if getattr(frame, "ndim", 2) == 1 and hasattr(frame, "to_frame"):
             frame = frame.to_frame()
-        # Keep the index only when it carries information a reader would need:
-        # a named index, or any non-default (non-RangeIndex) index such as
-        # compound names or a MultiIndex. A bare RangeIndex is just row numbers.
+        # Keep the index only when it carries information: named, or non-RangeIndex.
         index = frame.index
         keep_index = bool(
             getattr(index, "name", None)
@@ -143,11 +136,8 @@ def _render_table(data: Any, dest: Path) -> int:
 def _append_manifest(row: dict, *, table_changed: bool = True) -> None:
     """Replace this panel's manifest row, keeping the file sorted by panel.
 
-    ``written_utc`` is preserved when nothing else about the panel changed. Without
-    that, re-running a notebook rewrote the timestamp even when its table came out
-    byte-identical, so ``git status`` was dirty after every run and could not be used
-    to answer "did regenerating change anything?". With it, a clean tree means the
-    run reproduced exactly and any diff is real drift.
+    ``written_utc`` is preserved when nothing else changed, so a clean ``git status``
+    after a run means it reproduced exactly and any diff is real drift.
     """
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     existing: list[dict] = []
@@ -209,8 +199,7 @@ def save_panel(
 
     figure = panel_figure(panel)
     # Named for the panel alone: source_data/Fig5c.csv. The description lives in the
-    # manifest's caption column, so the filename does not have to carry it, and a
-    # reader looking for a panel's data can find it without consulting the manifest.
+    # manifest's caption column.
     table_path = SOURCE_DATA_ROOT / f"{panel}.csv"
     SOURCE_DATA_ROOT.mkdir(parents=True, exist_ok=True)
     n_rows, table_changed = _write_table(data, table_path)
@@ -241,8 +230,8 @@ def save_panel(
 def verify_manifest() -> list[str]:
     """Return a list of problems: panels missing tables, figures missing rows.
 
-    Used by ``run_all.py --verify`` and by the submission check, so the claim
-    "every panel has source data" is testable rather than asserted.
+    Runs at the end of ``run_all.py``, so the claim "every panel has source data" is
+    testable rather than asserted.
     """
     problems: list[str] = []
     if not MANIFEST.exists():
@@ -263,7 +252,7 @@ def verify_manifest() -> list[str]:
                 problems.append(f"{row['panel']}: figure file {fname} is missing")
 
     # The reverse direction: a rendered panel with no manifest row would ship
-    # without source data, which is exactly what this repo exists to prevent.
+    # without source data.
     from utils.paths import FIGURES_ROOT
 
     if FIGURES_ROOT.is_dir():
