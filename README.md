@@ -24,14 +24,6 @@ python utils/download_data.py         # download raw and processed feature table
 python run_all.py                       # every figure and source-data table
 ```
 
-Useful variants:
-
-```bash
-python run_all.py --figure Fig5                # also Figure5 or 3_Figure5
-python run_all.py --stage 2_Processing         # one stage
-python run_all.py --skip 1_Data                # everything except feature sorting
-```
-
 ## Downloading data
 
 Everything comes from BioImage Archive accession **S-BIAD2254**. The figures read processed tables deposited there. 
