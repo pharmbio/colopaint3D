@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22013751.svg)](https://doi.org/10.5281/zenodo.22013751)
+
 # Cell Painting in 3D spheroids — paper analysis
 
 ## Summary
@@ -20,14 +22,6 @@ pip install -r requirements.txt
 
 python utils/download_data.py         # download raw and processed feature tables from the BioImage Archive
 python run_all.py                       # every figure and source-data table
-```
-
-Useful variants:
-
-```bash
-python run_all.py --figure Fig5                # also Figure5 or 3_Figure5
-python run_all.py --stage 2_Processing         # one stage
-python run_all.py --skip 1_Data                # everything except feature sorting
 ```
 
 ## Downloading data
